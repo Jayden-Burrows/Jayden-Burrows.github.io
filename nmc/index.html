@@ -9,19 +9,69 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link href="/style.css" rel="stylesheet">
     <style>
-        h2 {
-            height: 1500px;
+        h1 {
+            text-align: center;
+            color: var(--accent);
         }
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
+
+        #courses {
+            width: 80vw;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 auto;
         }
+
+        .course-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 80px;
+            min-width: 80px;
+            max-width: 250px;
+            margin: 0;
+            padding: 8px 8px;
+            border: 1px solid var(--text);
+            border-radius: 8px;
+            box-shadow: 4px 4px 2px var(--bg-shadow);
+            transition: transform 250ms ease, box-shadow 250ms ease;
+
+            i {
+                color: var(--text-secondary);
+                font-size: 48px;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--primary);
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 0.01em;
+            }
+        }
+
+        .assignment-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 8px 8px 2px var(--bg-shadow);
+        }
+
     </style>
 </head>
 
 <body>
 
+    <!-- TODO  -->
+    <!-- 1. Fix navbar -->
+    <!-- Make navbar same color as background +  -->
+    <!-- Fix the contents of the navbar: about + contact + resume, projects, Skills + certifications, experience -->
+    <!-- fix the drawer -->
+    <!-- Change color palette to greens and tan + more sophisticated font -->
+    <!-- Adjust the content to look more like your own  -->
+    <!-- Fix the tailwind css -> regular css -->
     <div class="main-content">
         <nav class="top-nav" aria-label="main-nav">
             <div id="left-top-nav">
@@ -143,24 +193,13 @@
     </div>
 
     <main>
-        <h1>My Hometown : Watkinsville, GA</h1>
-        <h2 id="attractions">Attractions</h2>
-        <ul>
-            <li>Farmer's Market @ Wire Park</li>
-            <li>Washington Farms</li>
-            <li>Entangled Cat Café</li>
-        </ul>
-        <h2 id="restaurants">Restaurants</h2>
-        <ul>
-            <li>Mama Ning's</li>
-            <li>Fully Loaded</li>
-        </ul>
-        <h2 id="not-to-visit">Where Not to Visit</h2>
-        <ul>
-            <li>The local jail</li>
-        </ul>
-        <p><a href="/nmc/4020/exercise01.html">Exercise One</a></p>
-        <p><a href="mailto:jmb00097@uga.edu?subject=NMIX4020&body=You%20Get%20An%20A+%20In%20My%20Class!-Anthony%20Drag">Email Link</a></p>
+        <h1>Courses</h1>
+        <div id="courses">
+            <div class="course-card">
+                <i class="zmdi zmdi-language-javascript"></i>
+                <p><a href="/nmc/4020/index.html">NMIX 4020 - Advanced Web Development</a></p>
+            </div>
+        </div>
     </main>
 
     <script src="/script.js"></script>
