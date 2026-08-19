@@ -8,18 +8,44 @@
     <title>Jayden Burrows</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link href="/style.css" rel="stylesheet">
+    <style>
+        h1 {
+            text-align: center;
+            color: var(--accent);
+        }
+
+        #interests {
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .interest {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 600;
+            list-style-type: none;
+
+            i {
+                margin-right: 8px;
+            }
+        }
+
+        .description {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        img {
+            display: block;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <!-- TODO  -->
-    <!-- 1. Fix navbar -->
-    <!-- Make navbar same color as background +  -->
-    <!-- Fix the contents of the navbar: about + contact + resume, projects, Skills + certifications, experience -->
-    <!-- fix the drawer -->
-    <!-- Change color palette to greens and tan + more sophisticated font -->
-    <!-- Adjust the content to look more like your own  -->
-    <!-- Fix the tailwind css -> regular css -->
     <div class="main-content">
         <nav class="top-nav" aria-label="main-nav">
             <div id="left-top-nav">
@@ -140,6 +166,44 @@
         </div>
     </div>
 
+    <main>
+        <h1 id="top">Jayden Burrows</h1>
+        <h2>(Possibly Un-) Interesting Things about Me</h2>
+        <ul id="interests">
+            <li class="interest"><i class="zmdi zmdi-gamepad"></i> Gaming</li>
+            <li class="description">I'm not the biggest gamer, but I like playing games with my friends. Narrative-driven games are my favorite genre of games. Some of my favorites so far are:
+                <ul>
+                    <li><i>Red Dead Redemption 2</i></li>
+                    <li><i>Final Fantasy VII</i></li>
+                    <li><i>Split Fiction</i></li>
+                </ul>
+            </li>
+            <li class="interest"><i class="zmdi zmdi-movie"></i> Movies/Shows</li>
+            <li class="description">
+                I don't have a favorite movie or show, but I really enjoy animated media, especially 2D animation. Some examples of shows/movies I enjoy are:
+                <ul>
+                    <li><i>Avatar: the Last Airbender</i></li>
+                    <li><i>Batman: Under the Red Hood</i></li>
+                    <li><i>Goodbye, Lara (Currently watching)</i></li>
+                </ul>
+            </li>
+            <li class="interest"><i class="zmdi zmdi-brush"></i> Art</li>
+            <li class="description">In my spare time, I sometimes do traditional art, mainly portraits using plain graphite or water color. I love art with extremely saturated colors, but ironically, I rarely add much color to my own sketches.</li>
+        </ul>
+
+        <h2>Emphasis</h2>
+        <p>I really enjoy reading too. I don't read <em> as much </em> as I used to, but I still read pretty often. I always recommend <u>Gideon the Ninth</u> whenever someone asks me for a book recommendation because it's a pretty fun book while still being mature. I would definitely say that the book and the rest of the trilogy are <b>challenging</b> to get through to say the least. Despite that, I would still highly recommend trying it out. </p>
+        <p>I also <strong>love</strong> reading comics and light novels because they can be pretty self-indulgent, and there's less pressure while reading them.</p>
+        <a href="/images/bigProfile.png" title="Link to a bigger picture of me!" alt="A big picture of me!"><img src="/images/smallProfile.png" alt="Oh look! It's a small picture of me!"></a>
+        <h2>Links</h2>
+        <ul>
+            <li><a href="/nmc/4020/details/details.html">Details</a></li>
+            <li><a href="/nmc/4020/details/details.html#attractions">Attractions</a></li>
+            <li><a href="/nmc/4020/details/details.html#not-to-visit">Where Not To Visit</a></li>
+            <li><a href="/nmc/4020/details/details.html#top">Home</a></li>
+            <li><a href="https://www.youtube.com/watch?v=RvBwypGUkPo">YouTube</a></li>
+        </ul>
+    </main>
 
     <script src="/script.js"></script>
 

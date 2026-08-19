@@ -1,12 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jayden Burrows">
     <title>Jayden Burrows</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        h1 {
+            text-align: center;
+            color: var(--accent);
+        }
+
+        #projects-section, #assignments-section, #exercises-section {
+            width: 80vw;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+        }
+
+        .assignment-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80px;
+            min-width: 80px;
+            margin: 0;
+            padding: 16px 16px;
+            border: 1px solid var(--text);
+            border-radius: 8px;
+            box-shadow: 4px 4px 2px var(--bg-shadow);
+            transition: transform 250ms ease, box-shadow 250ms ease;
+
+            i {
+                color: var(--text-secondary);
+                font-size: 36px;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--primary);
+                font-size: 18px;
+                font-weight: 600;
+                letter-spacing: 0.01em;
+            }
+        }
+
+        .assignment-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 8px 8px 2px var(--bg-shadow);
+        }
+
+    </style>
 </head>
+
 <body>
-    <p>This is a second test!</p>
-    <p>Testing deployment upon push</p>
+
+    <!-- TODO  -->
+    <!-- 1. Fix navbar -->
+    <!-- Make navbar same color as background +  -->
+    <!-- Fix the contents of the navbar: about + contact + resume, projects, Skills + certifications, experience -->
+    <!-- fix the drawer -->
+    <!-- Change color palette to greens and tan + more sophisticated font -->
+    <!-- Adjust the content to look more like your own  -->
+    <!-- Fix the tailwind css -> regular css -->
+    <div class="main-content">
+        <nav class="top-nav" aria-label="main-nav">
+            <div id="left-top-nav">
+                <button type="button" id="toggle-nav" class="drawer-toggle-btn" aria-label="Toggle menu">
+                    <svg width="20" height="20" viewBox="0 0 23 23">
+                        <path fill="transparent" stroke-width="2.5" stroke="var(--text-secondary)"
+                            stroke-linecap="round" d="M 2 2.5 L 20 2.5" class="menu-toggle-path">
+                        </path>
+                        <path fill="transparent" stroke-width="2.5" stroke="var(--text-secondary)"
+                            stroke-linecap="round" d="M 2 9.423 L 20 9.423" class="menu-toggle-path">
+                        </path>
+                        <path fill="transparent" stroke-width="2.5" stroke="var(--text-secondary)"
+                            stroke-linecap="round" d="M 2 16.346 L 20 16.346" class="menu-toggle-path">
+                        </path>
+                    </svg>
+                </button>
+                <a href="/" class="title">Jayden Burrows</a>
+            </div>
+            <div id="right-top-nav">
+                <ul class="nav-links">
+                    <li>
+                        <a class="nav-link" data-scroll href="#body">About</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-scroll href="#experience_sec">Experience</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-scroll href="#skills_sec">Skills</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-scroll href="#certs_sec">Certifications</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-scroll href="#project_sec">Projects</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-scroll href="nmc/4020/index.html">NMC</a>
+                    </li>
+                </ul>
+                <label class="toggle">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Drawer for side nav -->
+        <!-- <Drawer name={about.name} avatar={about.avatar} social={about.social} isOpen={isOpen} setIsOpen={setIsOpen} /> -->
+        <div id="nav-drawer-backdrop" class="drawer-backdrop">
+
+            <nav id="nav-drawer" aria-label="side-nav">
+                <div id="nav-drawer-toggle-btn-and-nav-links">
+                    <div id="drawer-toggle-btn-wrapper">
+
+                        <button type="button" class="drawer-toggle-btn" aria-label="Toggle menu">
+                            <svg width="20" height="20" viewBox="0 0 23 23">
+                                <path fill="transparent" stroke-width="2.5" stroke="var(--accent)"
+                                    stroke-linecap="round" d="M 3 16.5 L 17 2.5" class="menu-toggle-path">
+                                </path>
+                                <path fill="transparent" stroke-width="2.5" stroke="var(--accent)"
+                                    stroke-linecap="round" d="M 2 9.423 L 20 9.423"
+                                    style="opacity: 0; transition-duration: 0.1" class="menu-toggle-path">
+                                </path>
+                                <path fill="transparent" stroke-width="2.5" stroke="var(--accent)"
+                                    stroke-linecap="round" d="M 3 2.5 L 17 16.346" class="menu-toggle-path">
+                                </path>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <ul class="drawer-navigation">
+                        <li>
+                            <a class="drawer-nav-link" data-scroll href="#body">
+                                <i class="zmdi zmdi-border-color pr-15"></i>
+                                <span>about</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="drawer-nav-link " data-scroll href="#experience_sec">
+                                <i class="zmdi zmdi-time-restore pr-15"></i>
+                                <span>experience</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="drawer-nav-link " data-scroll href="#skills_sec">
+                                <i class="zmdi zmdi-flash pr-15"></i>
+                                <span>skills</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="drawer-nav-link " data-scroll href="#certs_sec">
+                                <i class="zmdi zmdi-badge-check pr-15"></i>
+                                <span>certifications</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="drawer-nav-link " data-scroll href="#project_sec">
+                                <i class="zmdi zmdi-code pr-15"></i>
+                                <span>projects</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="drawer-nav-link" data-scroll href="nmc/4020/index.html">
+                                <i class="zmdi zmdi-folder pr-15"></i>
+                                <span>NMC</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p id="drawer-footer">Jayden Burrows © 2026.</p>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <!-- <h1>Projects</h1>
+        <div id="projects-section">
+
+        </div>
+        <h1>Assignments</h1>
+        <div id="assignments-section">
+            <div class="assignment-card">
+                <i class="zmdi zmdi-file"></i>
+                <p><a>Assignment 1</a></p>
+            </div>
+        </div> -->
+        <h1>Exercises</h1>
+        <div id="exercises-section">
+            <div class="assignment-card">
+                <i class="zmdi zmdi-file"></i>
+                <p><a href="/nmc/4020/exercise01.html">Excercise 1</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="/script.js"></script>
+
 </body>
+
 </html>
