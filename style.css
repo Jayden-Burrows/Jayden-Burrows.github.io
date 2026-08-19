@@ -1,5 +1,4 @@
 /* TODO: Change fonts out */
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css);
 
@@ -269,6 +268,7 @@ a.nav-link {
   width: 50%;
   min-width: 200px;
   min-height: 200px;
+  max-width: 400px;
   z-index: 100;
   overflow-y: auto;
   overflow-x: hidden;
@@ -334,9 +334,11 @@ a.nav-link {
   border-radius: 8px;
 }
 
-.about-sec.card {
+#about-sec.card {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 80vw;
 }
 
 #about-img-and-links {
@@ -426,7 +428,7 @@ a.nav-link {
 #info-and-details {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .info-wrap {
@@ -437,14 +439,15 @@ a.nav-link {
 }
 
 #about-name {
-  font-size: x-large;
+  font-size: 30px;
   margin: 0;
 }
 
 #about-tagline {
-  font-size: 16px !important;
+  font-size: 16px;
   margin: 0;
-  margin-bottom: 10px !important;
+  margin-bottom: 10px;
+  color: var(--text-secondary)
 }
 
 #about-action-btns {
@@ -547,13 +550,21 @@ a.nav-link {
     font-size: 18px;
   }
 
-  .about-sec.card {
+  #about-sec.card {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
   }
 
-  .about-sec {
+  #about-name {
+    text-align: left;
+  }
+
+  #about-tagline {
+    text-align: left;
+  }
+
+  #about-sec {
     gap: 16px;
   }
 

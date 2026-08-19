@@ -20,7 +20,7 @@
     <!-- Change color palette to greens and tan + more sophisticated font -->
     <!-- Adjust the content to look more like your own  -->
     <!-- Fix the tailwind css -> regular css -->
-    <div class="main-content">
+    <div class="nav-content">
         <nav class="top-nav" aria-label="main-nav">
             <div id="left-top-nav">
                 <button type="button" id="toggle-nav" class="drawer-toggle-btn" aria-label="Toggle menu">
@@ -141,9 +141,11 @@
     </div>
 
     <main>
+        <!-- About Section -->
         <section id="about-sec" class="card">
             <div id="about-img-and-links">
-                <img id="about-img" class="candidate-img" src="images/smallLogo.png" alt="Jayden Burrows" width="250" height="250">
+                <img id="about-img" class="candidate-img" src="images/smallLogo.png" alt="Jayden Burrows" width="250"
+                    height="250">
                 <ul class="social-list">
                     <li>
                         <a href="https://tryhackme.com/p/jaydenmburrows" class="social-link">
@@ -195,11 +197,10 @@
                     <h1 id="about-name">Jayden Burrows</h1>
                     <h3 id="about-tagline">Aspiring Cybersecurity Analyst</h3>
                     <div id="about-action-btns">
-                        <a id="download-resume"
-                            class="about-button"
-                            href="Jayden Burrows Resume.pdf" download>Resume</a>
-                        <a id="email-contact" class="about-button"
-                            href="mailto:jaydenmburrows@outlook.com" data-scroll>Contact</a>
+                        <a id="download-resume" class="about-button" href="Jayden Burrows Resume.pdf"
+                            download>Resume</a>
+                        <a id="email-contact" class="about-button" href="mailto:jaydenmburrows@outlook.com"
+                            data-scroll>Contact</a>
                     </div>
                 </div>
                 <ul class="about-details">
@@ -225,9 +226,51 @@
                 </ul>
             </div>
         </section>
+        <!-- Experience Section -->
+        <section id="experience_sec">
+            <h2>Experience</h2>
+            <!-- TODO: Add timeline  -->
+            <!-- TODO: Fix styling of timeline -->
+        </section>
+        <!-- Skills Section -->
+        <section id="skills_sec">
+            <h2>Skills</h2>
+        </section>
+        <!-- Certifications Section -->
+        <section id="certs_sec">
+            <h2>Certifications</h2>
+        </section>
+        <!-- Projects Section -->
+        <section id="project_sec" class="blog-sec">
+            <h2>Projects &amp; Work</h2>
+            <div id="repo-cards" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                <!-- TODO: Fill in content -->
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        const animatedName = document.getElementById('about-name');
+
+        let name = animatedName.textContent;
+        let nameIndex = 0;
+
+        function animateName() {
+            animatedName.textContent = '';
+            typeName()
+        }
+
+        function typeName() {
+            setTimeout(typeName, 100)
+            if (nameIndex < name.length) {
+                animatedName.textContent += name[nameIndex];
+                nameIndex++;
+            }
+        }
+
+        window.addEventListener('load', animateName);
+    </script>
 
 </body>
 
