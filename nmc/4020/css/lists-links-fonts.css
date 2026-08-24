@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+
+.matemasie-regular {
+    font-family: "Matemasie", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title-font {
+    color: darkblue;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+main ul {
+    list-style-type: none;
+}
+
+main ul li {
+    padding-left: 20px;
+    background-image: url('https://cdn-icons-png.magnific.com/256/361/361853.png?semt=ais_white_label');
+    background-position: 0 50%;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+main p {
+    margin: 24px;
+}
+
+main a {
+    padding: 8px;
+    border: 3px ridge var(--primary);
+    background-color: var(--primary);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: color 200ms ease, background-color 200ms ease;
+}
+
+main a:visited {
+    color: paleturquoise;
+    background-color: dodgerblue;
+    border-color: violet;
+}
+
+main a:focus {
+    background-color: peachpuff;
+    color: salmon;
+    border: 3px ridge sandybrown;
+}
+
+main a:hover {
+    background-color: var(--secondary);
+    color: var(--accent);
+}
+
+main a:active {
+    color: var(--bg);
+    background-color: var(--text-secondary);
+}

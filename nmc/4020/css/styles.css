@@ -1,0 +1,164 @@
+/*
+    NMIX 4020/6020
+    Advanced Web Development Assignments
+
+    This stylesheet provides a basic starting point.
+    Make it work first. Then improve it as you learn more.
+*/
+
+
+/* --------------------
+   Reset
+   -------------------- */
+
+/*
+    Browsers apply default styles to HTML elements.
+
+    This small reset makes element sizing more predictable
+    and removes the default margin around the page.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* --------------------
+   Body
+   -------------------- */
+
+body {
+    /*
+        Choose one of the two font stacks below.
+
+        To switch fonts:
+        1. Comment out the font-family currently in use.
+        2. Uncomment the other font-family.
+
+        If a font is not installed on the user's system,
+        the browser tries the next font in the stack.
+    */
+
+    /* Sans serif */
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+
+    /* Serif */
+    /* font-family: Georgia, "Times New Roman", serif; */
+
+    line-height: 1.5;
+}
+
+
+/* --------------------
+   Main
+   -------------------- */
+
+/*
+    max-width keeps the content from becoming too wide
+    on large screens.
+
+    margin: 0 auto centers main horizontally.
+
+    padding creates space between the content and the
+    edges of the browser window.
+*/
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+
+/* --------------------
+   Sections
+   -------------------- */
+
+/*
+    Each section represents a course module.
+
+    Indenting sections helps make the document hierarchy
+    visible on the rendered page.
+*/
+
+section {
+    margin: 48px 0;
+    padding-left: 24px;
+}
+
+
+/* --------------------
+   Headings
+   -------------------- */
+
+/*
+    The visual hierarchy below corresponds to the
+    document hierarchy in the HTML:
+
+    h1 = page / course
+    h2 = module
+    h3 = week
+*/
+
+/*
+    @todo After the CSS Text Styling lesson,
+    revisit these px values and consider whether
+    another unit would be more appropriate.
+*/
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-left: 24px;
+}
+
+
+/* --------------------
+   Lists
+   -------------------- */
+
+/*
+    Ordered lists contain the assignments for each week.
+
+    The additional indentation reinforces the hierarchy:
+
+    course
+        module
+            week
+                assignments
+*/
+
+/*
+    @todo Customize the ordered lists using techniques
+    from the Lists, Links & Fonts lesson.
+*/
+
+ol {
+    margin-left: 48px;
+}
+
+
+/* --------------------
+   Links
+   -------------------- */
+
+/*
+    @todo Customize the links and their states using
+    techniques from the Lists, Links & Fonts lesson.
+*/
+
+a {
+}
