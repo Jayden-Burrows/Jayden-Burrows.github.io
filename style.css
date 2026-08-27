@@ -79,6 +79,10 @@ body {
   background: var(--secondary);
 }
 
+a {
+  color: var(--secondary);
+}
+
 /* ── Dark mode toggle ── */
 .toggle {
   position: relative;
