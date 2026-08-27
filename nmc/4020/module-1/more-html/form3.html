@@ -8,7 +8,7 @@
     <title>Jayden Burrows</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link href="/style.css" rel="stylesheet">
-    <link href="/nmc/4020/css/lists-links-fonts.css" rel="stylesheet">
+    <link href="/nmc/4020/css/more-html.css" rel="stylesheet">
 </head>
 
 <body>
@@ -183,37 +183,99 @@
         </div>
     </div>
 
-    <main>
-        <h3>Exercise 1: Custom bullet list</h3>
-        <ul>
-            <li>This is my first bullet.</li>
-            <li>This is my second bullet.</li>
-            <li>This is my third bullet.</li>
-        </ul>
-        <h3>Exercise 2: Ordered list</h3>
-        <ol start="10">
-            <li>This is number 1.</li>
-            <li>This is number 2.</li>
-            <li>This is number 3.</li>
-            <li>This is number 4.</li>
-        </ol>
-        <h3>Exercise 3: Link styled</h3>
-        <p><a href="https://neal.fun/spend/">Spend Bill Gates' Money</a></p>
-        <p><a href="https://en.akinator.com/">Akinator</a></p>
-        <p><a href="https://twice.jype.com/">Twice Official Website</a></p>
-        <p><a href="https://thecoollinks.com/">Cool Links</a></p>
-        <p><a href="https://nmi.cool/advweb/">UGA Advanced Web Development Textbook</a></p>
-        <p><a href="https://csci4300-web-programming.github.io/UGA-WebDAWGS-Docs-Pages/">UGA Web Programming
-                Textbook</a></p>
+    <header>Form Practice</header>
 
-        <h3>Exercise 4: Web fonts</h3>
-        <p class="matemasie-regular">This is the Matemasie font. It would probably look nicer for very important titles with some adjustments to letter spacing and color.</p>
-        <p class="matemasie-regular title-font">Lorem</p>
-        <p class="matemasie-regular">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis reiciendis in esse
-            porro voluptates quaerat delectus nobis nulla. Consequuntur delectus vero beatae voluptatem, provident earum
-            labore maiores aspernatur enim voluptates.</p>
+    <main>
+        <h2>Exercise 3: Even more complex form elements</h2>
+
+        <p>Examples of a slider and a color picker.</p>
+
+        <form action="showme.html" method="get">
+
+            <!--
+                Step 3: Add a slider.
+                Follow the MDN slider example, but create your own
+                values and content.
+            -->
+
+            <label for="movieRating">
+                Your rating of the Odyssey:
+            </label>
+
+            <input type="range" name="movieRating" id="movieRating" min="1" max="10" step="1" value="1">
+
+            <output class="movieRating-output" for="movieRating"></output>
+
+
+            <!--
+                Step 4: Add a color picker using the MDN example.
+                Then add JavaScript so the selected color produces
+                visible feedback.
+            -->
+
+            <label for="color-picker1">Color 1:</label>
+
+            <input type="color" name="color1" id="color-picker1" value="#000000">
+
+            <label for="color-picker1">Color 2:</label>
+
+            <input type="color" name="color2" id="color-picker2" value="#000000">
+
+            <div class="color-result"></div>
+
+            <br>
+            <br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <!--
+            After pressing the Submit button, note how the form
+            inputs affect the URL.
+        -->
 
     </main>
+
+    <!--
+        The JavaScript is placed here so the HTML elements it refers
+        to already exist when the script runs.
+    -->
+
+    <script>
+        // Slider feedback
+        // Based on the MDN range input example.
+
+        const movieRating = document.querySelector("#movieRating");
+        const movieRatingOutput = document.querySelector(".movieRating-output");
+
+        movieRatingOutput.textContent = movieRating.value;
+
+        movieRating.addEventListener("input", () => {
+            movieRatingOutput.textContent = movieRating.value;
+        });
+
+
+        // Color picker feedback
+        // Extends the basic MDN color input example.
+
+        const colorPicker1 = document.querySelector("#color-picker1");
+        const colorPicker2 = document.querySelector("#color-picker2");
+        const colorResult = document.querySelector(".color-result");
+
+        function updateColorResult() {
+            colorResult.style.background = `linear-gradient(to right, ${colorPicker1.value}, ${colorPicker2.value})`
+        }
+
+        colorPicker1.addEventListener("input", () => {
+            updateColorResult();
+        });
+
+        colorPicker2.addEventListener("input", () => {
+            updateColorResult();
+        });
+
+    </script>
 
     <script src="/script.js"></script>
 

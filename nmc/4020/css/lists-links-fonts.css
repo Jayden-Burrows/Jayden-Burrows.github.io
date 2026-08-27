@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
 
+:root {
+    --bg: white;
+    --bg-shadow: lightgrey;
+    --primary: #2fbbd6;
+    --secondary: #1b366c;
+    --accent: red;
+    --accent-dark: darkred;
+    --text: black;
+    --text-secondary: #2d3030;
+}
+
+[data-theme="dark"] {
+  --bg: black;
+  --bg-shadow: #2d3030;
+  --accent: red;
+  --accent-dark: darkred;
+  --primary: #2fbbd6;
+  --secondary: #1b366c;
+  --text: white;
+  --text-secondary: lightgrey;
+}
+
+
 .matemasie-regular {
     font-family: "Matemasie", sans-serif;
     font-weight: 400;

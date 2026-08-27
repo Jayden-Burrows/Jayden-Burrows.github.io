@@ -8,7 +8,7 @@
     <title>Jayden Burrows</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link href="/style.css" rel="stylesheet">
-    <link href="/nmc/4020/css/lists-links-fonts.css" rel="stylesheet">
+    <link href="/nmc/4020/css/more-html.css" rel="stylesheet">
 </head>
 
 <body>
@@ -183,35 +183,92 @@
         </div>
     </div>
 
-    <main>
-        <h3>Exercise 1: Custom bullet list</h3>
-        <ul>
-            <li>This is my first bullet.</li>
-            <li>This is my second bullet.</li>
-            <li>This is my third bullet.</li>
-        </ul>
-        <h3>Exercise 2: Ordered list</h3>
-        <ol start="10">
-            <li>This is number 1.</li>
-            <li>This is number 2.</li>
-            <li>This is number 3.</li>
-            <li>This is number 4.</li>
-        </ol>
-        <h3>Exercise 3: Link styled</h3>
-        <p><a href="https://neal.fun/spend/">Spend Bill Gates' Money</a></p>
-        <p><a href="https://en.akinator.com/">Akinator</a></p>
-        <p><a href="https://twice.jype.com/">Twice Official Website</a></p>
-        <p><a href="https://thecoollinks.com/">Cool Links</a></p>
-        <p><a href="https://nmi.cool/advweb/">UGA Advanced Web Development Textbook</a></p>
-        <p><a href="https://csci4300-web-programming.github.io/UGA-WebDAWGS-Docs-Pages/">UGA Web Programming
-                Textbook</a></p>
+    <header>Form Practice</header>
 
-        <h3>Exercise 4: Web fonts</h3>
-        <p class="matemasie-regular">This is the Matemasie font. It would probably look nicer for very important titles with some adjustments to letter spacing and color.</p>
-        <p class="matemasie-regular title-font">Lorem</p>
-        <p class="matemasie-regular">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis reiciendis in esse
-            porro voluptates quaerat delectus nobis nulla. Consequuntur delectus vero beatae voluptatem, provident earum
-            labore maiores aspernatur enim voluptates.</p>
+    <main>
+
+        <h2>Exercise 2: More complex form elements</h2>
+
+        <p>
+            Examples of a dropdown select box, an autocomplete field, radio buttons, and a number input.
+        </p>
+
+        <form action="showme.html" method="get">
+
+            <!--
+                Step 3: Create a dropdown select box with at least three items.
+                Do not reuse the example below; create your own.
+            -->
+
+            <label for="hobbies">Choose your favorite hobby:</label>
+
+            <select name="hobbies" id="hobbies">
+                <option value="art">Art</option>
+                <option value="music">Music</option>
+                <option value="hiking">Hiking</option>
+                <option value="swimming">Swimming</option>
+                <option value="sports">Sports</option>
+            </select>
+
+            <br>
+
+            <!--
+                Step 4: Create an autocomplete field based on something
+                that interests you. Create your own example.
+            -->
+
+            <label for="favoriteYoutubeVideo">
+                Input the link to your favorite YouTube video:
+            </label>
+
+            <input type="url" name="favoriteYoutubeVideo" id="favoriteYoutubeVideo" autocomplete="url">
+
+            <br>
+
+            <!--
+                Step 5: Create a fieldset with at least three radio buttons.
+                Create your own values rather than reusing this example.
+            -->
+
+            <fieldset>
+                <legend>Favorite Dolly Parton Song</legend>
+
+                <div>
+                    <input type="radio" id="NineToFive" name="favDollyPartonSong" value="NineToFive" checked>
+                    <label for="NineToFive">Nine to Five</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="Jolene" name="favDollyPartonSong" value="Jolene">
+                    <label for="Jolene">Jolene</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="iWillAlwaysLoveYou" name="favDollyPartonSong" value="iWillAlwaysLoveYou">
+                    <label for="iWillAlwaysLoveYou">I will always love you</label>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!--
+                Step 6: Create a number input.
+                Create your own example rather than reusing this one.
+            -->
+
+            <label for="numSongs">Number of songs listened to per day (1–20):</label>
+            <input type="number" id="numSongs" name="numSongs" min="1" max="20">
+
+            <br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <!--
+            Step 7: Submit the form and examine the URL to see
+            how the form data is represented.
+        -->
 
     </main>
 

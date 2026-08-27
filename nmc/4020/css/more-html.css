@@ -1,5 +1,107 @@
+:root {
+    --bg: white;
+    --bg-shadow: lightgrey;
+    --primary: #2fbbd6;
+    --secondary: #1b366c;
+    --accent: red;
+    --accent-dark: darkred;
+    --text: black;
+    --text-secondary: #2d3030;
+}
+
+[data-theme="dark"] {
+    --bg: black;
+    --bg-shadow: #2d3030;
+    --accent: red;
+    --accent-dark: darkred;
+    --primary: #2fbbd6;
+    --secondary: #1b366c;
+    --text: white;
+    --text-secondary: lightgrey;
+}
+
 header {
     font-size: 24px;
-    background: linear-gradient(to right);
-    background-size: 400% 400%;
+    margin: 16px;
+    background-color: var(--secondary);
+    border-radius: 8px;
+    padding: 24px;
+    color: white;
+    text-align: center;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Main content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+/* Headings */
+main h1 {
+    font-size: 24px;
+}
+
+main h2 {
+    font-size: 20px;
+}
+
+/* Form elements */
+main label,
+main input,
+main select,
+main fieldset,
+main textarea,
+main output,
+main button {
+    margin-bottom: 16px;
+}
+
+main input:focus-visible,
+main fieldset:focus-visible,
+main textarea:focus-visible {
+    outline: none;
+    border: 3px solid var(--accent);
+}
+
+/* Fieldsets */
+main fieldset {
+    padding: 16px;
+}
+
+/* Buttons */
+main button {
+    padding: 8px 16px;
+    background-color: var(--primary);
+    color: var(--bg);
+    border-color: var(--secondary);
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px var(--bg-shadow);
+    transition: background-color 175ms ease;
+}
+
+main button:hover {
+    background-color: var(--secondary);
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 3px solid var(--text-secondary);
+}
+
+.color-result {
+    width: 60px;
+    height: 30px;
+    border: 3px solid black;
+    color: white;
 }

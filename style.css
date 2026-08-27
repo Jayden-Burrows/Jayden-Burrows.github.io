@@ -1,6 +1,22 @@
-/* TODO: Change fonts out */
-@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css);
+@import url('/material-design-iconic-font/css/material-design-iconic-font.css');
+
+@font-face {
+  font-family: 'Marcellus';
+  src: url('Marcellus/Marcellus-Regular.ttf');
+}
+
+.Marcellus {
+  font-family: 'Marcellus';
+}
+
+@font-face {
+  font-family: 'Assistant';
+  src: url('assistant/Assistant-Regular.otf');
+}
+
+.Assistant {
+  font-family: 'Assistant';
+}
 
 :root {
   --bg: #f0eae3;
@@ -23,6 +39,8 @@
 body {
   background-color: var(--bg);
   color: var(--text);
+  min-width: 300px;
+  font-family: 'Assistant';
 }
 
 [data-theme="dark"] {
@@ -217,6 +235,8 @@ input:checked+.slider:before {
 }
 
 #nav-title {
+  font-family: 'Marcellus';
+  letter-spacing: 1.5px;
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
@@ -277,10 +297,17 @@ a.nav-link {
   min-height: 250px;
   max-width: 400px;
   z-index: 100;
-  overflow-y: hidden;
   overflow-x: hidden;
   transition: transform 0.5s ease-in-out;
   transform: translateX(-100%);
+}
+
+#nav-drawer::-webkit-scrollbar-track {
+  background-color: var(--primary);
+}
+
+#nav-drawer::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
 }
 
 #drawer-toggle-btn-wrapper {
@@ -327,7 +354,9 @@ a.nav-link {
 }
 
 #drawer-name {
-  font-size: 28px;
+  font-family: "Marcellus";
+  letter-spacing: 1.5px;
+  font-size: 24px;
   color: var(--accent);
   text-transform: capitalize;
   font-weight: 600;
@@ -449,7 +478,8 @@ a.nav-link {
 
 .social-svg {
   fill: var(--text-secondary, #888);
-  transition: fill 0.2s ease;
+  transition: fill 0.2s ease, width 0.2s ease;
+  width: 32px;
 }
 
 .social-svg.tryhackme:hover {
@@ -517,6 +547,8 @@ a.nav-link {
 }
 
 #about-name {
+  font-family: 'Marcellus';
+  letter-spacing: 1.5px;
   font-size: 30px;
   margin: 0;
 }
@@ -763,6 +795,7 @@ a.nav-link {
 
   svg {
     margin-right: 4px;
+    width: 20px;
     fill: var(--accent);
   }
 }
@@ -833,6 +866,10 @@ a.nav-link {
     height: 48px;
   }
 
+  .social-svg {
+    width: 36px;
+  }
+
   #nav-title {
     font-size: 1.05rem;
   }
@@ -885,6 +922,10 @@ a.nav-link {
     display: block;
     height: 56px;
     width: auto;
+  }
+
+  .social-svg {
+    width: 40px;
   }
 
   #nav-title {
