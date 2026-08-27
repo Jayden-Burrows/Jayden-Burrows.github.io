@@ -23,7 +23,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom right, var(--primary), var(--secondary), var(--accent));
+    background: linear-gradient(to bottom right, var(--bg-shadow), var(--text-secondary), var(--accent));
     background-size: 400% 400%;
     animation: bgAnimation 10s ease infinite reverse;
 }
