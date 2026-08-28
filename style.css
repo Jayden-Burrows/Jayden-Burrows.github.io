@@ -369,10 +369,6 @@ a.nav-link {
 
 #drawer-profile-wrap .social-list {
   padding-bottom: 16px;
-
-  svg path {
-    fill: var(--text-secondary);
-  }
 }
 
 .drawer-navigation {
@@ -486,20 +482,32 @@ a.nav-link {
   width: 32px;
 }
 
+#drawer-profile-wrap .social-list .social-svg {
+  fill: var(--bg-shadow);
+}
+
 .social-svg.tryhackme:hover {
-  fill: #c11111;
+  path {
+    fill: #c11111;
+  }
 }
 
 .social-svg.hackthebox:hover {
-  fill: #9fef00;
+ path {
+    fill: #9fef00;
+  }  
 }
 
 .social-svg.linkedin:hover {
-  fill: #0288d1;
+   path {
+    fill: #0288d1;
+  }
 }
 
 .social-svg.github:hover {
-  fill: #1b1f23;
+   path {
+    fill: #1b1f23;
+  }
 }
 
 .tooltip {
@@ -848,14 +856,14 @@ a.nav-link {
 
 #certs-container .cert-icon {
   font-size: 60px;
-  color: var(--primary); 
+  color: var(--primary);
   display: block;
   margin-bottom: 12px;
 }
 
 [data-theme="dark"] {
   #certs-container .cert-icon {
-      color: #0d7bae; 
+    color: #0d7bae;
   }
 }
 
