@@ -4263,19 +4263,19 @@ body.is-preload #banner p {
 	padding: 2em;
 }
 
-.wrapper .inner > p {
+.wrapper .inner>p {
 	margin-bottom: 1em;
 }
 
-.wrapper .inner > ul {
+.wrapper .inner>ul {
 	margin: 1em;
 }
 
-.wrapper .inner > ul li {
+.wrapper .inner>ul li {
 	margin: 1em;
 }
 
-.wrapper .inner > img {
+.wrapper .inner>img {
 	width: 100%;
 }
 
@@ -4318,10 +4318,9 @@ body.is-preload #banner p {
 	}
 }
 
-#banner.home {
+#banner {
 	padding: 7em 0 8.25em 0;
 	background-color: var(--dark-grey);
-	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/cybersecurity-bg.jpg");
 	background-size: auto,
 		cover;
 	background-position: center,
@@ -4329,13 +4328,14 @@ body.is-preload #banner p {
 	margin-bottom: -6.5em;
 }
 
+#banner.home {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/cybersecurity-bg.jpg");
+}
+
 #banner.xss {
-	padding: 7em 0 8.25em 0;
-	background-color: var(--dark-grey);
 	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/xss-bg.jpg");
-	background-size: auto,
-		cover;
-	background-position: center,
-		center;
-	margin-bottom: -6.5em;
+}
+
+#banner.idor {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/idor-bg.png");
 }

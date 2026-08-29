@@ -64,13 +64,16 @@
 		</nav>
 
 		<!-- Banner -->
-		<section id="banner">
+		<section id="banner" class="idor">
 			<div class="inner">
 				<div class="logo"><img src="/images/logos/black-logo.png" alt="Jayden Burrows Logo" class="icon"></div>
-				<h2>Cybersecurity for Web Programming</h2>
-				<p>Common web-based attacks used by hackers and how developers can prevent them</p>
+				<h2>IDOR</h2>
+				<p>How hackers gain access to
+					internal data without the correct authorization</p>
+				<span class="credit-img">Image by <a href="https://www.aikido.dev/team-members/sooraj-shah">Sooraj
+						Shah</a>
+					on <a href="https://www.aikido.dev/blog/idor-vulnerability-explained">aikido</a></span>
 			</div>
-			<span class="credit-img">Photo by <a href="https://unsplash.com/@fantasyflip">Philipp Katzenberger</a> on <a href="https://unsplash.com/photos/closeup-photo-of-turned-on-blue-and-white-laptop-computer-iIJrUoeRoCQ">Unsplash</a></span>
 		</section>
 
 		<!-- Wrapper -->
@@ -79,13 +82,59 @@
 			<!-- Four -->
 			<section class="wrapper alt">
 				<div class="inner">
-					<h2 class="major">Introduction</h2>
-					<p>Over time, websites have become a crucial part of life, enabling us to store personal
-						information, process payments, communicate with others, and much more. As a result, it's also
-						become more important for developers to maintain the security of their websites to prevent
-						malicious third parties from exploiting vulnerabilities in their website in order to harm their
-						users. Throughout this project, I'll discuss some attacks commonly used by hackers and the web
-						programming practices developers employ to prevent them.</p>
+					<h2 class="major">What is IDOR?</h2>
+					<p>Insecure Direct Object Reference (IDOR) is a vulnerability that occurs when an application lacks
+						sufficient access control checks to verify whether a user should have access to specific data.
+						In turn, attackers can exploit these vulnerabilities to access and sometimes even modify
+						resources belonging to other users.</p>
+					<p>Consider the following example from <a href="https://github.com/Aastha-M1/CineCache">a previous
+							group project of mine</a>: </p>
+					<img src="images/idor-1.png"
+						alt="Screenshot of a movie review website with the url localhost:8080/movies/293660">
+					<img src="images/idor-2.png"
+						alt="Screenshot of two reviews on that website, one by the current user (Alice Croft) and another by Tommy Bahama">
+					<img src="images/idor-3.png"
+						alt="Screenshot of the website but with url localhost:8080/movies/293660/reviews/643/edit?">
+					<p>In the first screenshot, we can see the url <code>localhost:8080/movies/293660</code>, and we can
+						guess that the movie shown is attached to the ID 293660. Similarly, from the subsequent images,
+						we can guess that our review (the one written by Alice Croft) is associated with the ID 643.</p>
+					<p>Using this information, a hacker could try changing the review's ID in the url to see if the
+						website will allow them to access that review.</p>
+					<img src="images/idor-4.png"
+						alt="Screenshot of the website with the url localhost:8080/movies/293660/reviews/513/edit?, now displaying the user's access to a different review">
+					<p>From the image, we can see that changing the review's ID to 513 gave us access to edit Tommy
+						Bahama's review, so
+						we can change it however we want. </p>
+					<img src="images/idor-5.png"
+						alt="Screenshot of the user's modifications to another user's review form.">
+					<img src="images/idor-6.png" alt="Screenshot of the website now displaying the modified review">
+					<p>In this example, any user would be able to craft urls which would allow them to view and modify
+						other users' reviews for any movie. While it could be hard to guess a particular review's ID, a
+						hacker might a script which tries every possible review ID in order to review bomb a particular
+						movie.</p>
+					<p>In this setting, this attack is mostly inconsequential, but in real-world applications, this
+						attack can be devastating as hackers can exploit these vulernabilities to access or modify
+						sensitive data. For instance, imagine a website where instead of editing a movie review, the
+						user edits the amount they want to transfer to another account.</p>
+					<p>Fortunately, these attacks can be mitigated.</p>
+					<h2 class="major">Defense Against IDOR</h2>
+					<h3 class="major">Implementing Authorization Checks</h3>
+					<p>The most important way to prevent hackers from exploiting IDOR vulnerabilities is implementing access controls to ensure users are authorized to view and/or modify resources. Consider the code for the previous example:</p>
+					<img src="images/idor-7.png" alt="Screenshot of Java code for the previous website">
+					<p>With this code, any user can access any review with just the movie's ID and the review's ID.
+						However, adding a few simple lines of code can change that: </p>
+					<img src="images/idor-8.png"
+						alt="Screenshot of Java code for the previous website with added authorization control">
+					<img src="images/idor-9.png"
+						alt="Screenshot of the website now not allowing unauthorized access to a review that the current user does not own.">
+					<p>With these new additions, every user is now required to be the owner of a review to be able to
+						edit it. </p>
+					<h3 class="major">Adding Complexity to Identifiers</h3>
+					<p>Using complex identifiers makes it harder for malicious third parties to guess valid identifiers to use for their attacks. Still, using complex identifiers doesn't replace the need for access controls as hackers might be able to gain knowledge of valid identifiers through tactics like social engineering (manipulating people into compromising security) or scripting.</p>
+					<p class="sources">Source: <br><a
+							href="https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/IDOR">Insecure Direct
+							Object Reference (IDOR) </a> by <a href="https://developer.mozilla.org/en-US/">MDN</a>
+					</p>
 				</div>
 			</section>
 
