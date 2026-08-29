@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en-us">
+
+<head>
+    <title>Jayden Burrows</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header aria-label="header" id="header" class="alt">
+            <h1><a href="index.html">Jayden Burrows</a></h1>
+            <nav aria-label="header-nav">
+                <button class="menu-btn" type="button" href="#menu">Menu
+                    <svg width="20" height="20" viewBox="0 0 23 23">
+                        <path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 2 2.5 L 20 2.5">
+                        </path>
+                        <path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 2 9.423 L 20 9.423">
+                        </path>
+                        <path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 2 16.346 L 20 16.346">
+                        </path>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav aria-label="nav" id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Project</a></li>
+                    <li><a href="cross-site-scripting.html">Cross-Site Scripting</a></li>
+                    <li><a href="idor.html">IDOR</a></li>
+                    <li><a href="sql-injections.html">SQL Injections</a></li>
+                    <li><a href="reflection.html">Reflection</a></li>
+                    <li><a href="/">Portfolio</a></li>
+                </ul>
+                <button type="button" class="close" aria-label="Toggle menu">
+                    <svg width="20" height="20" viewBox="0 0 23 23">
+                        <path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 3 16.5 L 17 2.5"
+                            class="menu-toggle-path">
+                        </path>
+                        <path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 2 9.423 L 20 9.423"
+                            style="opacity: 0; transition-duration: 0.1" class="menu-toggle-path">
+                        </path>
+                        <path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 3 2.5 L 17 16.346"
+                            class="menu-toggle-path">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <section id="banner" class="xss">
+            <div class="inner">
+                <div class="logo"><img src="/images/logos/black-logo.png" alt="Jayden Burrows Logo" class="icon"></div>
+                <h2>Cross-Site Scripting (XSS)</h2>
+                <p>How hackers inject scripts into innocent websites to attack users</p>
+                <span class="credit-img">Photo by <a
+                        href="https://easydmarc.com/blog/what-is-a-cross-site-scripting-xss-attack-and-how-to-fix-it/">EasyDMARC</a></span>
+            </div>
+        </section>
+
+        <!-- Wrapper -->
+        <main id="wrapper">
+
+            <!-- Four -->
+            <section class="wrapper alt">
+                <div class="inner">
+                    <h2 class="major">What is Cross-Site Scripting?</h2>
+                    <p>Cross-Site Scripting (XSS) is an attack where hackers will inject malicious scripts into an
+                        otherwise safe website. That way, when users visit the site and come across the malicious
+                        script, their browser will execute that code alongside the legitimate source code. Furthermore,
+                        because the browser sees the script as a valid part of the original website, the script will be
+                        able to access sensitive data used by the website or otherwise saved by the browser such as
+                        cookies or session tokens.</p>
+                    <p>A successful XSS attack can enable hackers to: </p>
+                    <ul>
+                        <li>hijack a user's session and their account</li>
+                        <li>Access sensitive information</li>
+                        <li>install malware or bloatware</li>
+                        <li>modfiy content on the website</li>
+                    </ul>
+                    <h2 class="major">Types of Cross-Site Scripting</h2>
+                    <h3 class="major">Persistent XSS Attacks</h3>
+                    <p>Persistent XSS attacks, sometimes called Stored attacks, occur when the hacker injects a script
+                        which is then permenantly stored on the website's servers, typically through their database. For
+                        instance, consider the following example from <a
+                            href="https://pwn.college/intro-to-cybersecurity/web-security/#challenges-header-19">pwn.college.</a>
+                    </p>
+                    <img src="images/persistent-xss-1.png"
+                        alt="Image of a user being able to input a script into a website's text input">
+                    <p>In this example, the user is able to
+                        submit<br><code>&lt;/textarea>&lt;script>alert('pwned')&lt;/script>&lt;textarea></code> which
+                        results in the following:</p>
+                    <img src="images/persistent-xss-2.png"
+                        alt="Image of the browser executing the script with an alert saying 'pwned'">
+                    <img src="images/persistent-xss-3.png"
+                        alt="Image of the website with a newly added textarea element after executing the script">
+                    <p>In this example, the website allowed the user to input a message which then updates the website's
+                        inner html. In real settings, persistent XSS attacks can be extremely damaging, as they infect
+                        all visitors who stumble across the page where the malicious script is stored. However, this
+                        type of XSS attack can be prevented by validating user input and removing executable code before
+                        displaying the user-modified page. </p>
+                    <h3 class="major">Reflected XSS Attacks</h3>
+                    <p>Reflected XSS attacks occur when a hacker encodes malicious scripts through an HTTP request (e.g:
+                        a link) which is reflected back in the target server's response.</p>
+                    <p>For instance, consider <a
+                            href="https://pwn.college/intro-to-cybersecurity/web-security/#module-content-header-24">this
+                            example from pwn.college.</a> Consider the following link:</p>
+                    <code>http://challenge.localhost/?msg=%3Cscript%3Ealert%28%27pwned%27%29%3C%2Fscript%3E</code>
+                    <p>This link goes to challenge.localhost with a script encoded into the msg parameter. When a victim
+                        clicks this link, the following image is the result: </p>
+                    <img src="images/reflected-xss-1.png"
+                        alt="Image of a script executing on a website with a visible script in the url">
+                    <p>In real life, hackers will often conceal their attacks by sending malicious links in emails or  message forums and setting the display text to something seemingly harmless. As a user, reflected XSS is much easier to avoid than persistent XSS because you can carefully inspect the links you click. On the other hand, with persistent XSS, even trustworthy pages can suddenly execute malicious code. Moreover, since the malicious scripts aren't stored on the website, the malicious payload has to be sent to each victim or hosted on a third-party website. Reflected XSS attacks can be dangerous because they tend to be easier than persistent XSS attacks, especially because they don't require the hacker to specifically facilitate the attack through the target server's database.</p>
+                    <p class="sources">Source: <br><a href="https://owasp.org/www-community/attacks/xss/">Cross Site
+                            Scripting (XSS) </a> by the <a href="https://owasp.org/">Open Worldwide Application Security
+                            Project (OWASP)</a></p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="copyright">
+                    <li>&copy; Jayden Burrows 2026. All rights reserved.</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en-us">
+
+<head>
+	<title>Jayden Burrows</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header aria-label="header" id="header" class="alt">
+			<h1><a href="index.html">Jayden Burrows</a></h1>
+			<nav aria-label="header-nav">
+				<button class="menu-btn" type="button" href="#menu">Menu
+					<svg width="20" height="20" viewBox="0 0 23 23">
+						<path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 2 2.5 L 20 2.5">
+						</path>
+						<path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 2 9.423 L 20 9.423">
+						</path>
+						<path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 2 16.346 L 20 16.346">
+						</path>
+					</svg>
+				</button>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav aria-label="nav" id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Project</a></li>
+					<li><a href="cross-site-scripting.html">Cross-Site Scripting</a></li>
+					<li><a href="idor.html">IDOR</a></li>
+					<li><a href="sql-injections.html">SQL Injections</a></li>
+					<li><a href="reflection.html">Reflection</a></li>
+					<li><a href="/">Portfolio</a></li>
+				</ul>
+				<button type="button" class="close" aria-label="Toggle menu">
+					<svg width="20" height="20" viewBox="0 0 23 23">
+						<path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 3 16.5 L 17 2.5"
+							class="menu-toggle-path">
+						</path>
+						<path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 2 9.423 L 20 9.423"
+							style="opacity: 0; transition-duration: 0.1" class="menu-toggle-path">
+						</path>
+						<path fill="transparent" stroke-width="2.5" stroke-linecap="round" d="M 3 2.5 L 17 16.346"
+							class="menu-toggle-path">
+						</path>
+					</svg>
+				</button>
+			</div>
+		</nav>
+
+		<!-- Banner -->
+		<section id="banner" class="home">
+			<div class="inner">
+				<div class="logo"><img src="/images/logos/black-logo.png" alt="Jayden Burrows Logo" class="icon"></div>
+				<h2>Cybersecurity for Web Programming</h2>
+				<p>Common web-based attacks used by hackers and how developers can prevent them</p>
+				<span class="credit-img">Photo by <a href="https://unsplash.com/@fantasyflip">Philipp Katzenberger</a>
+					on <a
+						href="https://unsplash.com/photos/closeup-photo-of-turned-on-blue-and-white-laptop-computer-iIJrUoeRoCQ">Unsplash</a></span>
+			</div>
+		</section>
+
+		<!-- Wrapper -->
+		<main id="wrapper">
+
+			<!-- Four -->
+			<section class="wrapper alt">
+				<div class="inner">
+					<h2 class="major">Introduction</h2>
+					<p>Over time, websites have become a crucial part of life, enabling us to store personal
+						information, process payments, communicate with others, and much more. As a result, it's also
+						become more important for developers to maintain the security of their websites to prevent
+						malicious third parties from exploiting vulnerabilities in their website in order to harm their
+						users. Throughout this project, I'll discuss some attacks commonly used by hackers and the web
+						programming practices developers employ to prevent them.</p>
+					<section class="features">
+						<article>
+							<a href="cross-site-scripting.html" class="article-image"><img src="images/xss-overview.jpg"
+									alt="Image for Cross-Site Scripting"></a>
+							<span class="credit-img"> Image by <a
+									href="https://www.linkedin.com/in/alex-harper-90889a92/">Alex Harper</a> on <a
+									href="https://evalian.co.uk/xxs-attacks-what-is-cross-site-scripting-and-why-is-it-a-security-risk/">Evalian</a></span>
+							<a class="article-title" href="cross-site-scripting.html">
+								<h3 class="major">Cross-Site Scripting</h3>
+							</a>
+							<p>Discover how hackers inject scripts into innocent websites to attack users.</p>
+							<a class="learn-more" href="cross-site-scripting.html"><i
+									class="zmdi zmdi-chevron-right"></i>Learn more</a>
+						</article>
+						<article>
+							<a href="idor.html" class="article-image"><img src="images/idor-overview.png"
+									alt="Image for IDOR Attacks"></a>
+							<span class="credit-img"> Image by <a
+									href="https://escape.tech/blog/author/tristan/">Tristan Kalos</a> on <a
+									href="https://escape.tech/blog/idor-in-graphql/">ESCAPE</a></span>
+							<a class="article-title" href="idor.html">
+								<h3 class="major">IDOR Attacks</h3>
+							</a>
+							<p>IDOR attacks occur when a server (typically a website or API) allows users to access
+								internal data without correct authorization.</p>
+							<a class="learn-more" href="idor.html"><i class="zmdi zmdi-chevron-right"></i>Learn more</a>
+						</article>
+						<article>
+							<a href="sql-injections.html" class="article-image"><img
+									src="images/sql-injection-overview.jpg" alt="Image for SQL Injections"></a>
+							<span class="credit-img"> Image by <a href="https://www.linkedin.com/in/vjjomin/">Jomy
+									Joseph</a> on <a
+									href="https://www.linkedin.com/pulse/sql-injection-jomy-joseph/">ESCAPE</a></span>
+							<a class="article-title" href="sql-injections.html">
+								<h3 class="major">SQL Injections</h3>
+							</a>
+							<p>Learn how hackers exploit input elements to gain access to database information.</p>
+							<a class="learn-more" href="sql-injections.html"><i
+									class="zmdi zmdi-chevron-right"></i>Learn more</a>
+						</article>
+					</section>
+				</div>
+			</section>
+
+		</main>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Jayden Burrows 2026. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
