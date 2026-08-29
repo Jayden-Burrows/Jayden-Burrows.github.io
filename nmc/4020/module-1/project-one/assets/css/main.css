@@ -4339,3 +4339,7 @@ body.is-preload #banner p {
 #banner.idor {
 	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/idor-bg.png");
 }
+
+#banner.sql-injection {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/sql-injection-bg.avif");
+}
