@@ -66,7 +66,6 @@
 		<!-- Banner -->
 		<section id="banner" class="sql-injection">
 			<div class="inner">
-				<div class="logo"><img src="/images/logos/black-logo.png" alt="Jayden Burrows Logo" class="icon"></div>
 				<h2>SQL Injections</h2>
 				<p>How hackers exploit input elements to manipulate server databases.</p>
 				<span class="credit-img">Image by <a
@@ -103,23 +102,36 @@
 					<p>By filling out the form this way, we changed the application's query to: </p>
 					<code>SELECT rowid, * FROM
 						users WHERE username = 'admin' AND pin = 1 OR 1 = 1;</code>
-					<p>This query tells the database to return the row ID and information fields for all records where the username is "admin" AND the PIN is 1, OR where 1=1. Since 1=1 is always true, every record will be returned by this query. Behind the scenes, the website most likely validates the username and PIN by checking that the query to the database returns with at least one record and then allows us to enter the admin account.</p>
+					<p>This query tells the database to return the row ID and information fields for all records where
+						the username is "admin" AND the PIN is 1, OR where 1=1. Since 1=1 is always true, every record
+						will be returned by this query. Behind the scenes, the website most likely validates the
+						username and PIN by checking that the query to the database returns with at least one record and
+						then allows us to enter the admin account.</p>
 					<p>Consider another example from <a
 							href="https://pwn.college/intro-to-cybersecurity/web-security/#module-content-header-18">pwn.college</a>:
 					</p>
-					<img src="images/sql-injection-6.png" alt="Screenshot of a website where the user input 'guest' , and the website queried the database for usernames like 'guest'">
-					<p>In this example, the users input a username, and the website queries the database for usernames like the one the user inputted and the displays the list for the user.</p>
-					<p>The goal in this example is obtaining the admin account's password despite the website's query not selecting that field at the beginning of the query. Creative hackers can bypass this issue by crafting a query to take the union of all of the usernames like the user's input and all of the passwords.</p>
-					<img src="images/sql-injection-7.png" alt="Screenshot of the user inputting a query which results in SELECT username FROM users WHERE username LIKE '' UNION SELECT password from users;">
+					<img src="images/sql-injection-6.png"
+						alt="Screenshot of a website where the user input 'guest' , and the website queried the database for usernames like 'guest'">
+					<p>In this example, the users input a username, and the website queries the database for usernames
+						like the one the user inputted and the displays the list for the user.</p>
+					<p>The goal in this example is obtaining the admin account's password despite the website's query
+						not selecting that field at the beginning of the query. Creative hackers can bypass this issue
+						by crafting a query to take the union of all of the usernames like the user's input and all of
+						the passwords.</p>
+					<img src="images/sql-injection-7.png"
+						alt="Screenshot of the user inputting a query which results in SELECT username FROM users WHERE username LIKE '' UNION SELECT password from users;">
 					<h2 class="major">Defense Against SQL Injections</h2>
-					<p>SQL injections are dangerous because they expose a server's database for the hacker to potentially perform serious damage. A successful hacker may be able to: </p>
+					<p>SQL injections are dangerous because they expose a server's database for the hacker to
+						potentially perform serious damage. A successful hacker may be able to: </p>
 					<ul>
 						<li>Read other users' sensitive information such as financial or medical records</li>
 						<li>Create false records</li>
 						<li>Delete large volumes of data from the server</li>
 						<li>Maliciously modify server content</li>
 					</ul>
-					<p>Similar to cross-site scripting, SQL injection attacks are often prevented by validating user input before carrrying out any operations. This may include writing a script to strip special characters like "'", "--", and ";" from user input or using a library that does it for you. </p>
+					<p>Similar to cross-site scripting, SQL injection attacks are often prevented by validating user
+						input before carrrying out any operations. This may include writing a script to strip special
+						characters like "'", "--", and ";" from user input or using a library that does it for you. </p>
 					<p class="sources">Source: <br><a href="https://owasp.org/www-community/attacks/SQL_Injection">SQL
 							Injection </a> by the <a href="https://owasp.org/">Open Worldwide Application Security
 							Project (OWASP)</a></p>

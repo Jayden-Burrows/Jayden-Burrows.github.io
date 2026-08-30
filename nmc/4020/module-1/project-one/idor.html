@@ -66,7 +66,6 @@
 		<!-- Banner -->
 		<section id="banner" class="idor">
 			<div class="inner">
-				<div class="logo"><img src="/images/logos/black-logo.png" alt="Jayden Burrows Logo" class="icon"></div>
 				<h2>IDOR</h2>
 				<p>How hackers gain access to
 					internal data without the correct authorization</p>
@@ -118,7 +117,9 @@
 					<p>Fortunately, these attacks can be mitigated.</p>
 					<h2 class="major">Defense Against IDOR</h2>
 					<h3 class="major">Implementing Authorization Checks</h3>
-					<p>The most important way to prevent hackers from exploiting IDOR vulnerabilities is implementing access controls to ensure users are authorized to view and/or modify resources. Consider the code for the previous example:</p>
+					<p>The most important way to prevent hackers from exploiting IDOR vulnerabilities is implementing
+						access controls to ensure users are authorized to view and/or modify resources. Consider the
+						code for the previous example:</p>
 					<img src="images/idor-7.png" alt="Screenshot of Java code for the previous website">
 					<p>With this code, any user can access any review with just the movie's ID and the review's ID.
 						However, adding a few simple lines of code can change that: </p>
@@ -129,7 +130,10 @@
 					<p>With these new additions, every user is now required to be the owner of a review to be able to
 						edit it. </p>
 					<h3 class="major">Adding Complexity to Identifiers</h3>
-					<p>Using complex identifiers makes it harder for malicious third parties to guess valid identifiers to use for their attacks. Still, using complex identifiers doesn't replace the need for access controls as hackers might be able to gain knowledge of valid identifiers through tactics like social engineering (manipulating people into compromising security) or scripting.</p>
+					<p>Using complex identifiers makes it harder for malicious third parties to guess valid identifiers
+						to use for their attacks. Still, using complex identifiers doesn't replace the need for access
+						controls as hackers might be able to gain knowledge of valid identifiers through tactics like
+						social engineering (manipulating people into compromising security) or scripting.</p>
 					<p class="sources">Source: <br><a
 							href="https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/IDOR">Insecure Direct
 							Object Reference (IDOR) </a> by <a href="https://developer.mozilla.org/en-US/">MDN</a>

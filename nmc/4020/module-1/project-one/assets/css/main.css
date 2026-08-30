@@ -1,4 +1,6 @@
-@import url('/material-design-iconic-font/css/material-design-iconic-font.css');
+/* @import url('/material-design-iconic-font/css/material-design-iconic-font.css'); */
+@import url('/material-design-iconic-font/css/material-design-iconic-font.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*
 	Solid State by HTML5 UP
@@ -122,6 +124,7 @@ section {
 
 body {
 	line-height: 1;
+	font-family: "Bitter", serif;
 }
 
 ol,
@@ -230,7 +233,7 @@ input,
 select,
 textarea {
 	color: var(--bg);
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-family: "Work Sans", Helvetica;
 	font-size: 16.5pt;
 	font-weight: 300;
 	line-height: 1.65;
@@ -296,7 +299,7 @@ a {
 	-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-	border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
+	border-bottom: dotted 2px rgba(255, 255, 255, 0.35);
 	color: var(--bg);
 	text-decoration: none;
 }
@@ -310,7 +313,7 @@ a.special:not(.button) {
 	text-decoration: none;
 	border-bottom: 0;
 	display: block;
-	font-family: Raleway, Helvetica, sans-serif;
+	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
 	font-size: 0.8em;
 	font-weight: 700;
 	letter-spacing: 0.1em;
@@ -327,7 +330,6 @@ a.special:not(.button):before {
 	text-rendering: auto;
 	line-height: 1;
 	text-transform: none !important;
-	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
 }
 
@@ -380,7 +382,7 @@ h4,
 h5,
 h6 {
 	color: var(--bg);
-	font-family: Raleway, Helvetica, sans-serif;
+	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	margin: 0 0 1em 0;
@@ -413,7 +415,7 @@ h3.major,
 h4.major,
 h5.major,
 h6.major {
-	padding-bottom: 1em;
+	padding-bottom: 0.75em;
 	border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 }
 
@@ -440,11 +442,11 @@ h6 {
 @media screen and (max-width: 736px) {
 
 	h2 {
-		font-size: 1em;
+		font-size: 1.25em;
 	}
 
 	h3 {
-		font-size: 0.8em;
+		font-size: 1em;
 	}
 
 }
@@ -2311,7 +2313,7 @@ form>.fields>.field.quarter {
 label {
 	color: var(--bg);
 	display: block;
-	font-family: Raleway, Helvetica, sans-serif;
+	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
 	font-size: 0.8em;
 	font-weight: 700;
 	letter-spacing: 0.1em;
@@ -2414,7 +2416,7 @@ input[type="radio"]+label {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1em;
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-family: "Work Sans", Helvetica, sans-serif;
 	text-transform: none;
 	letter-spacing: 0;
 	font-weight: 300;
@@ -2433,7 +2435,6 @@ input[type="radio"]+label:before {
 	text-rendering: auto;
 	line-height: 1;
 	text-transform: none !important;
-	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
 }
 
@@ -2533,7 +2534,6 @@ input[type="radio"]+label:before {
 	text-rendering: auto;
 	line-height: 1;
 	text-transform: none !important;
-	font-family: 'Font Awesome 5 Free';
 	font-weight: 400;
 }
 
@@ -2549,10 +2549,6 @@ input[type="radio"]+label:before {
 	font-weight: 900;
 }
 
-.icon.brands:before {
-	font-family: 'Font Awesome 5 Brands';
-}
-
 /* Image */
 
 .article-image {
@@ -2561,12 +2557,19 @@ input[type="radio"]+label:before {
 	display: inline-block;
 	position: relative;
 	width: 100%;
+	overflow: hidden;
 }
 
 .article-image img {
 	border-radius: 5px;
 	display: block;
+	object-fit: cover;
+	transition: transform 0.5s ease;
 	width: 100%;
+}
+
+.article-image:hover img {
+	transform: scale(1.1);
 }
 
 .article-image.left,
@@ -2828,7 +2831,6 @@ ul.contact li:before {
 	text-rendering: auto;
 	line-height: 1;
 	text-transform: none !important;
-	font-family: 'Font Awesome 5 Free';
 	font-weight: 400;
 }
 
@@ -3018,7 +3020,7 @@ button,
 	color: var(--bg) !important;
 	cursor: pointer;
 	display: inline-block;
-	font-family: Raleway, Helvetica, sans-serif;
+	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
 	font-size: 0.8em;
 	font-weight: 700;
 	height: 3.75em;
@@ -3155,6 +3157,7 @@ button:disabled,
 }
 
 .features article {
+	position: relative;
 	padding: 1.75em;
 	background-color: var(--darkish-grey);
 	border-radius: 5px;
@@ -3265,7 +3268,7 @@ button:disabled,
 }
 
 #header nav {
-	font-family: Raleway, Helvetica, sans-serif;
+	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
 	font-size: 0.8em;
 	font-weight: 700;
 	height: 3em;
@@ -3451,8 +3454,8 @@ button:disabled,
 	border-radius: 5px;
 	border: 0;
 	display: block;
-	font-family: Raleway, Helvetica, sans-serif;
-	font-size: 0.8em;
+	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
+	font-size: 0.85em;
 	font-weight: 200;
 	letter-spacing: 0.1em;
 	line-height: 1.85em;
@@ -3573,7 +3576,7 @@ body.is-menu-visible #menu .inner {
 	-ms-filter: blur(0);
 	filter: blur(0);
 	opacity: 1;
-	font-family: Raleway, Helvetica, sans-serif;
+	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
 	font-size: 1em;
 	font-weight: 200;
 	letter-spacing: 0.1em;
@@ -3610,11 +3613,7 @@ body.is-menu-visible #menu .inner {
 	}
 
 	#banner h2 {
-		font-size: 1.5em;
-	}
-
-	#banner p {
-		font-size: 0.8em;
+		font-size: 1.65em;
 	}
 
 }
@@ -3670,7 +3669,7 @@ body.is-preload #banner p {
 }
 
 #wrapper>header p {
-	font-family: Raleway, Helvetica, sans-serif;
+	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
 	font-size: 1em;
 	font-weight: 200;
 	letter-spacing: 0.1em;
@@ -4280,15 +4279,18 @@ body.is-preload #banner p {
 }
 
 .credit-img {
-	font-size: 14px;
-	margin-bottom: 2em;
+	display: inline-block;
+	font-size: .9em;
+	margin-bottom: 0.75em;
 }
 
 .learn-more {
+	position: relative;
 	display: flex;
 	align-items: center;
 	text-transform: uppercase;
 	border: none;
+	transition: background-color 175ms ease;
 }
 
 .learn-more i {
@@ -4300,10 +4302,37 @@ body.is-preload #banner p {
 	transition: background-color 175ms ease;
 }
 
+.learn-more span.text {
+	position: relative;
+}
+
+.learn-more span.text::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--bg);
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 300ms ease-in-out;
+}
+
 .learn-more:hover {
+	span.text::after {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+
 	i {
 		background-color: rgba(255, 255, 255, 0.125);
 	}
+}
+
+.learn-more:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
 }
 
 @media (min-width: 762px) {
@@ -4342,4 +4371,17 @@ body.is-preload #banner p {
 
 #banner.sql-injection {
 	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/sql-injection-bg.avif");
+}
+
+#banner.reflection {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/reflection-bg.jpg");
+}
+
+#header h1 {
+	font-size: 0.9em;
+}
+
+button.menu-btn {
+	height: 100%;
+	font-size: 1.1em;
 }

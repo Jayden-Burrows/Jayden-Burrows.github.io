@@ -66,7 +66,6 @@
         <!-- Banner -->
         <section id="banner" class="xss">
             <div class="inner">
-                <div class="logo"><img src="/images/logos/black-logo.png" alt="Jayden Burrows Logo" class="icon"></div>
                 <h2>Cross-Site Scripting (XSS)</h2>
                 <p>How hackers inject scripts into innocent websites to attack users</p>
                 <span class="credit-img">Photo by <a
@@ -125,7 +124,15 @@
                         clicks this link, the following image is the result: </p>
                     <img src="images/reflected-xss-1.png"
                         alt="Image of a script executing on a website with a visible script in the url">
-                    <p>In real life, hackers will often conceal their attacks by sending malicious links in emails or  message forums and setting the display text to something seemingly harmless. As a user, reflected XSS is much easier to avoid than persistent XSS because you can carefully inspect the links you click. On the other hand, with persistent XSS, even trustworthy pages can suddenly execute malicious code. Moreover, since the malicious scripts aren't stored on the website, the malicious payload has to be sent to each victim or hosted on a third-party website. Reflected XSS attacks can be dangerous because they tend to be easier than persistent XSS attacks, especially because they don't require the hacker to specifically facilitate the attack through the target server's database.</p>
+                    <p>In real life, hackers will often conceal their attacks by sending malicious links in emails or
+                        message forums and setting the display text to something seemingly harmless. As a user,
+                        reflected XSS is much easier to avoid than persistent XSS because you can carefully inspect the
+                        links you click. On the other hand, with persistent XSS, even trustworthy pages can suddenly
+                        execute malicious code. Moreover, since the malicious scripts aren't stored on the website, the
+                        malicious payload has to be sent to each victim or hosted on a third-party website. Reflected
+                        XSS attacks can be dangerous because they tend to be easier than persistent XSS attacks,
+                        especially because they don't require the hacker to specifically facilitate the attack through
+                        the target server's database.</p>
                     <p class="sources">Source: <br><a href="https://owasp.org/www-community/attacks/xss/">Cross Site
                             Scripting (XSS) </a> by the <a href="https://owasp.org/">Open Worldwide Application Security
                             Project (OWASP)</a></p>
