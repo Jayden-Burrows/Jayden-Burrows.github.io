@@ -31,14 +31,12 @@
         main #bg #neptune {
             width: 35%;
             aspect-ratio: 1 / 1;
-            /* guarantees a true circle regardless of parent proportions */
             position: absolute;
+            /* Kept absolute, removed duplicate relative */
             top: 5%;
             left: -15%;
             border-radius: 50%;
             overflow: hidden;
-            /* clips the rotating layer to the circle */
-            position: relative;
             box-shadow:
                 inset -12px -12px 20px rgba(0, 0, 0, 0.85),
                 inset 4px 4px 10px rgba(255, 255, 255, 0.25),
@@ -48,15 +46,14 @@
         main #bg #neptune .surface {
             position: absolute;
             inset: -25%;
-            /* oversize so rotated corners never show gaps */
             background-image: linear-gradient(135deg,
                     #494eb0 0%,
                     #7c81e8 15%,
-                    #373c77 25%,
+                    #333766 25%,
                     #3d42a2 35%,
-                    #464bae 50%,
-                    #43456e 65%,
-                    #494d96 80%,
+                    #5f64cd 50%,
+                    #393b62 65%,
+                    #8084d0 80%,
                     #404491 100%);
             background-size: 100% 100%;
             animation: revolve 6s linear infinite;
@@ -65,14 +62,13 @@
         main #bg #venus {
             width: 15%;
             aspect-ratio: 1 / 1;
-            /* guarantees a true circle regardless of parent proportions */
             position: absolute;
-            top: 65%;
-            left: 70%;
+            /* Kept absolute, removed duplicate relative */
+            bottom: 5%;
+            /* Anchored to bottom right of #bg */
+            right: 5%;
             border-radius: 50%;
             overflow: hidden;
-            /* clips the rotating layer to the circle */
-            position: relative;
             box-shadow:
                 inset -12px -12px 20px rgba(0, 0, 0, 0.85),
                 inset 4px 4px 10px rgba(255, 255, 255, 0.25),
@@ -82,7 +78,6 @@
         main #bg #venus .surface {
             position: absolute;
             inset: -25%;
-            /* oversize so rotated corners never show gaps */
             background-image: linear-gradient(135deg,
                     #b04e49 0%,
                     #673734 15%,
@@ -322,7 +317,9 @@
             <div id="neptune">
                 <div class="surface"></div>
             </div>
-            <div id="venus"><div class="surface"></div></div>
+            <div id="venus">
+                <div class="surface"></div>
+            </div>
         </section>
         <section id="main-msg">
             <h1 id="header-404">404</h1>
