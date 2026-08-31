@@ -1,0 +1,70 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+#text-torture {
+    margin: 0 auto;
+    background: peachpuff;
+    padding: 1rem;
+    border-radius: calc(1rem + 3px);
+}
+
+#text-torture h1 {
+    text-transform: uppercase;
+    text-shadow: 3px 5px 3px salmon;
+}
+
+#text-torture h1, #text-torture h2, #text-torture h3 {
+    text-align: center;
+}
+
+#text-torture p {
+    line-height: 1.5;
+}
+
+p.pre-line {
+    white-space: pre-line;
+}
+
+p.pre-wrap {
+    white-space: pre-wrap;
+}
+
+#first {
+    background-color: peachpuff;
+    color: salmon;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.ugly { 
+    background-color: yellow;
+    color: yellowgreen;
+    border: 3px dotted greenyellow;
+    padding: 30px;
+    width: 180px;
+    height: 90px;
+    overflow: scroll;
+}

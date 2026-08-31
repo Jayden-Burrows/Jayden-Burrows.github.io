@@ -1,0 +1,161 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+#central {
+    width: 30rem;
+    height: 30rem;
+    background-image: url('https://nmi.cool/web/wp-content/uploads/sites/3/2025/08/icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Note this scales the background image relative to the container's size, not the image's */
+    background-size: 200%;
+    margin: 1rem;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+#image-inputs {
+    display: flex;
+    align-items: center;
+}
+
+#image-url {
+    font-size: 1rem;
+    width: 80%;
+    height: 5rem;
+    border: 3px solid hotpink;
+    background-color: lightgrey;
+}
+
+#image-btn {
+    background-color: hotpink;
+    color: white;
+    margin: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+#size-inputs {
+    display: flex;
+    align-items: center;
+}
+
+#size-label {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+#size-input {
+    margin: 1rem;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 60%;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 3rem;
+}
+
+#size-input:focus {
+    outline: none;
+}
+
+#size-input::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: lightgrey;
+    border-radius: 4px;
+}
+
+#size-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -4px;
+    height: 15px;
+    width: 15px;
+    background: hotpink;
+    border-radius: 50%;
+    border: none;
+}
+
+#size-input::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    background: lightgrey;
+    border-radius: 4px;
+}
+
+#size-input::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background: hotpink;
+    border-radius: 50%;
+    border: none;
+}
+
+#size-output {
+    font-size: 1.5rem;
+}
+
+/* Using .central to show intermediate steps */
+.central {
+    width: 30rem;
+    height: 30rem;
+    margin: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.central.ex-1 {
+    background-image: url('https://nmi.cool/web/wp-content/uploads/sites/3/2025/08/icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.central img.ex-2 {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+}
+
+.central.ex-3 {
+    background-image: url('https://nmi.cool/web/wp-content/uploads/sites/3/2025/08/icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.central.ex-4 {
+    background: linear-gradient(to bottom, yellowgreen, yellow, greenyellow, maroon);
+}
+
+.central.ex-5 {
+    background: radial-gradient(lightgrey, steelblue, darkslategrey);
+}
+
+.central.ex-6 {
+    background: radial-gradient(lightgrey, steelblue, darkslategrey);
+    border-radius: 50%;
+}
+
+main a {
+    display: inline-block;
+    background-color: dodgerblue;
+    padding: 1rem;
+    font-size: 2rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+main a:hover {
+    outline: 15px solid black;
+}
