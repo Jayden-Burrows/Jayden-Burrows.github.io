@@ -9,6 +9,7 @@ body {
 #central {
     width: 30rem;
     height: 30rem;
+    background-color: hotpink;
     background-image: url('https://nmi.cool/web/wp-content/uploads/sites/3/2025/08/icon.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -16,7 +17,11 @@ body {
     background-size: 200%;
     margin: 1rem;
     overflow: hidden;
-    border: 2px solid black;
+    border: 2px solid deeppink;
+}
+
+#url-label, #background-color-label, #size-label {
+    font-size: 1.5rem;
 }
 
 #image-inputs {
@@ -25,14 +30,17 @@ body {
 }
 
 #image-url {
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 80%;
     height: 5rem;
     border: 3px solid hotpink;
-    background-color: lightgrey;
+    background-color: #e1e1e1;
 }
 
 #image-btn {
+    border: 3px solid deeppink;
+    border-radius: 1rem;
+    padding: 0.25rem;
     background-color: hotpink;
     color: white;
     margin: 1rem;
@@ -45,13 +53,8 @@ body {
     align-items: center;
 }
 
-#size-label {
-    font-size: 1.5rem;
-    margin: 1rem;
-}
-
 #size-input {
-    margin: 1rem;
+    margin-right: 1rem;
     -webkit-appearance: none;
     appearance: none;
     width: 60%;
@@ -67,7 +70,7 @@ body {
 #size-input::-webkit-slider-runnable-track {
     width: 100%;
     height: 8px;
-    background: lightgrey;
+    background: #e1e1e1;
     border-radius: 4px;
 }
 
@@ -85,7 +88,6 @@ body {
 #size-input::-moz-range-track {
     width: 100%;
     height: 8px;
-    background: lightgrey;
     border-radius: 4px;
 }
 
@@ -99,6 +101,12 @@ body {
 
 #size-output {
     font-size: 1.5rem;
+}
+
+#background-color-input {
+    margin: 1rem;
+    border: 2px solid deeppink;
+    height: 3rem;
 }
 
 /* Using .central to show intermediate steps */
@@ -133,7 +141,7 @@ body {
 }
 
 .central.ex-4 {
-    background: linear-gradient(to bottom, yellowgreen, yellow, greenyellow, maroon);
+    background: linear-gradient(to bottom, yellowgreen, yellow, greenyellow, maroon, black);
 }
 
 .central.ex-5 {

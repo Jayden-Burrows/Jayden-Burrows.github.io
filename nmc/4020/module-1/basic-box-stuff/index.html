@@ -184,8 +184,8 @@
 
     <main>
         <div id="central"></div>
+        <label for="image-url" id="url-label">Image url:</label>
         <div id="image-inputs">
-            <label for="image-url" id="url-label" value="/images/logos/black-logo.png"></label>
             <input type="text" id="image-url" name="image-url"
                 placeholder="http://jayden-burrows.me/images/logos/black-logo.png" value="">
             <button id="image-btn" type="button" onclick="changeImage()">Change Image</button>
@@ -196,7 +196,8 @@
             <input id="size-input" type="range" min="0" max="500">
             <span id="size-output">200%</span>
         </div>
-
+        <label for="background-color" id="background-color-label">Background color:</label>
+        <input type="color" id="background-color-input" name="background-color-input" value="#ff69b4">
         <h3>Other Challenges</h3>
         <div class="central ex-1">
         </div>
@@ -220,6 +221,7 @@
         const central = document.getElementById("central");
         const sizeInput = document.getElementById("size-input");
         const sizeOutput = document.getElementById("size-output");
+        const backgroundColorInput = document.getElementById("background-color-input");
 
         function setImage() {
             central.style.backgroundImage = `url("${imageUrl.value}")`;
@@ -230,8 +232,13 @@
             central.style.backgroundSize = `${sizeInput.value}%`;
         }
 
+        function setBackgroundColor() {
+            central.style.backgroundColor = `${backgroundColorInput.value}`;
+        }
+
         imageBtn.addEventListener('click', setImage);
         sizeInput.addEventListener('input', setBackgroundImageSize);
+        backgroundColorInput.addEventListener('input', setBackgroundColor);
     </script>
 
 </body>

@@ -1,29 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap+Sharp:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
-    --bg: white;
-    --bg-shadow: lightgrey;
-    --primary: #2fbbd6;
-    --secondary: #1b366c;
-    --accent: red;
-    --accent-dark: darkred;
-    --text: black;
-    --text-secondary: #2d3030;
-}
-
-[data-theme="dark"] {
-    --bg: black;
-    --bg-shadow: #2d3030;
-    --accent: red;
-    --accent-dark: darkred;
-    --primary: #2fbbd6;
-    --secondary: #1b366c;
-    --text: white;
-    --text-secondary: lightgrey;
-}
-
 body {
-    background: linear-gradient(to bottom right, var(--bg-shadow), var(--text-secondary), var(--accent));
+    background: linear-gradient(to bottom right, var(--bg-shadow), var(--text-secondary), red);
     background-size: 400% 400%;
     animation: bgAnimation 10s ease infinite reverse;
 }
