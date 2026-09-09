@@ -198,13 +198,13 @@
                 values and content.
             -->
 
-            <label for="movieRating">
-                Your rating of the Odyssey:
+            <label for="opacity">
+                Opacity:
             </label>
 
-            <input type="range" name="movieRating" id="movieRating" min="1" max="10" step="1" value="1">
+            <input type="range" name="opacity" id="opacity" min="0" max="100" step="1" value="1">
 
-            <output class="movieRating-output" for="movieRating"></output>
+            <output class="opacity-output" for="opacity"></output>
 
 
             <!--
@@ -246,15 +246,18 @@
         // Slider feedback
         // Based on the MDN range input example.
 
-        const movieRating = document.querySelector("#movieRating");
-        const movieRatingOutput = document.querySelector(".movieRating-output");
+        const opacity = document.querySelector("#opacity");
+        const opacityOutput = document.querySelector(".opacity-output");
 
-        movieRatingOutput.textContent = movieRating.value;
+        let opacityValue = opacity.value;
 
-        movieRating.addEventListener("input", () => {
-            movieRatingOutput.textContent = movieRating.value;
+        opacityOutput.textContent = opacityValue;
+
+        opacity.addEventListener("input", () => {
+            opacityValue = opacity.value;
+            opacityOutput.textContent = opacityValue;
+            colorResult.style.opacity = `${opacityValue}%`;
         });
-
 
         // Color picker feedback
         // Extends the basic MDN color input example.
