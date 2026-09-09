@@ -122,11 +122,6 @@ section {
 	display: block;
 }
 
-body {
-	line-height: 1;
-	font-family: "Bitter", serif;
-}
-
 ol,
 ul {
 	list-style: none;
@@ -148,10 +143,6 @@ q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-body {
-	-webkit-text-size-adjust: none;
 }
 
 mark {
@@ -179,10 +170,6 @@ textarea {
 	width: device-width;
 }
 
-body {
-	-ms-overflow-style: scrollbar;
-}
-
 @media screen and (max-width: 480px) {
 
 	html,
@@ -203,6 +190,7 @@ html {
 }
 
 body {
+	font-family: "Bitter", 'Times New Roman', Times, serif;
 	background-color: var(--dark-grey);
 	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8));
 	background-size: auto,
@@ -226,14 +214,11 @@ body.is-preload *:after {
 	transition: none !important;
 }
 
-/* Type */
-
 body,
 input,
 select,
 textarea {
 	color: var(--bg);
-	font-family: "Work Sans", Helvetica;
 	font-size: 16.5pt;
 	font-weight: 300;
 	line-height: 1.65;
@@ -382,7 +367,7 @@ h4,
 h5,
 h6 {
 	color: var(--bg);
-	font-family: "Work Sans", Raleway, Helvetica, sans-serif;
+	font-family: "Work sans", Raleway, Helvetica, sans-serif;
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	margin: 0 0 1em 0;
@@ -4290,4 +4275,18 @@ body.is-preload #banner p {
 button.menu-btn {
 	height: 100%;
 	font-size: 1.1em;
+}
+
+p + code {
+	display: inline-block;
+	margin-bottom: 2em;
+	width: 100%;
+	overflow: auto;
+	scrollbar-color: var(--dark) var(--dark-grey);
+	scrollbar-width: thin;
+}
+
+html {
+	scrollbar-color: var(--dark) var(--dark-grey);
+	scrollbar-width: thin;
 }
