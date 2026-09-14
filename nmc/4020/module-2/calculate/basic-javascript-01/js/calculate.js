@@ -10,10 +10,8 @@ const output = document.getElementById('output');
 let result;
 
 function outputResult() {
-    console.log(result);
     if (isNaN(result)) {
         output.value = "Error: Please enter two valid numbers."
-        output.style.color = 'red';
     } else {
         if (result < 0) {
             output.value = `-$${(result * -1).toFixed(2)}`;
