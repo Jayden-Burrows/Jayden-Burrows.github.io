@@ -35,18 +35,27 @@ fetch(apiUrl)
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.href = item.name;
+                // I can't use displayNames here because I'm not sure
+                // what order the GitHub API will put them in
                 a.textContent = item.name + (item.type === 'dir' ? '/' : '');
                 li.appendChild(a);
                 list.appendChild(li);
             });
         } else {
             // In this case the GitHub API rate has been reached, so if I 
-            // hard coded the file names into index.html, try that
-            fileArr.forEach(item => {
+            // hard coded the file names into index.html, try that.
+            // ex: fileArr should look like ['form1.html', 'form2.html']
+            fileArr.forEach((item, index) => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.href = item;
-                a.textContent = item.split('.html')[0];
+                // If I defined an array called displayNames in the index file,
+                // use that for the displayed text of the links
+                if (displayNames != undefined) {
+                    a.textContent = displayNames[index];
+                } else {
+                    a.textContent = item.split('.html')[0];
+                }
                 li.appendChild(a);
                 list.appendChild(li);
             });

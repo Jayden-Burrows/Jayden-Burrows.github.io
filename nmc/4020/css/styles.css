@@ -18,29 +18,6 @@
     and removes the default margin around the page.
 */
 
-:root {
-    --bg: white;
-    --bg-shadow: lightgrey;
-    --primary: #2fbbd6;
-    --secondary: #1b366c;
-    --accent: red;
-    --accent-dark: darkred;
-    --text: black;
-    --text-secondary: #2d3030;
-}
-
-[data-theme="dark"] {
-    --bg: black;
-    --bg-shadow: #2d3030;
-    --accent: red;
-    --accent-dark: darkred;
-    --primary: #2fbbd6;
-    --secondary: #1b366c;
-    --text: white;
-    --text-secondary: lightgrey;
-}
-
-
 * {
     box-sizing: border-box;
 }
@@ -183,4 +160,22 @@ ol {
     techniques from the Lists, Links & Fonts lesson.
 */
 
-a {}
+a {
+    color: var(--primary);
+}
+
+a:visited {
+    color: var(--secondary);
+}
+
+a:active {
+    color: var(--accent-dark);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+#index-heading {
+    margin: 20px;
+}
