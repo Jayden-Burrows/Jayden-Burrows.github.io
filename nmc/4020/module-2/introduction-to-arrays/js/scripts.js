@@ -48,6 +48,36 @@ function appendRoom(index) {
     errorMsg.textContent = '';
 }
 
+function searchRoom() {
+    let roomNum = roomNumInput.value;
+    try {
+        let [beforeLetter, letter] = roomNum.split('403');
+        letter = letter.toLowerCase();
+        if (!roomLetters.includes(letter) || letter == '') {
+            directory.replaceChildren();
+            throw new Error("Please enter a valid room letter.");
+        } else if (beforeLetter != '') {
+            directory.replaceChildren();
+            throw new Error("Please enter a valid room number.");
+        }
+        let index = roomLetters.indexOf(letter);
+        directory.replaceChildren();
+        appendRoom(index);
+    } catch (error) {
+        errorMsg.textContent = error.message;
+    }
+}
+
+roomNumBtn.addEventListener('click', () => {
+    searchRoom();
+})
+
+document.addEventListener('keydown', e => {
+    if (e.key == 'Enter') {
+        searchRoom();
+    }
+})
+
 for (let i = 0; i < occupants.length; i++) {
     appendRoom(i);
 }
@@ -56,23 +86,3 @@ for (let i = 0; i < occupants.length; i++) {
 // img.src = "images/" + occupantPix[index];
 // img.alt = occupants[index];
 count.innerHTML = occupants.length;
-
-roomNumBtn.addEventListener('click', () => {
-    let roomNum = roomNumInput.value;
-    try {
-        let [beforeLetter, letter] = roomNum.split('403');
-        letter = letter.toLowerCase();
-        if (!roomLetters.includes(letter)) {
-            directory.replaceChildren();
-            throw error;
-        } else if (beforeLetter != '') {
-            throw error;
-        }
-        let index = roomLetters.indexOf(letter);
-
-        directory.replaceChildren();
-        appendRoom(index);
-    } catch (error) {
-        errorMsg.textContent = 'Please enter a valid room number. Ex: 403H';
-    }
-})
