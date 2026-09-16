@@ -1,0 +1,35 @@
+main {
+    text-align: center;
+}
+
+.occupant-card {
+    border: 3px solid grey;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: fit-content;
+}
+
+[data-theme="dark"] {
+    .occupant-card {
+        border: 3px solid grey;
+        box-shadow: 8px 8px 8px rgba(255, 255, 255, 0.25);
+    }
+}
+
+#directory {
+    text-align: left;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+#errorMsg {
+    color: red;
+}
