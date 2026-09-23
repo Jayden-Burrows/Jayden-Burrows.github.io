@@ -1,0 +1,445 @@
+/* Reset & Base Setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    /* Dramatic Deep Cosmic Background Gradient */
+    background: radial-gradient(circle at 50% 30%, #2b1055, #000005 85%);
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+/* Atmospheric Background Layers (Clouds & Fog) */
+.sky-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Fog Effect Layers */
+.fog-layer {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(147, 112, 219, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(40px);
+}
+
+.fog-1 {
+    top: -10%;
+    animation: driftFog 25s linear infinite;
+}
+
+.fog-2 {
+    bottom: -20%;
+    animation: driftFog 35s linear infinite reverse;
+}
+
+@keyframes driftFog {
+    0% { transform: translateX(-25%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Cloud Animations */
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 100px;
+    filter: blur(15px);
+}
+
+.cloud-1 {
+    width: 300px;
+    height: 100px;
+    top: 15%;
+    left: -100px;
+    animation: floatCloud 28s linear infinite;
+}
+
+.cloud-2 {
+    width: 450px;
+    height: 120px;
+    top: 50%;
+    right: -150px;
+    animation: floatCloud 38s linear infinite reverse;
+}
+
+.cloud-3 {
+    width: 250px;
+    height: 80px;
+    bottom: 10%;
+    left: -80px;
+    animation: floatCloud 22s linear infinite;
+}
+
+@keyframes floatCloud {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(100vw); }
+}
+
+/* Header & Typography */
+header {
+    text-align: center;
+    margin-top: 15px;
+    z-index: 10;
+}
+
+header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.6rem;
+    color: #f39c12;
+    text-shadow: 0 0 15px rgba(243, 156, 18, 0.7), 0 0 30px rgba(155, 89, 182, 0.5);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #d1c4e9;
+    margin-top: 6px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 20px 0;
+    z-index: 10;
+}
+
+/* Form Section */
+.input-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-section label {
+    font-size: 1.05rem;
+    color: #e0e0e0;
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border: 2px solid #5e35b1;
+    border-radius: 8px;
+    background: rgba(15, 12, 41, 0.85);
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #f39c12;
+    box-shadow: 0 0 12px rgba(243, 156, 18, 0.5);
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f0c29;
+    background: linear-gradient(135deg, #f39c12, #f1c40f);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+}
+
+button:hover {
+    transform: translateY(-2deg);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+}
+
+.error-message {
+    color: #ff5252;
+    font-size: 0.9rem;
+    min-height: 1.2rem;
+}
+
+/* Deck Container & Perspective */
+.deck-container {
+    perspective: 1200px;
+    width: 260px;
+    height: 380px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.card-deck {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+/* Base Card Styling */
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Deck Layers Setup */
+.card-deck-layer {
+    background: linear-gradient(135deg, #1b113a, #0b071a);
+    border: 2px solid #4a347f;
+}
+
+.layer-3 { transform: translateZ(-12px) translateY(4px); z-index: 1; }
+.layer-2 { transform: translateZ(-6px) translateY(2px); z-index: 2; }
+.layer-1 { transform: translateZ(-2px); z-index: 3; }
+
+.card-main {
+    z-index: 10;
+    transform-style: preserve-3d;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.9s cubic-bezier(0.34, 1.3, 0.64, 1);
+    transform-style: preserve-3d;
+}
+
+/* Card Faces */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 16px;
+    border: 2px solid #f39c12;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: inset 0 0 15px rgba(243, 156, 18, 0.2);
+}
+
+/* Card Back Design */
+.card-back {
+    background: linear-gradient(135deg, #241445, #0d0722);
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back-pattern {
+    width: 85%;
+    height: 88%;
+    border: 2px dashed #f39c12;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(243, 156, 18, 0.15) 0%, transparent 75%);
+}
+
+.card-back-pattern i {
+    font-size: 3.5rem;
+    color: #f39c12;
+    text-shadow: 0 0 15px rgba(243, 156, 18, 0.8);
+}
+
+/* Card Front Design & Animated Front Elements */
+.card-front {
+    background-color: rgba(20, 15, 45, 0.92);
+    transform: rotateY(180deg);
+    box-shadow: 0 0 25px rgba(243, 156, 18, 0.4);
+    backdrop-filter: blur(8px);
+    transition: background-color 0.5s ease;
+}
+
+.card-category-header {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f39c12;
+    font-weight: 600;
+}
+
+/* Center Animated Tarot Frame Area */
+.card-visual-container {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.tarot-frame {
+    position: relative;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 2px solid #f39c12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(243, 156, 18, 0.1);
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.4);
+    transition: all 0.4s ease;
+}
+
+.tarot-aura {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed rgba(243, 156, 18, 0.6);
+    animation: rotateAura 12s linear infinite;
+}
+
+@keyframes rotateAura {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tarot-frame i {
+    font-size: 2.5rem;
+    color: #ffffff;
+    z-index: 2;
+}
+
+/* Category Specific Tarot Animations */
+.tarot-frame.anim-sun {
+    animation: pulseSun 3s infinite ease-in-out;
+}
+@keyframes pulseSun {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(235, 198, 66, 0.5); }
+    50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(235, 198, 66, 0.9); }
+}
+
+.tarot-frame.anim-time {
+    animation: pulseTime 2.5s infinite ease-in-out;
+}
+@keyframes pulseTime {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12) rotate(10deg); }
+}
+
+.tarot-frame.anim-case {
+    animation: pulseCase 2s infinite ease-in-out;
+}
+@keyframes pulseCase {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 10px rgba(22, 22, 125, 0.4); }
+    50% { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(243, 156, 18, 0.8); }
+}
+
+.tarot-frame.anim-heart {
+    animation: pulseHeart 1.5s infinite ease-in-out;
+}
+@keyframes pulseHeart {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.1); }
+}
+
+.fortune-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: 5px 0;
+}
+
+#resultText {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.card-footer-branding {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #b388ff;
+    text-transform: uppercase;
+}
+
+/* Playing Card Fan-Out Shuffle Keyframes */
+.shuffling .layer-3 { animation: fanLeft 0.6s infinite alternate ease-in-out; }
+.shuffling .layer-2 { animation: fanRight 0.6s infinite alternate ease-in-out; }
+.shuffling .layer-1 { animation: fanCenter 0.6s infinite alternate ease-in-out; }
+
+@keyframes fanLeft {
+    0% { transform: translateZ(-12px) rotate(0deg) translateX(0); }
+    100% { transform: translateZ(-12px) rotate(-18deg) translateX(-50px); }
+}
+
+@keyframes fanRight {
+    0% { transform: translateZ(-6px) rotate(0deg) translateX(0); }
+    100% { transform: translateZ(-6px) rotate(18deg) translateX(50px); }
+}
+
+@keyframes fanCenter {
+    0% { transform: translateZ(-2px) translateY(0); }
+    100% { transform: translateZ(-2px) translateY(-20px); }
+}
+
+/* Pull Card From Top Keyframes */
+.card-main.is-drawing {
+    animation: drawTopCard 0.8s forwards ease-in-out;
+    z-index: 100;
+}
+
+@keyframes drawTopCard {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-110px) scale(1.05) rotate(-5deg); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.card-main.is-flipped {
+    z-index: 100;
+}
+
+.card-main.is-flipped .card-inner {
+    transform: rotateY(180deg) scale(1.08);
+}
+
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+    z-index: 10;
+}

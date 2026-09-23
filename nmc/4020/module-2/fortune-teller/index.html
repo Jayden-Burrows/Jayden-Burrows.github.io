@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Fortune Teller</title>
+    <!-- Material Design Iconic Font for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <!-- Google Fonts for Mystical Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Atmospheric Animated Background Elements (Fog & Floating Clouds) -->
+    <div class="sky-background">
+        <div class="fog-layer fog-1"></div>
+        <div class="fog-layer fog-2"></div>
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+
+    <header>
+        <h1>Mystic Fortune Teller</h1>
+        <p class="subtitle">Consult the celestial deck to uncover your destiny</p>
+    </header>
+
+    <main class="container">
+        <section class="input-section">
+            <div class="input-grid">
+                <div class="input-field">
+                    <label for="namehere">Your Name</label>
+                    <input type="text" id="namehere" placeholder="Seeker of Truth..." autocomplete="off">
+                </div>
+
+            </div>
+
+            <button type="button" id="fortuneBtn">Draw Fortune</button>
+            <p id="errorMsg" class="error-message"></p>
+        </section>
+
+        <!-- Interactive Card Deck Container -->
+        <section class="deck-container">
+            <div id="cardDeck" class="card-deck">
+                <!-- Stacked background cards forming the deck -->
+                <div class="card card-deck-layer layer-3">
+                    <div class="card-back-pattern"><i class="zmdi zmdi-eye"></i></div>
+                </div>
+                <div class="card card-deck-layer layer-2">
+                    <div class="card-back-pattern"><i class="zmdi zmdi-eye"></i></div>
+                </div>
+                <div class="card card-deck-layer layer-1">
+                    <div class="card-back-pattern"><i class="zmdi zmdi-eye"></i></div>
+                </div>
+
+                <!-- Main Active Flip/Draw Card -->
+                <div class="card card-main" id="mainCard">
+                    <div class="card-inner">
+                        <!-- Card Back -->
+                        <div class="card-face card-back">
+                            <div class="card-back-pattern">
+                                <i class="zmdi zmdi-eye"></i>
+                            </div>
+                        </div>
+                        <!-- Card Front with Tarot-Style Animated Component -->
+                        <div class="card-face card-front" id="cardFront">
+                            <div class="card-category-header">
+                                <span id="categoryName">Category</span>
+                            </div>
+
+                            <!-- Animated Tarot Emblem Area -->
+                            <div class="card-visual-container">
+                                <div class="tarot-frame" id="emblemContainer">
+                                    <div class="tarot-aura"></div>
+                                    <i id="categoryIcon" class="zmdi"></i>
+                                </div>
+                            </div>
+
+                            <div class="fortune-content">
+                                <p id="resultText">Your fortune will appear here...</p>
+                            </div>
+
+                            <div class="card-footer-branding">✦ Mystical Oracle ✦</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Advanced Web Development - Fortune Teller Project</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
