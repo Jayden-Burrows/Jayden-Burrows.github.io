@@ -14,13 +14,16 @@
 </head>
 <body>
 
-    <!-- Atmospheric Animated Background Elements (Fog & Floating Clouds) -->
-    <div class="sky-background">
+    <!-- Atmospheric Animated Background (drifting fog banks & floating clouds) -->
+    <div class="sky-background" aria-hidden="true">
         <div class="fog-layer fog-1"></div>
         <div class="fog-layer fog-2"></div>
+        <div class="fog-layer fog-3"></div>
         <div class="cloud cloud-1"></div>
         <div class="cloud cloud-2"></div>
         <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+        <div class="cloud cloud-5"></div>
     </div>
 
     <header>
@@ -30,16 +33,20 @@
 
     <main class="container">
         <section class="input-section">
-            <div class="input-grid">
-                <div class="input-field">
-                    <label for="namehere">Your Name</label>
-                    <input type="text" id="namehere" placeholder="Seeker of Truth..." autocomplete="off">
+            <form id="fortuneForm" class="reading-form" novalidate>
+                <div class="field field-wide">
+                    <label for="namehere">Your name</label>
+                    <input type="text" id="namehere" placeholder="Seeker of Truth..." autocomplete="off" maxlength="30">
                 </div>
 
-            </div>
+                <div class="field">
+                    <label for="focus">What's on your mind?</label>
+                    <select id="focus"></select>
+                </div>
 
-            <button type="button" id="fortuneBtn">Draw Fortune</button>
-            <p id="errorMsg" class="error-message"></p>
+                <button type="submit" id="fortuneBtn" class="field-wide">Draw Fortune</button>
+                <p id="errorMsg" class="error-message field-wide" role="alert"></p>
+            </form>
         </section>
 
         <!-- Interactive Card Deck Container -->
@@ -80,7 +87,14 @@
                             </div>
 
                             <div class="fortune-content">
+                                <p id="questionText" class="question-text" hidden></p>
                                 <p id="resultText">Your fortune will appear here...</p>
+                                <p id="adviceText" class="advice-text"></p>
+                            </div>
+
+                            <div class="card-meta">
+                                <span id="signText"></span>
+                                <span id="luckyText"></span>
                             </div>
 
                             <div class="card-footer-branding">✦ Mystical Oracle ✦</div>

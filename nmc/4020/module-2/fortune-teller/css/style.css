@@ -5,6 +5,13 @@
     padding: 0;
 }
 
+:root {
+    /* Card size lives in one place so the layout can reserve room for it */
+    --card-w: 290px;
+    --card-h: 490px;
+    --card-flip-scale: 1.05;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
@@ -15,82 +22,116 @@ body {
     color: #ffffff;
     /* Dramatic Deep Cosmic Background Gradient */
     background: radial-gradient(circle at 50% 30%, #2b1055, #000005 85%);
+    background-attachment: fixed;
     overflow-x: hidden;
     position: relative;
     padding: 20px;
 }
 
-/* Atmospheric Background Layers (Clouds & Fog) */
+/* ------------------------------------------------------------------
+   Atmospheric Background (fog banks & clouds)
+   Fixed to the viewport so it fills the screen and keeps drifting
+   while the page scrolls.
+------------------------------------------------------------------- */
 .sky-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    inset: 0;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
 }
 
-/* Fog Effect Layers */
+/* Fog: each layer is two screens wide and made of a repeating tile.
+   Sliding it left by exactly 50% (one tile) loops with no visible seam. */
 .fog-layer {
     position: absolute;
+    left: 0;
     width: 200%;
-    height: 100%;
-    background: radial-gradient(ellipse at center, rgba(147, 112, 219, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-    filter: blur(40px);
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    filter: blur(30px);
+    will-change: transform;
+    animation: fogDrift 40s linear infinite;
 }
 
 .fog-1 {
-    top: -10%;
-    animation: driftFog 25s linear infinite;
+    top: -8%;
+    height: 50%;
+    background-image:
+        radial-gradient(ellipse 30% 50% at 30% 50%, rgba(160, 120, 240, 0.42), transparent),
+        radial-gradient(ellipse 25% 45% at 75% 40%, rgba(120, 90, 220, 0.34), transparent);
+    animation-duration: 42s;
 }
 
 .fog-2 {
-    bottom: -20%;
-    animation: driftFog 35s linear infinite reverse;
+    top: 32%;
+    height: 42%;
+    background-image:
+        radial-gradient(ellipse 28% 50% at 20% 50%, rgba(190, 160, 255, 0.28), transparent),
+        radial-gradient(ellipse 30% 45% at 65% 55%, rgba(140, 100, 230, 0.30), transparent);
+    animation-duration: 58s;
+    animation-direction: reverse;
 }
 
-@keyframes driftFog {
-    0% { transform: translateX(-25%); }
-    100% { transform: translateX(0%); }
+.fog-3 {
+    bottom: -12%;
+    height: 48%;
+    background-image:
+        radial-gradient(ellipse 32% 50% at 35% 55%, rgba(170, 130, 245, 0.38), transparent),
+        radial-gradient(ellipse 24% 45% at 80% 50%, rgba(110, 80, 210, 0.32), transparent);
+    animation-duration: 34s;
 }
 
-/* Cloud Animations */
+@keyframes fogDrift {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* Clouds: soft puffs built from overlapping gradients. Each one slides all
+   the way across the screen and gently bobs up and down. The negative
+   delay means they are already mid-sky when the page loads. */
 .cloud {
+    --puff: rgba(218, 202, 255, 0.30);
     position: absolute;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 100px;
-    filter: blur(15px);
+    left: 0;
+    filter: blur(8px);
+    background-repeat: no-repeat;
+    background-image:
+        radial-gradient(ellipse 22% 48% at 18% 68%, var(--puff), transparent),
+        radial-gradient(ellipse 26% 70% at 38% 45%, var(--puff), transparent),
+        radial-gradient(ellipse 24% 62% at 62% 50%, var(--puff), transparent),
+        radial-gradient(ellipse 20% 45% at 82% 68%, var(--puff), transparent),
+        radial-gradient(ellipse 50% 30% at 50% 78%, var(--puff), transparent);
+    will-change: transform;
+    animation:
+        cloudDrift var(--dur) linear var(--delay) infinite,
+        cloudBob 9s ease-in-out infinite alternate;
 }
 
-.cloud-1 {
-    width: 300px;
-    height: 100px;
-    top: 15%;
-    left: -100px;
-    animation: floatCloud 28s linear infinite;
+.cloud-1 { width: 340px; height: 110px; top: 10%; --dur: 55s; --delay: -12s; }
+.cloud-2 { width: 480px; height: 140px; top: 36%; --dur: 80s; --delay: -45s; animation-direction: reverse, alternate; }
+.cloud-3 { width: 280px; height: 90px;  top: 60%; --dur: 48s; --delay: -26s; }
+.cloud-4 { width: 420px; height: 120px; top: 80%; --dur: 95s; --delay: -70s; animation-direction: reverse, alternate; }
+.cloud-5 { width: 220px; height: 70px;  top: 24%; --dur: 62s; --delay: -38s; --puff: rgba(243, 190, 120, 0.22); }
+
+@keyframes cloudDrift {
+    from { transform: translateX(-110%); }
+    to   { transform: translateX(calc(100vw + 10%)); }
 }
 
-.cloud-2 {
-    width: 450px;
-    height: 120px;
-    top: 50%;
-    right: -150px;
-    animation: floatCloud 38s linear infinite reverse;
+@keyframes cloudBob {
+    from { translate: 0 -10px; }
+    to   { translate: 0 14px; }
 }
 
-.cloud-3 {
-    width: 250px;
-    height: 80px;
-    bottom: 10%;
-    left: -80px;
-    animation: floatCloud 22s linear infinite;
-}
-
-@keyframes floatCloud {
-    0% { transform: translateX(-100px); }
-    100% { transform: translateX(100vw); }
+/* Respect people who ask their device for less motion */
+@media (prefers-reduced-motion: reduce) {
+    .fog-layer,
+    .cloud,
+    .tarot-aura,
+    .tarot-frame {
+        animation: none !important;
+    }
 }
 
 /* Header & Typography */
@@ -129,42 +170,90 @@ header h1 {
 .input-section {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    justify-content: center;
 }
 
-.input-section label {
-    font-size: 1.05rem;
+.reading-form {
+    width: 100%;
+    max-width: 520px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+    padding: 22px;
+    border: 1px solid rgba(179, 136, 255, 0.28);
+    border-radius: 16px;
+    background: rgba(15, 12, 41, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    min-width: 0;
+}
+
+.field-wide {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-size: 0.9rem;
     color: #e0e0e0;
 }
 
-.input-group {
-    display: flex;
-    width: 100%;
-    max-width: 450px;
-    gap: 10px;
+.optional {
+    color: #a899cc;
+    font-weight: 300;
+    font-size: 0.8rem;
 }
 
-input[type="text"] {
-    flex: 1;
-    padding: 12px 18px;
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: inherit;
     font-size: 1rem;
     border: 2px solid #5e35b1;
     border-radius: 8px;
     background: rgba(15, 12, 41, 0.85);
     color: #ffffff;
+    color-scheme: dark;
     outline: none;
     transition: all 0.3s ease;
 }
 
-input[type="text"]:focus {
+input::placeholder {
+    color: #8b7fb0;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' fill='none' stroke='%23f39c12' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+select option {
+    background: #140f2d;
+    color: #ffffff;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
     border-color: #f39c12;
     box-shadow: 0 0 12px rgba(243, 156, 18, 0.5);
 }
 
 button {
-    padding: 12px 24px;
+    padding: 13px 24px;
+    font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
     color: #0f0c29;
@@ -177,23 +266,38 @@ button {
 }
 
 button:hover {
-    transform: translateY(-2deg);
+    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+}
+
+button:focus-visible {
+    outline: 3px solid #b388ff;
+    outline-offset: 3px;
 }
 
 .error-message {
     color: #ff5252;
     font-size: 0.9rem;
     min-height: 1.2rem;
+    text-align: center;
+    margin-top: -6px;
 }
 
-/* Deck Container & Perspective */
+@media (max-width: 520px) {
+    header h1 { font-size: 2rem; }
+    .reading-form { grid-template-columns: 1fr; padding: 18px; }
+}
+
+/* Deck Container & Perspective.
+   The flipped card grows by --card-flip-scale and the draw animation lifts
+   it, and neither takes up layout space, so the margins below reserve that
+   room. Without them the card runs into the footer. */
 .deck-container {
     perspective: 1200px;
-    width: 260px;
-    height: 380px;
+    width: var(--card-w);
+    height: var(--card-h);
     position: relative;
-    margin-top: 10px;
+    margin: 30px 0 50px;
 }
 
 .card-deck {
@@ -279,19 +383,20 @@ button:hover {
     text-shadow: 0 0 15px rgba(243, 156, 18, 0.8);
 }
 
-/* Card Front Design & Animated Front Elements */
+/* Card Front Design & Animated Front Elements.
+   The background is solid on purpose (JS sets an opaque color per card),
+   so nothing from the deck behind it can show through. */
 .card-front {
-    background-color: rgba(20, 15, 45, 0.92);
+    background-color: #140f2d;
     transform: rotateY(180deg);
     box-shadow: 0 0 25px rgba(243, 156, 18, 0.4);
-    backdrop-filter: blur(8px);
     transition: background-color 0.5s ease;
 }
 
 .card-category-header {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     color: #f39c12;
     font-weight: 600;
 }
@@ -374,12 +479,29 @@ button:hover {
     60% { transform: scale(1.1); }
 }
 
+/* Fortune text block: question (optional), fortune, mood guidance */
 .fortune-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     flex: 1;
     margin: 5px 0;
+    min-height: 0;
+}
+
+.question-text {
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 1.4;
+    color: #cbbcf0;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 #resultText {
@@ -387,6 +509,23 @@ button:hover {
     line-height: 1.5;
     color: #ffffff;
     font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.advice-text {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: #f3d9a4;
+    font-weight: 300;
+}
+
+.card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    color: #cbbcf0;
 }
 
 .card-footer-branding {
@@ -424,7 +563,7 @@ button:hover {
 
 @keyframes drawTopCard {
     0% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-110px) scale(1.05) rotate(-5deg); }
+    50% { transform: translateY(-70px) scale(1.05) rotate(-5deg); }
     100% { transform: translateY(0) scale(1); }
 }
 
@@ -433,7 +572,7 @@ button:hover {
 }
 
 .card-main.is-flipped .card-inner {
-    transform: rotateY(180deg) scale(1.08);
+    transform: rotateY(180deg) scale(var(--card-flip-scale));
 }
 
 footer {
