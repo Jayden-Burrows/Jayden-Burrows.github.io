@@ -5,6 +5,8 @@ const category = document.getElementById("category");
 let theAnswer = "";
 
 function qa() {
+    category.style.display = "block";
+    question.style.display = "block";
     $.getJSON('https://the-trivia-api.com/v2/questions/', data => {
         question.textContent = data[0].question.text;
         let cat = data[0].category.replaceAll('_', ' ');
@@ -30,6 +32,5 @@ function qa() {
 }
 
 function showAnswer() {
-    console.log(theAnswer);
     answer.innerHTML = "Correct answer: " + theAnswer;
 }
