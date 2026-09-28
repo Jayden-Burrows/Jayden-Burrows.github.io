@@ -1,21 +1,12 @@
 @import url('/material-design-iconic-font/css/material-design-iconic-font.css');
 
 @font-face {
-  font-family: 'Marcellus';
-  src: url('Marcellus/Marcellus-Regular.ttf');
+  font-family: 'Nunito Sans';
+  src: url('Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf');
 }
 
-.Marcellus {
-  font-family: 'Marcellus';
-}
-
-@font-face {
-  font-family: 'Assistant';
-  src: url('assistant/Assistant-Regular.otf');
-}
-
-.Assistant {
-  font-family: 'Assistant';
+.Nunito-Sans {
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -40,7 +31,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   min-width: 300px;
-  font-family: 'Assistant';
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
 }
 
 [data-theme="dark"] {
@@ -204,12 +195,7 @@ input:checked+.slider:before {
   height: 40px;
   padding: 16px;
   margin: 3px auto;
-  background-color: var(--bg);
-  border-color: var(--bg-shadow);
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 16px;
-  box-shadow: 4px 4px 4px var(--bg-shadow);
+  background-color: transparent;
 }
 
 #left-top-nav {
@@ -239,11 +225,10 @@ input:checked+.slider:before {
 }
 
 #nav-title {
-  font-family: 'Marcellus';
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
   text-decoration: none;
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 18px;
 }
 
@@ -358,12 +343,12 @@ a.nav-link {
 }
 
 #drawer-name {
-  font-family: "Marcellus";
-  letter-spacing: 1.5px;
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
   font-size: 24px;
   color: var(--accent);
   text-transform: capitalize;
-  font-weight: 600;
+  font-weight: 700;
   margin: 11px auto;
 }
 
@@ -559,8 +544,9 @@ a.nav-link {
 }
 
 #about-name {
-  font-family: 'Marcellus';
-  letter-spacing: 1.5px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 700;
   font-size: 30px;
   margin: 0;
 }

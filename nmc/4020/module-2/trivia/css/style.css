@@ -1,0 +1,13 @@
+body {
+    margin: 20px;
+    color: black;
+}
+
+main {
+    margin: 0 auto;
+}
+
+select {
+    width: 200px;
+}
+
