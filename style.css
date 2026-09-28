@@ -25,13 +25,13 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
   min-width: 300px;
-  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
 }
 
 [data-theme="dark"] {
@@ -343,7 +343,6 @@ a.nav-link {
 }
 
 #drawer-name {
-  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
   letter-spacing: 0.5px;
   font-size: 24px;
   color: var(--accent);
@@ -478,19 +477,19 @@ a.nav-link {
 }
 
 .social-svg.hackthebox:hover {
- path {
+  path {
     fill: #9fef00;
-  }  
+  }
 }
 
 .social-svg.linkedin:hover {
-   path {
+  path {
     fill: #0288d1;
   }
 }
 
 .social-svg.github:hover {
-   path {
+  path {
     fill: #1b1f23;
   }
 }

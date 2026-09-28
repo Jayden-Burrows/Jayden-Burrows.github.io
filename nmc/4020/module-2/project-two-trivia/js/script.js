@@ -9,9 +9,10 @@ function qa() {
         divLoad.replaceChildren();
         for (let i = 0; i < 10; i++) {
             const questionContainer = document.createElement('div');
+            questionContainer.classList.add("question");
             // Equivalent to step 7, just using createElement because it's more programmatic
             const cat = document.createElement('h3');
-            cat.textContent = data[i].category;
+            cat.textContent = data[i].category.replaceAll('_', ' ');
 
             const question = document.createElement('h6')
             question.textContent = data[i].question.text;
@@ -34,6 +35,7 @@ function qa() {
                 answerChoice.value = incorrectAnswer;
                 answerChoices.appendChild(answerChoice);
             }
+
             questionContainer.appendChild(cat);
             questionContainer.appendChild(question);
             questionContainer.appendChild(correctAnswer);
