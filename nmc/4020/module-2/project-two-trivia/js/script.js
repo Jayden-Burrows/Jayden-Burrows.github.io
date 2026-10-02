@@ -3,12 +3,11 @@ const categoryError = document.getElementById('categoryError');
 const questionsPage = document.getElementById('questions-page');
 const questionsGrid = document.getElementById('questions-grid');
 const questionPage = document.getElementById('question-page');
-const score = document.getElementById('score');
+const pointsBar = document.getElementById('points-bar');
 const difficultyScores = ["easy", "medium", "hard"]
 let questions = [];
-// Will contain points for each question and the points assigned the user's answer (either 0 or the points assigned for the question)
-let scores = []
-let lastScore;
+let scores = [];
+let lastScore = 0;
 
 // Used AI to quickly generate this section, so I could quickly draft out the pages 
 // ---------- Categories --------------
@@ -29,6 +28,10 @@ const categories = [
 function renderCategoryCards(items) {
     const container = document.getElementById('categories');
 
+    // I would have used the document.createElement()...
+    // that I do for the rest of the page, but this div
+    //  would require a lot of lines of code because it 
+    // has so many attributes
     const cardsHTML = items.map(cat => `
         <label class="category-card">
           <input type="checkbox" name="category[]" value="${cat.value}">
@@ -48,11 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ---------- Categories --------------
 
 function qa() {
-    // 1. Make first-page disappear and second-page appear
-    // 2. Get selected categories
-    // 3. Make request for selected categories one at a time
-    // 4. populate columns one at a time
-    // 5. make it each is a button that makes a popup appear
     // 6. points bar at the bottom
     const checkedBoxes = document.querySelectorAll('input[type=checkbox]:checked');
     const selectedCategories = Array.from(checkedBoxes).map(box => box.value);
@@ -62,86 +60,64 @@ function qa() {
     } else {
         categoriesPage.style.display = 'none';
         questionsPage.style.display = 'block';
+        pointsBar.style.display = 'flex';
+        initPointsBar();
         for (let i = 0; i < 5; i++) {
             // randomly choose an answer
             const randomIndex = Math.floor(Math.random() * selectedCategories.length);
             // [0] because splice() returns an array
             const selectedCategory = selectedCategories.splice(randomIndex, 1)[0];
             getCategory(i, selectedCategory);
-
         }
-
-        // $.getJSON('https://the-trivia-api.com/v2/questions/', data => {
-        //     divLoad.innerHTML = "";
-
-        //     theAnswer = [];
-        //     scores = [];
-        //     maxPoints = 0;
-        //     userPoints = 0;
-
-        //     // Sorting the questions by difficulty
-        //     // Note: I used AI to see how people typically sort by a custom order
-        //     data.sort((a, b) => difficultyScores.indexOf(a['difficulty']) - difficultyScores.indexOf(b['difficulty']))
-
-        //     divLoad.replaceChildren();
-        //     for (let i = 0; i < 10; i++) {
-        //         const questionContainer = document.createElement('div');
-        //         questionContainer.classList.add("question");
-        //         // Equivalent to step 7, just using createElement because it's more programmatic
-        //         const cat = document.createElement('h3');
-        //         cat.textContent = data[i].category.replaceAll('_', ' ');
-
-        //         const question = document.createElement('h6')
-        //         question.textContent = data[i].question.text;
-
-        //         const correctAnswer = document.createElement('p');
-        //         correctAnswer.id = "answers" + i;
-        //         correctAnswer.style.display = "none";
-
-        //         theAnswer.push(data[i].correctAnswer)
-
-        //         const answerChoices = document.createElement('select');
-        //         answerChoices.onchange = (e) => showAnswer(i, e);
-
-        //         const placeholderOption = document.createElement('option');
-        //         placeholderOption.selected = true;
-        //         placeholderOption.hidden = true;
-        //         placeholderOption.disabled = true;
-        //         placeholderOption.value = '';
-        //         placeholderOption.textContent = 'Choose an option...';
-        //         answerChoices.appendChild(placeholderOption);
-
-        //         let possibleAnswerChoices = [...data[i].incorrectAnswers, data[i].correctAnswer];
-        //         // Used AI to help me randomize the order of the choices
-        //         for (let j = 0; j < 4; j++) {
-        //             // randomly choose an answer
-        //             const randomIndex = Math.floor(Math.random() * possibleAnswerChoices.length);
-        //             // Splice removes the item from the array and returns the item in an array 
-        //             // so use [0] to get that one answer from the possible answerChoices
-        //             const possibleAnswer = possibleAnswerChoices.splice(randomIndex, 1)[0];
-
-        //             const answerChoice = document.createElement('option')
-        //             answerChoice.textContent = possibleAnswer;
-        //             answerChoice.value = possibleAnswer;
-        //             answerChoices.appendChild(answerChoice);
-        //         }
-
-        //         questionContainer.appendChild(cat);
-        //         questionContainer.appendChild(question);
-        //         questionContainer.appendChild(correctAnswer);
-        //         questionContainer.appendChild(answerChoices);
-        //         divLoad.appendChild(questionContainer);
-
-        //         // Assign points to each question based on difficulty
-        //         scores.push({});
-        //         scores[i]['maxPoints'] = assignPoints(data[i]['difficulty']); // Points for the question
-        //         scores[i]['userPoints'] = 0; // The points awarded to the user based on their current answer
-        //     }
-        //     score.style.display = 'block';
-        //     maxPoints = scores.reduce((sum, score) => { return sum + score['maxPoints'] }, 0);
-        //     score.textContent = `0 out of ${maxPoints} points`;
-        // });
     }
+}
+
+function initPointsBar() {
+    createNewScore();
+    // for the user to add other players
+    const createNewScoreBtn = document.createElement('button');
+    createNewScoreBtn.onclick = () => createNewScore();
+    createNewScoreBtn.textContent = 'Add Player';
+    pointsBar.appendChild(createNewScoreBtn);
+}
+
+function createNewScore() {
+    const scoreDiv = document.createElement('div');
+    scoreDiv.classList.add('score');
+
+    let scoreIndex = scores.length;
+
+    const decBtn = document.createElement('button');
+    decBtn.onclick = () => updateScore(scoreIndex, -lastScore);
+    const decI = document.createElement('i');
+    decI.classList.add('zmdi', 'zmdi-minus');
+    decBtn.appendChild(decI);
+
+    const pointsDisplay = document.createElement('span');
+    pointsDisplay.id = 'points' + scoreIndex;
+    pointsDisplay.textContent = 0;
+
+    const incBtn = document.createElement('button');
+    incBtn.onclick = () => updateScore(scoreIndex, lastScore);
+    const incI = document.createElement('i');
+    incI.classList.add('zmdi', 'zmdi-plus');
+    incBtn.appendChild(incI);
+
+    scoreDiv.appendChild(decBtn);
+    scoreDiv.appendChild(pointsDisplay);
+    scoreDiv.appendChild(incBtn);
+
+    pointsBar.appendChild(scoreDiv);
+
+    scores.push(0);
+}
+
+function updateScore(scoreIndex, amt) {
+    const pointsDisplay = document.getElementById('points' + scoreIndex);
+    const currentScore = Number(pointsDisplay.textContent);
+    const newScore = currentScore + amt;
+    pointsDisplay.textContent = newScore;
+    scores[scoreIndex] = newScore;
 }
 
 function getCategory(i, category) {
@@ -265,6 +241,7 @@ function showAnswer(i, j, e) {
     // Get the user-selected answer 
     const selectedAnswerValue = selectedInput.value;
     let selectedAnswerBox = document.getElementById(id);
+    lastScore = (j + 1) * 100;
     if (selectedAnswerValue === questions[i][j].correctAnswer) {
         selectedAnswerBox.textContent = "Correct! The answer is: " + questions[i][j].correctAnswer;
     } else {
@@ -272,7 +249,7 @@ function showAnswer(i, j, e) {
     }
     selectedInput.disabled = true;
     selectedAnswerBox.style.display = "block";
-    
+
 
     const questionContainer = e.target.parentElement;
     const backBtn = document.createElement('button');
@@ -284,8 +261,3 @@ function showAnswer(i, j, e) {
 
     questionContainer.appendChild(backBtn);
 }
-
-// TODO:
-// Make the questions into a grid of separate categories
-// Make points for different players
-// daily double
