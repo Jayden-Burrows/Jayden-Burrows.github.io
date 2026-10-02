@@ -1,18 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
 
 main {
-    margin: 20px auto;
-    background-color: #25299b;
-    color: white;
-    min-height: calc(100vh - 50px);
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 8px !important;
 }
 
-main * {
+#categories-page {
+    margin: 20px auto 0 auto;
+    background-color: #25299b;
+    color: white;
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    height: 100%;
+}
+
+#categories-page * {
     font-family: 'Nunito Sans', 'Helvetica', 'Arial';
 }
 
-main h1 {
-    margin: 30px auto;
+#categories-page h1 {
+    margin: 40px auto;
     color: white;
     font-family: "Bowlby One", Helvetica, Arial, sans-serif;
     letter-spacing: 6px;
@@ -25,6 +34,14 @@ main h1 {
     text-shadow: -3px 0 6px #ffb9e5;
 }
 
+#categories-page #categoryError {
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+}
+
 main button {
     color: white;
     font-size: 24px;
@@ -34,19 +51,142 @@ main button {
         1px -1px 2px #000,
         -1px 1px 2px #000,
         1px 1px 2px #000;
+    cursor: pointer;
     padding: 20px;
     border: 3px solid black;
-    background: linear-gradient(to right, #25299b, #2228d9, #25299b);
+    background: linear-gradient(to right, #25299b, #464be0, #25299b);
     width: 100%;
     transition: background 300ms ease;
 }
 
 main button:hover {
-    background: #2228d9;
+    background: #464be0;
 }
 
-main div {
+main button:disabled {
+    background: #101473;
+    cursor: not-allowed;
+}
+
+/* Generated styling with AI for efficiency */
+
+#categories-page #categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+/* Individual Card */
+.category-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #25299b;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+}
+
+/* Hover effect */
+.category-card:hover {
+    border-color: #b0b0b0;
+    background-color: #101473;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    input[type="checkbox"] {
+        background-color: #464be0;
+    }
+}
+
+/* Checkbox positioning in top-left */
+.category-card input[type="checkbox"] {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    appearance: none;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Large Category Icon in center */
+.category-card i {
+    font-family: 'Material-Design-Iconic-Font' !important;
+    font-size: 64px;
+    margin-bottom: 12px;
+    transition: color 0.2s ease-in-out;
+}
+
+/* Category Title */
+.category-card .category-name {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Checked State Styling */
+.category-card input[type="checkbox"]:checked {
+    background-color: #464be0;
+}
+
+
+/* Active / Checked State Styling */
+.category-card:has(input[type="checkbox"]:checked) {
+    background-color: #101473;
+    color: #464be0;
+    box-shadow: 0 4px 12px rgba(63, 81, 181, 0.15);
+}
+
+.category-card:has(input[type="checkbox"]:checked) .zmdi {
+    color: #464be0;
+}
+
+/* End of AI generated content */
+
+#questions-page {
     width: 100%;
+    display: none;
+}
+
+#questions-page #questions-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: sans-serif;
+    background-color: #25299b;
+}
+
+#questions-page .catHeader { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+#questions-page .questionPanel { 
+    display: block;
+}
+
+#question-page {
+    width: 100%;
+    height: 100%;
 }
 
 main div div.question {
@@ -100,7 +240,7 @@ main select {
     padding: 20px;
     border: 3px solid black;
     color: rgb(212, 185, 11);
-    background-color: #14188c;
+    background-color: #101473;
     width: 100%;
 }
 
@@ -133,4 +273,10 @@ main option {
     font-weight: bold;
     border: 3px solid black;
     background: url('https://img.buzzfeed.com/buzzfeed-static/static/2020-05/12/16/enhanced/b000477b8b9e/enhanced-15192-1589300412-5.jpg?output-format=jpg&output-quality=auto');
+}
+
+@media (max-width: 762px) {
+    #questions-page #questions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
 }

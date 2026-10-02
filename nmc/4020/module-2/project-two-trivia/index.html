@@ -7,6 +7,9 @@
     <link href="/style.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="/nmc/4020/css/styles.css" rel="stylesheet">
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -180,11 +183,24 @@
     </div>
 
     <main>
-        <h1>Trivia!</h1>
-        <button type="button" onclick="qa()">Load new question set</button>
-        <p id="score"></p>
-        <div id="mainDiv"></div>
+        <div id="categories-page">
+            <h1>Trivia!</h1>
+
+            <h3>Select Topics to Test Your Knowledge On</h3>
+            <div id="categories">
+            </div>
+
+            <p id="categoryError"></p>
+
+            <button type="button" onclick="qa()">Load new question set</button>
+        </div>
+        <div id="questions-page">
+            <div id="questions-grid"></div>
+        </div>
+        <div id="question-page"></div>
     </main>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script src="/script.js"></script>

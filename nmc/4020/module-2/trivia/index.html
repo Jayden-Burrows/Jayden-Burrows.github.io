@@ -181,15 +181,9 @@
 
     <main>
         <h1>Trivia!</h1>
-        <button type="button" onclick="qa()">Generate New Question</button>
-
-        <div id="category"></div>
-        <div id="question"></div>
-        <div id="answer"></div>
-        <select name="answerChoices" id="answerChoices" onchange="showAnswer()">
-            <option value="" disabled selected hidden>Choose an option...</option>
-        </select>
-
+        <button type="button" onclick="qa()">Load new question set</button>
+        <p id="score"></p>
+        <div id="mainDiv"></div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/script.js"></script>

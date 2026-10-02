@@ -4,57 +4,133 @@ main {
     margin: 20px auto;
     background-color: #25299b;
     color: white;
+    min-height: calc(100vh - 50px);
+}
+
+main * {
+    font-family: 'Nunito Sans', 'Helvetica', 'Arial';
 }
 
 main h1 {
-    margin: 8px;
+    margin: 30px auto;
     color: white;
     font-family: "Bowlby One", Helvetica, Arial, sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: 6px;
+    background: url('https://images.launchbox-app.com/r2_90f6d135-b512-41a5-954a-cf167d13d345.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    transform: scaleY(1.5);
+    text-shadow: -3px 0 6px #ffb9e5;
 }
 
 main button {
     color: white;
-    font-size: 14px;
+    font-size: 24px;
     font-weight: bold;
+    text-shadow:
+        -1px -1px 2px #000,
+        1px -1px 2px #000,
+        -1px 1px 2px #000,
+        1px 1px 2px #000;
     padding: 20px;
     border: 3px solid black;
-    background-color: #25299b;
-    width: 300px;
+    background: linear-gradient(to right, #25299b, #2228d9, #25299b);
+    width: 100%;
+    transition: background 300ms ease;
 }
 
-#category,
-#question {
+main button:hover {
+    background: #2228d9;
+}
+
+main div {
+    width: 100%;
+}
+
+main div div.question {
+    padding: 40px;
+    border: 3px solid black;
+    border-top: 0;
+    background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c3f34d4f-0676-4857-9fd9-cc10807708af/dfj4q3r-de11ede0-3288-4792-9309-77cb8dba5e72.png/v1/fill/w_1280,h_720,q_80,strp/blank_jeopardy_screen_v2_by_drewmandew_dfj4q3r-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mL2MzZjM0ZDRmLTA2NzYtNDg1Ny05ZmQ5LWNjMTA4MDc3MDhhZi9kZmo0cTNyLWRlMTFlZGUwLTMyODgtNDc5Mi05MzA5LTc3Y2I4ZGJhNWU3Mi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ePb2Ahis0BsA9NBTerrqTbXgJPLQXNExCA7WP0-L3UE');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    filter: brightness(125%);
+}
+
+main div div.question * {
+    margin: 8px auto;
+}
+
+main h3 {
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
     margin: 0;
-    padding: 20px;
-    border: 3px solid white;
-    width: 300px;
-    display: none;
+    width: 100%;
+    text-shadow:
+        -1px -1px 2px #000,
+        1px -1px 2px #000,
+        -1px 1px 2px #000,
+        1px 1px 2px #000;
 }
 
-#category {
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-#question {
-    border-width: 0 3px 3px 3px;
-    margin-bottom: 20px;
+main h6 {
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow:
+        -1px -1px 2px #000,
+        1px -1px 2px #000,
+        -1px 1px 2px #000,
+        1px 1px 2px #000;
 }
 
 main select {
-    width: 300px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     padding: 20px;
     border: 3px solid black;
-    color: rgb(239, 211, 23);
-    background-color: #25299b;
+    color: rgb(212, 185, 11);
+    background-color: #14188c;
+    width: 100%;
+}
+
+main select:disabled {
+    background-color: #090a35e0;
+    color: rgb(176, 157, 28);
 }
 
 main option {
     font-size: 14px;
     font-weight: bold;
-    color: rgb(239, 211, 23);
-    background-color: #25299b;
+    color: rgb(212, 185, 11);
+}
+
+#score {
+    width: 100%;
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin: 0;
+    text-align: center;
+    text-shadow:
+        -1px -1px 2px #000,
+        1px -1px 2px #000,
+        -1px 1px 2px #000,
+        1px 1px 2px #000;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 3px solid black;
+    background: url('https://img.buzzfeed.com/buzzfeed-static/static/2020-05/12/16/enhanced/b000477b8b9e/enhanced-15192-1589300412-5.jpg?output-format=jpg&output-quality=auto');
 }
