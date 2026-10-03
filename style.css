@@ -10,17 +10,29 @@
 }
 
 :root {
-  --bg: #FEFCFB;
-  --bg-shadow: #e5eaf0;
-  --accent: #bf9b30;
-  --accent-dark: #a67c00;
-  --primary: #149ad8;
-  --secondary: #001F54;
+  --primary: #1565C0;
+  --primary-light: #0090db;
+  --secondary: #02805c;
+  --accent: #29c195;
+  --bg: #e4e8ed;
+  --surface: #ffffff;
+  --drawer-text: #969696; 
+  --drawer-profile: #151a34; 
+  --drawer-bg: #252b47; 
   --text: #000000;
-  --text-secondary: #28282f;
-  --border: hsla(0, 0%, 0%, 0.4);
-  --shadow: rgba(0, 0, 0, 0.2);
-  --slide-amt: 14px;
+  --text-secondary: #25335e;
+  --border: rgba(0, 0, 0, 0.4);
+  --shadow: rgba(0, 0, 0, 0.25);
+  --slide-amt: 24px;
+}
+
+[data-theme="dark"] {
+  --bg: #0e1320;
+  --surface: #051937;
+  --text: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: rgba(0, 0, 0, 0.40);
 }
 
 * {
@@ -29,22 +41,12 @@
 }
 
 body {
+  position: relative;
   background-color: var(--bg);
   color: var(--text);
   min-width: 300px;
-}
-
-[data-theme="dark"] {
-  --bg: #000000;
-  --bg-shadow: #28282f;
-  --accent: #bf9b30;
-  --accent-dark: #a67c00;
-  --primary: #001F54;
-  --secondary: #149ad8;
-  --text: #FEFCFB;
-  --text-secondary: #e5eaf0;
-  --border: rgba(0, 0, 0, 0.4);
-  --shadow: rgba(0, 0, 0, 0.2);
+  margin: 0;
+  display: flow-root;
 }
 
 /* Scrollbar properties */
@@ -67,19 +69,24 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary);
+  background: var(--primary-light);
 }
 
 a {
   color: var(--secondary);
 }
 
+main {
+  position: relative;
+  z-index: 3;
+}
+
 /* ── Dark mode toggle ── */
 .toggle {
   position: relative;
+  width: 54px;
   display: inline-block;
-  width: 36px;
-  height: 22px;
+  height: 28px;
 }
 
 .toggle input {
@@ -95,7 +102,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--bg-shadow);
+  background-color: var(--bg);
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -103,17 +110,17 @@ a {
 .slider:before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 16px;
-  left: 3px;
-  bottom: 3px;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
   background-color: var(--accent);
   -webkit-transition: .25s;
   transition: .25s;
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px var(--bg-shadow);
+  box-shadow: 0 0 1px var(--shadow);
 }
 
 input:checked+.slider:before {
@@ -130,57 +137,9 @@ input:checked+.slider:before {
   border-radius: 50%;
 }
 
-.bg-wrapper {
-  position: absolute;
-  min-height: 498px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 0;
-}
-
-.splash-bg {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  z-index: 1;
-}
-
 .nav-content {
   overflow: visible;
 }
-
-.splash-bg {
-  background: linear-gradient(315deg, var(--secondary) 3%, var(--primary) 38%, var(--secondary) 68%);
-  animation: gradient 10s ease infinite;
-  background-size: 150% 150%;
-  background-attachment: fixed;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-
-  50% {
-    background-position: 100% 100%;
-  }
-
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .splash-bg {
-    animation: none;
-  }
-}
-
-/* TODO: Edit CSS */
 
 /* Top Nav */
 .top-nav {
@@ -191,11 +150,13 @@ input:checked+.slider:before {
   align-items: center;
   gap: 8px;
   width: 100%;
-  max-width: 900px;
-  height: 40px;
-  padding: 16px;
-  margin: 3px auto;
-  background-color: transparent;
+  max-width: calc(100% - 16px);
+  margin: 8px auto;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 16px var(--shadow);
+  background-color: var(--surface);
+  z-index: 3;
 }
 
 #left-top-nav {
@@ -209,7 +170,7 @@ input:checked+.slider:before {
   height: 30px;
   width: 30x;
   border: none;
-  background-color: var(--bg);
+  background-color: var(--surface);
 
   svg {
     text-align: center;
@@ -262,7 +223,7 @@ a.nav-link {
 
 #nav-drawer-backdrop.isOpen {
   transition: background-color 500ms ease-in-out;
-  background-color: #00000073;
+  background-color: #00000070;
   pointer-events: auto;
 
   #nav-drawer {
@@ -275,7 +236,7 @@ a.nav-link {
   flex-direction: column;
   justify-content: space-between;
   color: inherit;
-  background: var(--primary);
+  background: var(--drawer-bg);
   border-right: medium none;
   position: fixed;
   top: 0;
@@ -292,11 +253,11 @@ a.nav-link {
 }
 
 #nav-drawer::-webkit-scrollbar-track {
-  background-color: var(--primary);
+  background-color: var(--drawer-bg);
 }
 
 #nav-drawer::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
+  background-color: var(--drawer-profile);
 }
 
 #drawer-toggle-btn-wrapper {
@@ -312,18 +273,17 @@ a.nav-link {
   height: 30px;
   width: 30px;
   padding: 3px 3px 0px 6px;
-  background-color: var(--secondary);
   border: none;
   border-radius: 4px;
 
   svg path {
-    stroke: var(--primary);
+    stroke: var(--drawer-text);
   }
 }
 
 #drawer-toggle-btn-wrapper .drawer-toggle-btn:hover {
   svg path {
-    stroke: var(--accent);
+    stroke: var(--primary-light);
     transition: 0.3s ease;
   }
 }
@@ -332,7 +292,7 @@ a.nav-link {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: var(--secondary);
+  background-color: var(--drawer-profile);
 }
 
 #img-drawer {
@@ -344,8 +304,8 @@ a.nav-link {
 
 #drawer-name {
   letter-spacing: 0.5px;
-  font-size: 24px;
-  color: var(--accent);
+  font-size: 22px;
+  color: white;
   text-transform: capitalize;
   font-weight: 700;
   margin: 11px auto;
@@ -384,7 +344,7 @@ a.nav-link {
 }
 
 .drawer-nav-link {
-  color: var(--text-secondary);
+  color: var(--drawer-text);
   text-decoration: none;
   display: flex;
   justify-content: start;
@@ -410,8 +370,8 @@ a.nav-link {
   overflow: visible;
   display: block;
   padding: 45px 25px;
-  background: var(--bg);
-  box-shadow: 6px 6px 4px var(--bg-shadow);
+  background: var(--surface);
+  box-shadow: 0 0 16px var(--shadow);
   border-radius: 8px;
 }
 
@@ -423,13 +383,12 @@ a.nav-link {
   min-width: 300px;
   width: 80vw;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 #about-sec.card {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
 }
 
 #about-img-and-links {
@@ -440,7 +399,7 @@ a.nav-link {
 }
 
 #about-img {
-  border: 2px solid var(--accent);
+  border: 2px solid var(--primary);
   border-radius: 50%;
   width: 125px;
   height: 125px;
@@ -467,7 +426,7 @@ a.nav-link {
 }
 
 #drawer-profile-wrap .social-list .social-svg {
-  fill: var(--bg-shadow);
+  fill: var(--drawer-text);
 }
 
 .social-svg.tryhackme:hover {
@@ -577,14 +536,6 @@ a.nav-link {
   border-radius: 4px;
 }
 
-[data-theme="dark"] {
-
-  #download-resume,
-  #email-contact {
-    /* Hard-coded because it looks better this way for both */
-    color: var(--text);
-  }
-}
 
 #download-resume,
 #email-contact {
@@ -592,26 +543,34 @@ a.nav-link {
   text-decoration: none;
   font-size: 16px;
   height: 30px;
-  color: var(--bg);
+  color: var(--surface);
+  box-shadow: 3px 3px 4px var(--shadow);
   transition: background-color 250ms ease;
+}
+
+[data-theme="dark"] {
+
+  #download-resume,
+  #email-contact {
+    /* Hard-coded because it looks better this way for both */
+    color: white;
+  }
 }
 
 #download-resume {
   background-color: var(--primary);
-  box-shadow: 3px 3px 4px var(--secondary);
 }
 
 #download-resume:hover {
-  background-color: var(--secondary);
+  background-color: var(--primary-light);
 }
 
 #email-contact {
   background-color: var(--accent);
-  box-shadow: 3px 3px 4px var(--accent-dark);
 }
 
 #email-contact:hover {
-  background-color: var(--accent-dark);
+  background-color: var(--secondary);
 }
 
 .about-details {
@@ -686,7 +645,7 @@ a.nav-link {
 
 #experience-timeline .exp-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px var(--bg-shadow);
+  box-shadow: 0 8px 16px var(--shadow);
 }
 
 #experience-timeline .exp-company {
@@ -787,7 +746,7 @@ a.nav-link {
   border-radius: 20px;
   font-size: 15px;
   font-weight: 500;
-  box-shadow: 4px 4px 4px var(--bg-shadow);
+  box-shadow: 4px 4px 4px var(--shadow);
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 
   svg {
@@ -808,7 +767,7 @@ a.nav-link {
 .skill-chip:hover {
   background-color: var(--secondary);
   transform: translateY(-2px);
-  box-shadow: 8px 8px 4px var(--bg-shadow);
+  box-shadow: 8px 8px 4px var(--shadow);
 }
 
 /* ── Certifications ── */
@@ -826,9 +785,8 @@ a.nav-link {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg);
-  border: 1px solid var(--bg-shadow);
-  box-shadow: 3px 3px 4px var(--bg-shadow);
+  background-color: var(--surface);
+  box-shadow: 0 0 24px var(--shadow);
   border-radius: 8px;
   padding: 24px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -867,7 +825,100 @@ a.nav-link {
 
 
 /* Media Queries */
+@media only screen and (min-width: 450px) {
+
+  /* The background animation on the index page */
+  .bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 498px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .bg-struct {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .bg-struct.bg-img {
+    background: linear-gradient(315deg, #1565c0 3%, #12519b 38%, #092a56 68%, #051937 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+  }
+
+  .wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: absolute;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+  }
+
+  .wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+  }
+
+  @keyframes wave {
+    2% {
+      transform: translateX(1);
+    }
+
+    25% {
+      transform: translateX(-25%);
+    }
+
+    50% {
+      transform: translateX(-50%);
+    }
+
+    75% {
+      transform: translateX(-25%);
+    }
+
+    100% {
+      transform: translateX(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-struct {
+      animation: none;
+    }
+
+    .wave {
+      animation: none;
+      display: none;
+    }
+  }
+}
+
 @media only screen and (min-width: 650px) {
+  .bg-wrapper {
+    min-height: 400px;
+  }
+
   .top-nav {
     height: 48px;
   }
@@ -920,6 +971,7 @@ a.nav-link {
 }
 
 @media only screen and (min-width: 768px) {
+
   .top-nav {
     height: 60px;
   }
@@ -944,16 +996,18 @@ a.nav-link {
 
   .toggle {
     width: 46px;
-    height: 25px;
+    height: 26px;
   }
 
   .slider::before {
     width: 20px;
     height: 20px;
+    top: 3px;
+    left: 4px;
   }
 
   :root {
-    --slide-amt: 20px
+    --slide-amt: 18px;
   }
 
   .experience-sec .timeline-item .card p {
