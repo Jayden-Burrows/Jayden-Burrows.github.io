@@ -1,0 +1,213 @@
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+h1 {
+    text-align: center;
+    background: linear-gradient(90deg, transparent, var(--primary), var(--primary-light), transparent);
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--primary), var(--primary-light), transparent);
+    border-radius: 4px;
+    opacity: 0.6;
+}
+
+#courses {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.75rem;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 580px;
+    min-height: 110px;
+    padding: 1.5rem 2rem;
+    border-top: 4px solid transparent;
+    background:
+        linear-gradient(var(--surface)) padding-box,
+        linear-gradient(to right, var(--primary-light), var(--primary), var(--primary-light)) border-box;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 0 4px var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    backdrop-filter: blur(2px);
+}
+
+.course-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: var(--shadow);
+}
+
+.course-card i {
+    font-size: 48px;
+    color: var(--primary);
+    background: #20879b23;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.course-card:hover i {
+    color: var(--primary-light);
+    background: #5293a03b;
+    transform: scale(1.02);
+}
+
+.course-card p {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.course-card a {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+    word-break: break-word;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    background: linear-gradient(to right, var(--primary), var(--primary-light), var(--accent));
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.25s ease, color 0.2s;
+    width: fit-content;
+}
+
+.course-card:hover a {
+    background-size: 100% 2px;
+    color: var(--primary-light);
+}
+
+[data-theme='dark'] {
+    .course-card {
+        background-color: var(--surface);
+    }
+
+    .course-card a {
+        color: var(--primary-light);
+    }
+
+    .course-card:hover a {
+        color: var(--primary-light);
+    }
+
+    .course-card i {
+        background: rgba(122, 199, 240, 0.1);
+        color: var(--primary-light);
+    }
+
+    .course-card:hover i {
+        background: rgba(122, 199, 240, 0.2);
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        white-space: normal;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
+
+    h1::after {
+        left: 10%;
+        width: 80%;
+    }
+
+    .course-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1.25rem;
+        gap: 1rem;
+        max-width: 100%;
+    }
+
+    .course-card::before {
+        width: 100%;
+        height: 4px;
+        top: 0;
+        bottom: auto;
+        left: 0;
+        border-radius: var(--card-radius) var(--card-radius) 0 0;
+        background: linear-gradient(90deg, var(--accent), var(--secondary), var(--accent));
+    }
+
+    .course-card i {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 2.5rem;
+    }
+
+    .course-card p {
+        justify-content: center;
+    }
+
+    .course-card a {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+}

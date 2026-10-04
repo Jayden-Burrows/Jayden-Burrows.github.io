@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jayden Burrows">
+    <title>NMC Courses · enhanced</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <!-- Google Font & Material Icons (clean, modern) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="nav-content">
+        <nav class="top-nav" aria-label="main-nav">
+            <div id="left-top-nav">
+                <button type="button" id="toggle-nav" class="drawer-toggle-btn" aria-label="Toggle menu">
+                    <svg width="20" height="20" viewBox="0 0 23 23">
+                        <path fill="transparent" stroke-width="2.5" stroke="var(--text-secondary)"
+                            stroke-linecap="round" d="M 2 2.5 L 20 2.5" class="menu-toggle-path">
+                        </path>
+                        <path fill="transparent" stroke-width="2.5" stroke="var(--text-secondary)"
+                            stroke-linecap="round" d="M 2 9.423 L 20 9.423" class="menu-toggle-path">
+                        </path>
+                        <path fill="transparent" stroke-width="2.5" stroke="var(--text-secondary)"
+                            stroke-linecap="round" d="M 2 16.346 L 20 16.346" class="menu-toggle-path">
+                        </path>
+                    </svg>
+                </button>
+                <a href="/"><img id="top-nav-logo" src="/images/logos/accent-transparent-logo.png" height="30"
+                        width="30" alt="Logo"></a>
+                <a href="/" id="nav-title">Jayden Burrows</a>
+            </div>
+            <div id="right-top-nav">
+                <ul class="nav-links">
+                    <li>
+                        <a class="nav-link" data-scroll href="/index.html#about-sec">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-scroll href="/nmc/">NMC</a>
+                    </li>
+                </ul>
+                <label class="toggle">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Drawer for side nav -->
+        <!-- <Drawer name={about.name} avatar={about.avatar} social={about.social} isOpen={isOpen} setIsOpen={setIsOpen} /> -->
+        <div id="nav-drawer-backdrop" class="drawer-backdrop">
+
+            <nav id="nav-drawer" aria-label="side-nav">
+                <div id="drawer-profile-wrap">
+                    <!-- For the X in the side nav -->
+                    <div id="drawer-toggle-btn-wrapper">
+                        <button type="button" class="drawer-toggle-btn" aria-label="Toggle menu">
+                            <svg width="20" height="20" viewBox="0 0 23 23">
+                                <path fill="transparent" stroke-width="2.5" stroke="var(--accent)"
+                                    stroke-linecap="round" d="M 3 16.5 L 17 2.5" class="menu-toggle-path">
+                                </path>
+                                <path fill="transparent" stroke-width="2.5" stroke="var(--accent)"
+                                    stroke-linecap="round" d="M 2 9.423 L 20 9.423"
+                                    style="opacity: 0; transition-duration: 0.1" class="menu-toggle-path">
+                                </path>
+                                <path fill="transparent" stroke-width="2.5" stroke="var(--accent)"
+                                    stroke-linecap="round" d="M 3 2.5 L 17 16.346" class="menu-toggle-path">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Image + socials -->
+                    <img src="/images/logos/accent-dark-logo.png" alt="JMB Logo" id="img-drawer" width="150"
+                        height="150">
+                    <p id="drawer-name">Jayden Burrows</p>
+                    <ul class="social-list">
+                        <li>
+                            <a href="https://tryhackme.com/p/jaydenmburrows" class="social-link">
+                                <svg viewBox="0 0 24 24" class="social-svg tryhackme"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.705 0C7.54 0 4.902 2.285 4.349 5.291a4.525 4.525 0 0 0-4.107 4.5a4.525 4.525 0 0 0 4.52 4.52h6.761a.625.625 0 1 0 0-1.25H4.761a3.273 3.273 0 0 1-3.27-3.27A3.273 3.273 0 0 1 6.59 7.08a.625.625 0 0 0 .7-1.035a4.5 4.5 0 0 0-1.68-.69a5.22 5.22 0 0 1 5.096-4.104a5.22 5.22 0 0 1 5.174 4.57a5 5 0 0 0-.488.305a.625.625 0 1 0 .731 1.013a3.25 3.25 0 0 1 1.912-.616a3.28 3.28 0 0 1 3.203 2.61a.625.625 0 0 0 1.225-.251a4.53 4.53 0 0 0-4.428-3.61a4.5 4.5 0 0 0-.958.105C16.556 2.328 13.9 0 10.705 0m5.192 10.64a.9.9 0 0 0-.462.108a.9.9 0 0 0-.313.29a1.3 1.3 0 0 0-.175.427a2.4 2.4 0 0 0-.054.514q0 .271.054.517q.055.246.175.43a.9.9 0 0 0 .313.297q.19.11.462.11q.27 0 .46-.11a.9.9 0 0 0 .309-.296q.12-.185.173-.431q.054-.246.054-.517q0-.27-.054-.514a1.3 1.3 0 0 0-.173-.426a.9.9 0 0 0-.309-.291a.9.9 0 0 0-.46-.108m6.486 0a.9.9 0 0 0-.462.108a.9.9 0 0 0-.313.29a1.3 1.3 0 0 0-.175.427a2.4 2.4 0 0 0-.053.514q0 .271.053.517q.055.246.175.43a.9.9 0 0 0 .313.297q.19.11.462.11q.27 0 .46-.11a.9.9 0 0 0 .31-.296q.117-.185.172-.431t.054-.517q0-.27-.054-.514a1.3 1.3 0 0 0-.173-.426a.9.9 0 0 0-.308-.291a.9.9 0 0 0-.461-.108m-8.537.068l-.84.618l.313.43l.476-.368v1.877h.603v-2.557zm6.486 0l-.841.618l.314.43l.477-.368v1.877h.603v-2.557zm-4.435.445q.119 0 .193.084q.074.085.114.21q.039.125.054.269a2.5 2.5 0 0 1 0 .533q-.015.145-.054.27a.6.6 0 0 1-.114.21a.24.24 0 0 1-.193.085a.25.25 0 0 1-.195-.086a.6.6 0 0 1-.118-.209a1.3 1.3 0 0 1-.056-.27a2.7 2.7 0 0 1 0-.533q.015-.144.056-.27a.6.6 0 0 1 .118-.209a.25.25 0 0 1 .195-.084m6.486 0q.12 0 .193.084q.074.085.114.21t.054.269a2.5 2.5 0 0 1 0 .533q-.014.145-.054.27a.6.6 0 0 1-.114.21a.24.24 0 0 1-.193.085a.25.25 0 0 1-.195-.086a.6.6 0 0 1-.117-.209a1.3 1.3 0 0 1-.056-.27a2.6 2.6 0 0 1 0-.533q.014-.144.056-.27a.6.6 0 0 1 .117-.209a.25.25 0 0 1 .195-.084m-2.191 3.51a.93.93 0 0 0-.463.109a.9.9 0 0 0-.312.291q-.12.182-.175.426a2.4 2.4 0 0 0-.054.514q0 .27.054.516t.175.432a.9.9 0 0 0 .312.296a.9.9 0 0 0 .463.11q.27 0 .46-.11a.9.9 0 0 0 .308-.296a1.3 1.3 0 0 0 .174-.432q.054-.245.054-.516q0-.27-.054-.514a1.3 1.3 0 0 0-.174-.426a.9.9 0 0 0-.309-.291a.9.9 0 0 0-.46-.108zm-6.402.07l-.841.617l.314.43l.476-.369v1.878h.604v-2.557zm2.125 0l-.841.617l.314.43l.477-.369v1.878h.603v-2.557zm2.116 0l-.84.617l.313.43l.477-.369v1.878h.603v-2.557zm2.16.443q.12 0 .194.085a.6.6 0 0 1 .114.21q.04.124.053.269a2.6 2.6 0 0 1 0 .532a1.3 1.3 0 0 1-.053.27a.6.6 0 0 1-.114.21a.24.24 0 0 1-.193.085a.25.25 0 0 1-.196-.085a.6.6 0 0 1-.117-.21a1.3 1.3 0 0 1-.056-.27a2.6 2.6 0 0 1 0-.532q.014-.145.056-.27a.6.6 0 0 1 .117-.209a.25.25 0 0 1 .196-.085zm-6.729 3.073a.7.7 0 0 0-.335.078a.66.66 0 0 0-.227.211a.9.9 0 0 0-.127.31q-.04.177-.04.373c0 .196.013.256.04.375a.9.9 0 0 0 .127.313a.65.65 0 0 0 .227.215q.138.08.335.08a.66.66 0 0 0 .334-.08a.65.65 0 0 0 .225-.215q.086-.135.125-.313a2 2 0 0 0 .04-.375q0-.195-.04-.373a.9.9 0 0 0-.125-.31a.66.66 0 0 0-.225-.21a.7.7 0 0 0-.334-.08zm3.086 0a.7.7 0 0 0-.336.078a.66.66 0 0 0-.226.211a.9.9 0 0 0-.127.31a1.7 1.7 0 0 0-.04.373q0 .197.04.375a.9.9 0 0 0 .127.313q.088.135.226.215q.14.08.336.08a.66.66 0 0 0 .334-.08a.65.65 0 0 0 .224-.215q.087-.135.126-.313a1.75 1.75 0 0 0 0-.748a1 1 0 0 0-.126-.31a.66.66 0 0 0-.224-.21a.7.7 0 0 0-.334-.08zm5.108 0a.7.7 0 0 0-.336.078a.66.66 0 0 0-.226.211a.9.9 0 0 0-.127.31q-.04.177-.04.373c0 .196.013.256.04.375a.9.9 0 0 0 .127.313q.087.135.226.215q.14.08.336.08t.334-.08a.65.65 0 0 0 .224-.215q.087-.135.126-.313a2 2 0 0 0 .04-.375q0-.195-.04-.373a1 1 0 0 0-.126-.31a.66.66 0 0 0-.224-.21a.7.7 0 0 0-.334-.08zm-6.658.05l-.61.448l.227.311l.346-.266v1.362h.438v-1.856zm3.068 0l-.61.448l.227.311l.346-.266v1.362h.438v-1.856zm5.108 0l-.611.448l.228.311l.346-.266v1.362h.438v-1.856zm-9.712.322q.087 0 .14.062a.4.4 0 0 1 .083.151a1 1 0 0 1 .04.196a2 2 0 0 1 0 .386a1 1 0 0 1-.04.197a.4.4 0 0 1-.083.152a.18.18 0 0 1-.14.061a.18.18 0 0 1-.141-.06a.4.4 0 0 1-.085-.153a1 1 0 0 1-.041-.197a2 2 0 0 1 0-.386a1 1 0 0 1 .04-.196a.4.4 0 0 1 .086-.151a.18.18 0 0 1 .141-.062m3.086 0q.086 0 .14.062a.4.4 0 0 1 .082.151a1 1 0 0 1 .04.196a2 2 0 0 1 0 .386a1 1 0 0 1-.04.197a.4.4 0 0 1-.082.152a.18.18 0 0 1-.14.061a.18.18 0 0 1-.141-.06a.4.4 0 0 1-.086-.153a1 1 0 0 1-.04-.197a2 2 0 0 1-.011-.195q0-.086.01-.191a1 1 0 0 1 .041-.196a.4.4 0 0 1 .086-.151a.18.18 0 0 1 .141-.062m5.108 0q.087 0 .14.062a.4.4 0 0 1 .082.151a1 1 0 0 1 .04.196a2 2 0 0 1 0 .386a1 1 0 0 1-.04.197a.4.4 0 0 1-.082.152a.18.18 0 0 1-.14.061a.18.18 0 0 1-.142-.06a.4.4 0 0 1-.085-.153a1 1 0 0 1-.04-.197a2 2 0 0 1-.011-.195q0-.086.01-.191a1 1 0 0 1 .04-.196a.5.5 0 0 1 .086-.151a.18.18 0 0 1 .142-.062m-1.684 1.814a.7.7 0 0 0-.336.079a.66.66 0 0 0-.227.21a.9.9 0 0 0-.127.31a1.7 1.7 0 0 0 0 .748a1 1 0 0 0 .127.314q.088.135.227.215q.14.08.336.08a.66.66 0 0 0 .334-.08a.65.65 0 0 0 .224-.215q.087-.135.126-.314a1.7 1.7 0 0 0-.001-.747a.9.9 0 0 0-.125-.31a.65.65 0 0 0-.224-.211a.7.7 0 0 0-.334-.079m3.063 0a.7.7 0 0 0-.336.079a.7.7 0 0 0-.227.21a.9.9 0 0 0-.127.31a1.7 1.7 0 0 0 0 .748a.9.9 0 0 0 .127.314a.66.66 0 0 0 .227.215q.138.08.336.08a.65.65 0 0 0 .334-.08a.65.65 0 0 0 .223-.215q.087-.135.126-.314a1.7 1.7 0 0 0 0-.747a.9.9 0 0 0-.126-.31a.65.65 0 0 0-.223-.211a.7.7 0 0 0-.334-.079m-1.545.05l-.611.448l.228.312l.346-.267v1.363h.438v-1.856zm-1.518.323q.086 0 .14.061a.4.4 0 0 1 .082.152a1 1 0 0 1 .04.195a2 2 0 0 1 0 .387a1 1 0 0 1-.04.197a.4.4 0 0 1-.082.152a.18.18 0 0 1-.14.06a.18.18 0 0 1-.142-.06a.4.4 0 0 1-.085-.152a1 1 0 0 1-.04-.197a2 2 0 0 1-.011-.195q0-.087.01-.192a1 1 0 0 1 .041-.195q.03-.09.085-.152a.18.18 0 0 1 .142-.061m3.063 0q.086 0 .14.061a.4.4 0 0 1 .082.152a1 1 0 0 1 .04.195a2 2 0 0 1 0 .387a1 1 0 0 1-.04.197a.4.4 0 0 1-.083.152a.18.18 0 0 1-.14.06a.18.18 0 0 1-.141-.06a.4.4 0 0 1-.085-.152a1 1 0 0 1-.04-.197a2 2 0 0 1 0-.387a1 1 0 0 1 .04-.195q.03-.09.085-.152a.18.18 0 0 1 .142-.061m-9.713.185a.5.5 0 0 0-.232.055a.46.46 0 0 0-.157.146a.6.6 0 0 0-.089.215a1.2 1.2 0 0 0-.027.259q0 .135.027.26a.7.7 0 0 0 .089.216q.06.094.157.149a.46.46 0 0 0 .232.056q.136-.001.231-.056a.45.45 0 0 0 .156-.149a.7.7 0 0 0 .087-.217a1.2 1.2 0 0 0 0-.518a.7.7 0 0 0-.087-.215a.45.45 0 0 0-.156-.146a.46.46 0 0 0-.23-.055zm1.052.035l-.423.31l.158.217l.24-.185v.944h.303v-1.286zm-1.052.224q.06 0 .097.042a.3.3 0 0 1 .057.105a.7.7 0 0 1 .028.136q.006.073.007.133q0 .06-.007.135a.7.7 0 0 1-.028.136a.3.3 0 0 1-.057.105a.12.12 0 0 1-.097.043a.13.13 0 0 1-.098-.043a.3.3 0 0 1-.059-.105a.6.6 0 0 1-.028-.136a1.4 1.4 0 0 1 0-.268a.6.6 0 0 1 .028-.136a.3.3 0 0 1 .06-.105a.13.13 0 0 1 .097-.042m3.775 1.394a.46.46 0 0 0-.232.054a.45.45 0 0 0-.157.146a.6.6 0 0 0-.088.214a1.2 1.2 0 0 0 0 .519a.6.6 0 0 0 .088.217a.46.46 0 0 0 .157.15a.46.46 0 0 0 .232.054a.45.45 0 0 0 .232-.055a.45.45 0 0 0 .155-.149a.7.7 0 0 0 .087-.217a1.2 1.2 0 0 0 0-.519a.6.6 0 0 0-.087-.214a.45.45 0 0 0-.155-.146a.46.46 0 0 0-.232-.054m1.052.034l-.423.31l.158.216l.24-.185v.945h.303V22.68zm-1.052.223q.06 0 .098.043a.3.3 0 0 1 .057.105a.6.6 0 0 1 .027.135a1.3 1.3 0 0 1 0 .268a.7.7 0 0 1-.027.137a.3.3 0 0 1-.057.105a.12.12 0 0 1-.098.042a.13.13 0 0 1-.098-.042a.3.3 0 0 1-.059-.105a.6.6 0 0 1-.028-.137a1.4 1.4 0 0 1 0-.268a.6.6 0 0 1 .028-.135a.3.3 0 0 1 .06-.105a.12.12 0 0 1 .097-.043" />
+                                </svg>
+                                <span class="tooltip">tryhackme</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://app.hackthebox.com/public/users/2675413" class="social-link">
+                                <svg viewBox="0 0 24 24" class="social-svg hackthebox"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m22.51 6.457l.001-.013a.9.9 0 0 0-.271-.638l-.027-.024q-.028-.025-.057-.048q-.03-.022-.06-.04l-.029-.02l-9.61-5.547a.89.89 0 0 0-.922.004L1.933 5.674l-.03.02l-.023.014l-.02.015a1 1 0 0 0-.147.134l-.003.003a.9.9 0 0 0-.221.584v.014l-.001.027v11.07c0 .328.18.63.469.784l9.599 5.542l.023.011a1 1 0 0 0 .166.07l.04.01l.072.015l.035.006a.8.8 0 0 0 .216 0q.018-.002.035-.006l.072-.014l.04-.012l.064-.022a1 1 0 0 0 .102-.047l.023-.011l9.599-5.542a.89.89 0 0 0 .469-.784V6.478zM5.255 6.082l6.537-3.774a.42.42 0 0 1 .418 0l6.537 3.774a.418.418 0 0 1 0 .725l-6.537 3.774a.42.42 0 0 1-.418 0L5.254 6.807a.418.418 0 0 1 0-.725m5.614 14.345a.417.417 0 0 1-.626.361l-6.524-3.766a.42.42 0 0 1-.209-.361V9.127a.417.417 0 0 1 .626-.361l6.524 3.766a.42.42 0 0 1 .209.362zm9.623-3.766a.42.42 0 0 1-.209.36l-6.524 3.767a.417.417 0 0 1-.626-.36v-7.533c0-.15.08-.287.209-.362l6.524-3.766a.417.417 0 0 1 .626.36z" />
+                                </svg>
+                                <span class="tooltip">hackthebox</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.linkedin.com/in/jayden-burrows/" class="social-link">
+                                <svg viewBox="0 0 24 24" class="social-svg linkedin" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.06 2.06 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065m1.782 13.019H3.555V9h3.564zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z" />
+                                </svg>
+                                <span class="tooltip">linkedin</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com/Jburrows-dev/" class="social-link">
+                                <svg viewBox="0 0 24 24" class="social-svg github" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                </svg>
+                                <span class="tooltip">github</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Page Links -->
+                <ul class="drawer-navigation">
+                    <li>
+                        <a class="drawer-nav-link" data-scroll href="/index.html#about-sec">
+                            <i class="zmdi zmdi-border-color pr-15"></i>
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="drawer-nav-link" data-scroll href="/nmc/">
+                            <i class="zmdi zmdi-folder pr-15"></i>
+                            <span>NMC</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- <p id="drawer-footer">Jayden Burrows © 2026.</p> -->
+            </nav>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <p class="course-code">CSCI 4260/6260</p>
+            <h1>Data Security &amp; Privacy</h1>
+            <p class="subtitle">A complete summary of slides, notes, handwritten notes, and homework</p>
+            <nav role="toc" class="toc">
+                <a href="#foundations">Foundations</a>
+                <a href="#math">Math Background</a>
+                <a href="#learning">Statistical Learning</a>
+                <a href="#gd">Gradient Descent</a>
+                <a href="#adversarial">Adversarial Attacks</a>
+                <a href="#llm">LLM Attacks</a>
+                <a href="#defense">Adversarial Defense</a>
+                <a href="#fl">Federated Learning</a>
+                <a href="#he">Homomorphic Encryption</a>
+                <a href="#privacy">Data Privacy</a>
+                <a href="#tradeoffs">Trade-offs</a>
+                <a href="#formulas">Formula Sheet</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- 1. FOUNDATIONS -->
+        <section id="foundations">
+            <h2>1. Foundations &amp; Course Scope</h2>
+            <p>This course is <strong>not</strong> classical computer security (malware, viruses, network attacks). It
+                focuses on <strong>security and privacy of AI/ML systems</strong>.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Core Modules</h3>
+                    <ul>
+                        <li><strong>Information security:</strong> CIA triad, cryptographic building blocks.</li>
+                        <li><strong>Attacking AI systems:</strong> Adversarial examples, LLM jailbreaks.</li>
+                        <li><strong>Secure &amp; private learning:</strong> Federated learning, homomorphic encryption.
+                        </li>
+                        <li><strong>Data privacy:</strong> Anonymization, differential privacy, privacy-preserving ML.
+                        </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>What Can Go Wrong (Beyond Accuracy)</h3>
+                    <ul>
+                        <li><strong>Evasion attacks:</strong> Small perturbations cause misclassification.</li>
+                        <li><strong>Data poisoning:</strong> Corrupt training data.</li>
+                        <li><strong>Privacy leakage:</strong> Reconstruction, membership inference, attribute inference.
+                        </li>
+                        <li><strong>Data extraction:</strong> LLMs memorize and regurgitate training data.</li>
+                        <li><strong>Gradient inversion:</strong> Recover training data from shared gradients in FL.</li>
+                        <li><strong>De-anonymization:</strong> Netflix Prize linkage to IMDb.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout">
+                <p><strong>Key idea:</strong> Data staying local does not mean data staying private. Federated learning
+                    keeps raw data on devices, but the updates (gradients/parameters) still leak information.</p>
+            </div>
+        </section>
+
+        <!-- 2. MATH BACKGROUND -->
+        <section id="math">
+            <h2>2. Mathematical Background</h2>
+
+            <h3>2.1 Linear Algebra</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Vectors &amp; Norms</h4>
+                    <ul>
+                        <li><strong>L0 norm:</strong> # of non-zero elements.</li>
+                        <li><strong>L1 norm:</strong> \(\|x\|_1 = \sum |x_i|\) (Manhattan).</li>
+                        <li><strong>L2 norm:</strong> \(\|x\|_2 = \sqrt{\sum x_i^2}\) (Euclidean).</li>
+                        <li><strong>L∞ norm:</strong> \(\|x\|_\infty = \max |x_i|\).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Inner Product &amp; Matrices</h4>
+                    <ul>
+                        <li><strong>Inner product:</strong> \(\langle x, y \rangle = x^T y = \sum x_i y_i\).</li>
+                        <li><strong>Transpose:</strong> \((A^T)_{ij} = A_{ji}\).</li>
+                        <li><strong>Matrix product:</strong> \(C_{ij} = \sum_k A_{ik} B_{kj}\).</li>
+                        <li>\(AB \neq BA\) in general.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>2.2 Probability</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Conditional Probability &amp; Bayes</h4>
+                    <p>\[
+                        P(A|B) = \frac{P(A \cap B)}{P(B)}
+                        \]</p>
+                    <p>\[
+                        P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+                        \]</p>
+                </div>
+                <div class="card">
+                    <h4>Expectation, Variance, Covariance</h4>
+                    <ul>
+                        <li>\(\mathbb{E}[X] = \sum x p(x)\)</li>
+                        <li>\(\text{Var}(X) = \mathbb{E}[(X-\mu)^2] = \mathbb{E}[X^2] - (\mathbb{E}[X])^2\)</li>
+                        <li>\(\text{Cov}(X,Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]\)</li>
+                        <li>Independent \(\Rightarrow\) Cov = 0, but Cov = 0 does <em>not</em> imply independence.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout">
+                <p><strong>Risk analysis:</strong> \(\text{risk} = \mathbb{E}[\text{loss}] = \sum_{\text{threats}}
+                    \text{loss} \times P[\text{threat}]\).</p>
+            </div>
+
+            <h3>2.3 Calculus &amp; Optimization</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Derivative &amp; Gradient</h4>
+                    <p>\[
+                        f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
+                        \]</p>
+                    <p>\[
+                        \nabla f(x) = \left[\frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial
+                        x_p}\right]^T
+                        \]</p>
+                </div>
+                <div class="card">
+                    <h4>Taylor Approximation</h4>
+                    <p>Second-order around \(x_0\):</p>
+                    <p>\[
+                        f(x) \approx f(x_0) + \nabla f(x_0)^T(x-x_0) + \frac{1}{2}(x-x_0)^T \nabla^2 f(x_0)(x-x_0)
+                        \]</p>
+                </div>
+                <div class="card">
+                    <h4>Convexity</h4>
+                    <p>\(f\) is convex if:</p>
+                    <p>\[
+                        f(\alpha x + (1-\alpha)y) \leq \alpha f(x) + (1-\alpha)f(y)
+                        \]</p>
+                    <p>For differentiable \(f\): \(f(y) \geq f(x) + \nabla f(x)^T(y-x)\).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. STATISTICAL LEARNING -->
+        <section id="learning">
+            <h2>3. Statistical Learning &amp; Models</h2>
+
+            <h3>3.1 Setup</h3>
+            <p>We have data \((X, Y) \sim P\), i.i.d. draws. A model \(f_\theta \in \mathcal{H}\) learns a mapping \(X
+                \to Y\).</p>
+            <ul>
+                <li><strong>Loss function</strong> \(\ell(y, \hat{y})\): measures prediction error.</li>
+                <li><strong>Risk</strong> \(R(f_\theta) = \mathbb{E}[\ell(f_\theta(X), Y)]\): expected loss on
+                    population.</li>
+                <li><strong>Empirical Risk Minimization (ERM):</strong> \(\hat{\theta} = \arg\min_\theta
+                    \frac{1}{n}\sum_{i=1}^n \ell(f_\theta(x_i), y_i)\).</li>
+            </ul>
+
+            <h3>3.2 Linear Regression</h3>
+            <div class="card">
+                <p>Model: \(y = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p + \epsilon\)</p>
+                <p>Loss (L2): \(L(\beta) = \frac{1}{2n}\|X\beta - y\|_2^2\)</p>
+                <p>Closed form: \(\hat{\beta} = (X^T X)^{-1} X^T y\)</p>
+                <p>Gradient descent update: \(\beta^{(t)} = \beta^{(t-1)} - \frac{\eta}{n}\sum_i ((\beta^{(t-1)})^T x_i
+                    - y_i)x_i\)</p>
+            </div>
+
+            <h3>3.3 Logistic Regression</h3>
+            <div class="card">
+                <p>Model: \(P[Y=1|X=x] = \sigma(\beta^T x) = \frac{1}{1 + e^{-\beta^T x}}\)</p>
+                <p>Loss (binary cross-entropy): \(-\sum_i [y_i \log \hat{y}_i + (1-y_i)\log(1-\hat{y}_i)]\)</p>
+                <p>Decision boundary: \(\beta^T x = 0\)</p>
+            </div>
+
+            <h3>3.4 Multi-class Classification</h3>
+            <div class="card">
+                <p>Softmax: \(P[Y=k|X=x] = \frac{e^{z_k}}{\sum_j e^{z_j}}\) where \(z = Wx + b\).</p>
+                <p>Softmax is <strong>shift-invariant</strong>: adding a uniform offset to logits does not change
+                    probabilities.</p>
+            </div>
+        </section>
+
+        <!-- 4. GRADIENT DESCENT -->
+        <section id="gd">
+            <h2>4. Gradient Descent &amp; SGD</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Gradient Descent</h4>
+                    <p>Update: \(x_{t+1} = x_t - \eta \nabla f(x_t)\)</p>
+                    <p>\(\eta\) = step size / learning rate.</p>
+                </div>
+                <div class="card">
+                    <h4>Stochastic Gradient Descent (SGD)</h4>
+                    <p>Use a mini-batch \(B\): \(g(\theta) = \frac{1}{|B|}\sum_{i\in B} \nabla \ell(f_\theta(x_i),
+                        y_i)\)</p>
+                    <p>Update: \(\theta_{t+1} = \theta_t - \eta g_t\)</p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <p><strong>GD as surrogate optimization:</strong> Approximate \(f\) by a second-order Taylor model with
+                    Hessian \(\frac{1}{\eta}I\), minimize it to get the GD update.</p>
+            </div>
+
+            <h3>Step Size Trade-off</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Small \(\eta\)</th>
+                        <th>Large \(\eta\)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Slow progress, many iterations</td>
+                        <td>Big progress, but overshooting and zig-zagging</td>
+                    </tr>
+                    <tr>
+                        <td>More likely to converge</td>
+                        <td>May diverge</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5. ADVERSARIAL ATTACKS -->
+        <section id="adversarial">
+            <h2>5. Adversarial Attacks on ML Models</h2>
+
+            <h3>5.1 Definition</h3>
+            <div class="card">
+                <p>Adversarial example \(x_{\text{adv}} = x_{\text{og}} + \delta\) such that:</p>
+                <ol>
+                    <li><strong>Misclassification:</strong> \(f(x_{\text{adv}}) \neq f(x_{\text{og}})\)</li>
+                    <li><strong>Proximity:</strong> \(\|\delta\| \leq \epsilon\) (small perturbation)</li>
+                </ol>
+                <p><strong>Targeted:</strong> \(f(x_{\text{adv}}) = y_{\text{target}}\) &nbsp;|&nbsp;
+                    <strong>Untargeted:</strong> \(f(x_{\text{adv}}) \neq y_{\text{og}}\)
+                </p>
+            </div>
+
+            <h3>5.2 FGSM (Fast Gradient Sign Method)</h3>
+            <div class="card">
+                <p>Linear classifier: \(x_{\text{adv}} = x_{\text{og}} + \epsilon \cdot \text{sign}(w)\)</p>
+                <p>General nonlinear: \(x_{\text{adv}} = x_{\text{og}} + \epsilon \cdot \text{sign}(\nabla_x J(\theta,
+                    x_{\text{og}}, y))\)</p>
+                <p>One-step method; fast but coarse.</p>
+            </div>
+
+            <h3>5.3 I-FGSM (Iterative FGSM)</h3>
+            <div class="card">
+                <p>\(x_{i+1}^{\text{adv}} = \text{clip}_{[0,1]}(x_i^{\text{adv}} + \epsilon \cdot \text{sign}(\nabla_x
+                    J(\theta, x_i^{\text{adv}}, y)))\)</p>
+                <p>Multiple small steps with clipping; stronger and finer than FGSM.</p>
+            </div>
+
+            <h3>5.4 DeepFool</h3>
+            <div class="card">
+                <p>Finds minimal perturbation to cross decision boundary.</p>
+                <p>Linear: \(x_{\text{adv}} = x_0 - \frac{f(x_0)}{\|w\|_2^2}w\)</p>
+                <p>Nonlinear: iterate \(x_{t+1} = x_t - \frac{f(x_t)}{\|\nabla f(x_t)\|_2^2}\nabla f(x_t)\)</p>
+            </div>
+
+            <h3>5.5 Boundary Attack (black-box, decision-based)</h3>
+            <div class="card">
+                <p>Start from an adversarial point; random walk along decision boundary, shrinking toward original.</p>
+                <p>Needs only the final label; query-hungry.</p>
+            </div>
+
+            <h3>5.6 Mimicry Attack</h3>
+            <div class="card">
+                <p>Favor attack points from dense regions of legitimate data using KDE:</p>
+                <p>\(\min_x F(x) = g(x) - \lambda \frac{1}{n}\sum_{i:y_i=-1} K\left(\frac{x-x_i}{h}\right)\)</p>
+                <p>Subject to \(\text{dist}(x, x_0) &lt; d_{\max}\).</p>
+            </div>
+
+            <h3>5.7 Kernel Density Estimation (KDE)</h3>
+            <div class="card">
+                <p>\(\hat{f}(x) = \frac{1}{nh}\sum_{i=1}^n K\left(\frac{x-x_i}{h}\right)\)</p>
+                <p>Bandwidth \(h\) controls smoothness:</p>
+                <ul>
+                    <li><strong>Small \(h\):</strong> spiky, overfits, high variance.</li>
+                    <li><strong>Large \(h\):</strong> over-smoothed, high bias, hides structure.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. LLM ATTACKS -->
+        <section id="llm">
+            <h2>6. Adversarial Attacks on LLMs</h2>
+
+            <h3>6.1 Tokenization &amp; Embeddings</h3>
+            <div class="card">
+                <p>LLMs use subword tokenization (BPE, WordPiece). Each token maps to an embedding vector.</p>
+                <p>Similarity: \(\cos\theta = \frac{e_{\text{cat}}^T
+                    e_{\text{dog}}}{\|e_{\text{cat}}\|\|e_{\text{dog}}\|}\)</p>
+            </div>
+
+            <h3>6.2 Jailbreaks &amp; GCG Attack</h3>
+            <div class="card">
+                <p>Goal: append adversarial suffix so aligned model answers harmful request.</p>
+                <p>Maximize \(P[\text{"Sure, here is how to..."} | \text{prompt} + \text{suffix}]\).</p>
+                <p>GCG works in hard-token space using gradient w.r.t. one-hot encodings:</p>
+                <p>\(\nabla_x \mathcal{L} = \Phi^T \nabla_e \mathcal{L}\)</p>
+            </div>
+
+            <h3>6.3 Hard vs. Soft Prompts</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Hard Prompt</th>
+                        <th>Soft Prompt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Form</td>
+                        <td>Real, interpretable tokens</td>
+                        <td>Continuous embeddings</td>
+                    </tr>
+                    <tr>
+                        <td>Optimization</td>
+                        <td>Discrete search (GCG, PEZ)</td>
+                        <td>Gradient-based</td>
+                    </tr>
+                    <tr>
+                        <td>Portability</td>
+                        <td>Portable across models</td>
+                        <td>Not portable</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="card">
+                <p><strong>PEZ (hard prompt learning):</strong> Learn prompt \(P\) to match text embedding to target
+                    image embedding via CLIP:</p>
+                <p>\(\min_P \mathcal{L}(P) = 1 - \cos(f(P), g(x))\)</p>
+            </div>
+        </section>
+
+        <!-- 7. DEFENSE -->
+        <section id="defense">
+            <h2>7. Adversarial Defense</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Detection</h4>
+                    <p>Two-sample hypothesis testing: \(H_0: P = Q\) vs. \(H_1: P \neq Q\).</p>
+                    <p>Limitation: needs a large batch of adversarial examples.</p>
+                </div>
+                <div class="card">
+                    <h4>Pre-processing</h4>
+                    <p>Transform input to remove perturbations: cropping, rescaling, bit-depth reduction, JPEG, Total
+                        Variation Minimization.</p>
+                </div>
+                <div class="card">
+                    <h4>Adversarial Training</h4>
+                    <p>\(\min_\theta \mathbb{E}_{(x,y)} [\max_{\delta \in S} \ell(f_\theta(x+\delta), y)]\)</p>
+                    <p>Inner max = attack; outer min = defense.</p>
+                </div>
+                <div class="card">
+                    <h4>Defensive Distillation</h4>
+                    <p>Train student on soft labels from teacher with temperature \(T\).</p>
+                    <p>High \(T\) smooths outputs and reduces adversarial gradients.</p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <p><strong>Trade-off:</strong> Adversarial training is costly and may reduce clean accuracy.
+                    Pre-processing can destroy useful detail.</p>
+            </div>
+        </section>
+
+        <!-- 8. FEDERATED LEARNING -->
+        <section id="fl">
+            <h2>8. Federated Learning (FL)</h2>
+
+            <h3>8.1 Setup</h3>
+            <div class="card">
+                <p>\(K\) clients, each with local data \(D_k\). Server aggregates updates without seeing raw data.</p>
+                <p>Goal: \(\min_w f(w) = \sum_{k=1}^K \frac{n_k}{n} F_k(w)\)</p>
+            </div>
+
+            <h3>8.2 FedSGD vs. FedAvg</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>FedSGD</h4>
+                    <p>Each client does 1 local gradient step; server averages.</p>
+                    <p>Equivalent to centralized GD on the union of data.</p>
+                </div>
+                <div class="card">
+                    <h4>FedAvg</h4>
+                    <p>Each client does \(M\) local SGD steps; server averages parameters.</p>
+                    <p>Fewer communication rounds but client drift on non-IID data.</p>
+                </div>
+            </div>
+
+            <h3>8.3 Non-IID Data Challenge</h3>
+            <div class="card">
+                <p>With non-IID data and large \(M\), local models drift toward local optima, slowing global
+                    convergence.</p>
+                <p>When \(M = 1\), IID and non-IID results coincide (FedSGD = centralized GD).</p>
+            </div>
+
+            <h3>8.4 Hyperparameter Trade-offs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hyperparameter</th>
+                        <th>Lower value</th>
+                        <th>Higher value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>C</strong> (client fraction)</td>
+                        <td>Cheaper rounds, noisier aggregate</td>
+                        <td>Stable aggregate, more computation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>M</strong> (local updates)</td>
+                        <td>More communication, no drift</td>
+                        <td>Fewer rounds, client drift on non-IID</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B</strong> (mini-batch size)</td>
+                        <td>Noisy gradients, cheap steps</td>
+                        <td>Smooth gradients, costly steps</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 9. HOMOMORPHIC ENCRYPTION -->
+        <section id="he">
+            <h2>9. Homomorphic Encryption (HE)</h2>
+
+            <div class="card">
+                <p>Property: \(f(\text{Enc}(m,k)) = \text{Enc}(f(m),k)\)</p>
+                <p>Allows server to compute on encrypted data without seeing it.</p>
+            </div>
+
+            <div class="callout">
+                <p><strong>Trade-off:</strong> Strong privacy but very slow and supports limited operations.</p>
+            </div>
+
+            <h3>Example: \(x + y\) without sharing data</h3>
+            <div class="card">
+                <p>Worker 1 encrypts \(x\), Worker 2 encrypts \(y\). Server computes on ciphertexts. Only key holder
+                    decrypts.</p>
+                <p>But ordinary encryption breaks computation: \(x' + y' \neq \text{Enc}(x+y)\) in general.</p>
+            </div>
+        </section>
+
+        <!-- 10. DATA PRIVACY -->
+        <section id="privacy">
+            <h2>10. Data Privacy &amp; Cryptography</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Anonymization Isn't Enough</h4>
+                    <p>Netflix Prize: linked "anonymous" ratings to IMDb profiles (Narayanan &amp; Shmatikov, 2008).</p>
+                </div>
+                <div class="card">
+                    <h4>Cryptography</h4>
+                    <p>Alice sends \(m\) to Bob; Eve eavesdrops.</p>
+                    <p>\(C = \text{Enc}(k, m)\), \(m = \text{Dec}(k, C)\).</p>
+                    <p>CIA triad: confidentiality, integrity, availability.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. TRADE-OFFS -->
+        <section id="tradeoffs">
+            <h2>11. Master Table of Trade-offs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Knob</th>
+                        <th>Too small / weak</th>
+                        <th>Too large / strong</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Step size \(\eta\)</td>
+                        <td>Slow, many iterations</td>
+                        <td>Overshoot, zig-zag, divergence</td>
+                    </tr>
+                    <tr>
+                        <td>Mini-batch \(B\)</td>
+                        <td>Noisy gradients, cheap</td>
+                        <td>Accurate, costly, diminishing returns</td>
+                    </tr>
+                    <tr>
+                        <td>KDE bandwidth \(h\)</td>
+                        <td>Spiky, high variance</td>
+                        <td>Over-smoothed, high bias</td>
+                    </tr>
+                    <tr>
+                        <td>Mimicry weight \(\lambda\)</td>
+                        <td>May stall at local minimum</td>
+                        <td>Chases benign density, may lose evasion</td>
+                    </tr>
+                    <tr>
+                        <td>Perturbation \(\epsilon\)</td>
+                        <td>Attack fails</td>
+                        <td>Attack succeeds but visible</td>
+                    </tr>
+                    <tr>
+                        <td>Distillation \(T\)</td>
+                        <td>Sharp outputs, large gradients</td>
+                        <td>Uniform outputs, no signal</td>
+                    </tr>
+                    <tr>
+                        <td>FedAvg \(C\)</td>
+                        <td>Noisy, cheap rounds</td>
+                        <td>Stable, more computation</td>
+                    </tr>
+                    <tr>
+                        <td>FedAvg \(M\)</td>
+                        <td>Many communication rounds</td>
+                        <td>Fewer rounds, client drift</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 12. FORMULA SHEET -->
+        <section id="formulas">
+            <h2>12. Formula Sheet</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Formula</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bayes</td>
+                        <td>\(P(A|B) = \frac{P(B|A)P(A)}{P(B)}\)</td>
+                    </tr>
+                    <tr>
+                        <td>Expectation / Variance</td>
+                        <td>\(\mathbb{E}[X] = \sum x p(x)\), \(\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2\)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Risk</td>
+                        <td>\(\text{risk} = \sum \text{loss} \times P[\text{threat}]\)</td>
+                    </tr>
+                    <tr>
+                        <td>Linear Regression (closed form)</td>
+                        <td>\(\hat{\beta} = (X^T X)^{-1} X^T y\)</td>
+                    </tr>
+                    <tr>
+                        <td>Sigmoid / Softmax</td>
+                        <td>\(\sigma(z) = \frac{1}{1+e^{-z}}\), \(\text{softmax}(z)_k = \frac{e^{z_k}}{\sum_j e^{z_j}}\)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Binary Cross-Entropy</td>
+                        <td>\(-[y\log\hat{y} + (1-y)\log(1-\hat{y})]\)</td>
+                    </tr>
+                    <tr>
+                        <td>Gradient Descent / SGD</td>
+                        <td>\(x_{t+1} = x_t - \eta \nabla f(x_t)\), \(\theta_{t+1} = \theta_t - \eta g_t\)</td>
+                    </tr>
+                    <tr>
+                        <td>KDE</td>
+                        <td>\(\hat{f}(x) = \frac{1}{nh}\sum K\left(\frac{x-x_i}{h}\right)\)</td>
+                    </tr>
+                    <tr>
+                        <td>FGSM</td>
+                        <td>\(x_{\text{adv}} = x + \epsilon \cdot \text{sign}(\nabla_x J(\theta, x, y))\)</td>
+                    </tr>
+                    <tr>
+                        <td>DeepFool (linear)</td>
+                        <td>\(x_{\text{adv}} = x_0 - \frac{f(x_0)}{\|w\|^2}w\)</td>
+                    </tr>
+                    <tr>
+                        <td>Adversarial Training</td>
+                        <td>\(\min_\theta \mathbb{E}[\max_{\delta \in S} \ell(f_\theta(x+\delta), y)]\)</td>
+                    </tr>
+                    <tr>
+                        <td>Softmax with Temperature</td>
+                        <td>\(p_i = \frac{\exp(z_i/T)}{\sum_j \exp(z_j/T)}\)</td>
+                    </tr>
+                    <tr>
+                        <td>GCG Loss</td>
+                        <td>\(-\sum \log p(x_{n+i}|x_{1:n+i-1})\)</td>
+                    </tr>
+                    <tr>
+                        <td>PEZ Objective</td>
+                        <td>\(\min_P 1 - \cos(f(P), g(x))\)</td>
+                    </tr>
+                    <tr>
+                        <td>FedAvg Aggregation</td>
+                        <td>\(w_{t+1} = \sum_k \frac{n_k}{n} w_{t,M}^{(k)}\)</td>
+                    </tr>
+                    <tr>
+                        <td>Homomorphic Property</td>
+                        <td>\(f(\text{Enc}(m,k)) = \text{Enc}(f(m),k)\)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>CSCI 4260/6260 · Data Security &amp; Privacy · Course Notes</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+
+</html>

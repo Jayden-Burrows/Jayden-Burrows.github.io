@@ -183,18 +183,251 @@
         </div>
     </div>
 
-
-    <main>
-        <h1> Courses</h1>
-        <div id="courses">
-            <div class="course-card">
-                <i class="zmdi zmdi-language-javascript"></i>
-                <p>
-                    <a href="4020/">NMIX 4020 – Advanced Web Development</a>
-                </p>
-            </div>
+    <header class="site-header">
+        <div class="container header-content">
+            <h1>CSCI 4360 — Midterm Study Guide</h1>
+            <p class="subhead">Machine Learning Landscape · Ensembles · Dimensionality Reduction · Neural Networks</p>
         </div>
+    </header>
+
+
+    <main class="container">
+        <nav role="toc" class="toc" aria-label="Table of contents">
+            <h2>📌 Topics</h2>
+            <ul>
+                <li><a href="#ml-landscape">1. Machine Learning Landscape</a></li>
+                <li><a href="#ensembles">2. Ensemble Learning &amp; Random Forests</a></li>
+                <li><a href="#dim-reduction">3. Dimensionality Reduction</a></li>
+                <li><a href="#neural-nets">4. Neural Networks</a></li>
+            </ul>
+            <p class="exam-note">📋 25 multiple‑choice questions · No coding · LockDown Browser + Respondus Monitor</p>
+        </nav>
+
+        <section id="ml-landscape" class="card">
+            <h2>1. The Machine Learning Landscape</h2>
+            <p class="source">Based on <em>01_The_Machine_Learning_Landscape.pdf</em></p>
+
+            <h3>What is Machine Learning?</h3>
+            <p>Machine learning is the science (and art) of programming computers so they can <strong>learn from
+                    data</strong>. Instead of writing explicit rules, we train a model on examples.</p>
+
+            <h3>Types of Machine Learning</h3>
+            <ul>
+                <li><strong>Supervised</strong> – training data includes desired solutions (labels). Tasks:
+                    classification, regression.</li>
+                <li><strong>Unsupervised</strong> – no labels; discover hidden structure (clustering, visualization,
+                    dimensionality reduction, anomaly detection, association rules).</li>
+                <li><strong>Semi-supervised</strong> – partially labeled data; combine small labeled set with large
+                    unlabeled set.</li>
+                <li><strong>Self-supervised</strong> – labels generated automatically from unlabeled data (e.g., mask
+                    part of an image and reconstruct).</li>
+                <li><strong>Reinforcement learning</strong> – an agent interacts with an environment, learns a policy to
+                    maximize long-term reward.</li>
+            </ul>
+
+            <h3>Online vs. Batch Learning</h3>
+            <ul>
+                <li><strong>Batch learning</strong> – trained on the full dataset, typically offline; model does not
+                    learn after deployment. Retraining needed periodically.</li>
+                <li><strong>Online learning</strong> – model updates incrementally with new data (mini-batches).
+                    Supports continuous adaptation, out-of-core learning; learning rate controls adaptation speed.</li>
+            </ul>
+
+            <h3>Training / Validation / Testing Sets</h3>
+            <ul>
+                <li><strong>Training set</strong> – used to fit model parameters.</li>
+                <li><strong>Validation set</strong> – used to tune hyperparameters and select models (holdout
+                    validation).</li>
+                <li><strong>Test set</strong> – used only once to estimate generalization error on unseen data.</li>
+            </ul>
+            <div class="callout">
+                <p>⚠️ Tuning hyperparameters on the test set causes <em>overfitting to the test set</em>. Always use a
+                    separate validation set.</p>
+            </div>
+        </section>
+
+        <section id="ensembles" class="card">
+            <h2>2. Ensemble Learning &amp; Random Forests</h2>
+            <p class="source">Based on <em>06_Ensemble_Learning_and_Random_Forests.pdf</em></p>
+
+            <h3>Voting Classifiers</h3>
+            <ul>
+                <li><strong>Hard voting</strong> – majority vote among classifiers.</li>
+                <li><strong>Soft voting</strong> – weighted average based on predicted class probabilities; often
+                    performs better.</li>
+            </ul>
+
+            <h3>Bagging vs. Pasting</h3>
+            <ul>
+                <li><strong>Bagging</strong> – sampling <em>with</em> replacement (bootstrap aggregating).</li>
+                <li><strong>Pasting</strong> – sampling <em>without</em> replacement.</li>
+                <li>Feature sampling can also be used: <em>random patches</em> (instances + features) and <em>random
+                        subspaces</em> (features only).</li>
+            </ul>
+
+            <h3>Random Forest</h3>
+            <p>An ensemble of decision trees, each trained on a random subset of the data (bagging) and often using
+                random feature subsets. Final prediction by majority vote (classification) or averaging (regression).
+            </p>
+
+            <h3>Boosting</h3>
+            <ul>
+                <li><strong>AdaBoost</strong> – sequentially trains weak learners; misclassified instances get more
+                    weight. Predictor weight depends on accuracy: <em>α<sub>j</sub> = η
+                        log((1−r<sub>j</sub>)/r<sub>j</sub>)</em>.</li>
+                <li><strong>Gradient Boosting</strong> – sequentially fits new models to the <em>residual errors</em> of
+                    previous models. Learning rate (shrinkage) controls each tree’s contribution.</li>
+            </ul>
+
+            <h3>Stacking</h3>
+            <p>Stacked generalization: train a <em>meta-model</em> (blender) to combine predictions of base models. Use
+                out-of-sample predictions (cross_val_predict) to train the blender.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <caption>When to use ensemble methods</caption>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>When to use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hard voting</td>
+                            <td>Balanced classification, multiple strong diverse classifiers</td>
+                        </tr>
+                        <tr>
+                            <td>Soft voting</td>
+                            <td>Probabilistic models, confidence scores matter</td>
+                        </tr>
+                        <tr>
+                            <td>Bagging</td>
+                            <td>High variance, overfitting-prone models</td>
+                        </tr>
+                        <tr>
+                            <td>Pasting</td>
+                            <td>More independent models desired</td>
+                        </tr>
+                        <tr>
+                            <td>Random forest</td>
+                            <td>High-dimensional, noisy features</td>
+                        </tr>
+                        <tr>
+                            <td>AdaBoost</td>
+                            <td>Small/medium, low-noise, weak learners</td>
+                        </tr>
+                        <tr>
+                            <td>Gradient boosting</td>
+                            <td>Medium/large, high predictive power</td>
+                        </tr>
+                        <tr>
+                            <td>Stacking</td>
+                            <td>Complex, high-dimensional, maximize accuracy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="dim-reduction" class="card">
+            <h2>3. Dimensionality Reduction</h2>
+            <p class="source">Based on <em>07_Dimensionality_Reduction.pdf</em></p>
+
+            <h3>Curse of Dimensionality</h3>
+            <p>In high dimensions, data becomes sparse, distance-based methods become less effective, and overfitting
+                risk increases. The required sample size grows exponentially with the number of dimensions.</p>
+            <p><strong>Example:</strong> In a unit square, average distance between two random points ≈ 0.52; in a
+                1,000,000‑dimensional hypercube, it’s ≈ 408.25.</p>
+
+            <h3>PCA (Principal Component Analysis)</h3>
+            <ul>
+                <li>Identifies the hyperplane that lies closest to the data and preserves the most variance.</li>
+                <li>Principal components are obtained via <strong>Singular Value Decomposition (SVD)</strong>; matrix
+                    <em>V</em> contains the principal components.</li>
+                <li><strong>Explained variance ratio</strong> – proportion of variance captured by each PC. Use
+                    <code>explained_variance_ratio_</code> in scikit‑learn.</li>
+                <li>Projection: <em>X<sub>d-proj</sub> = X · W<sub>d</sub></em> (first <em>d</em> columns of
+                    <em>V</em>).</li>
+                <li>Inverse transform: <em>X<sub>recovered</sub> = X<sub>d-proj</sub> · W<sub>d</sub><sup>T</sup></em>
+                    (reconstruction error).</li>
+                <li>Variants: Randomized PCA (faster when <em>d ≪ n</em>), Incremental PCA (mini-batches).</li>
+            </ul>
+
+            <h3>Random Projection</h3>
+            <p>Uses a random linear transformation to project data. Surprisingly preserves distances well
+                (Johnson–Lindenstrauss lemma). Works well for sparse, very high-dimensional data. Trades accuracy for
+                speed.</p>
+
+            <h3>Manifold Learning</h3>
+            <ul>
+                <li><strong>LLE (Locally Linear Embedding)</strong> – nonlinear method. First finds how each instance
+                    relates to its nearest neighbors; then finds a low‑dimensional representation preserving these local
+                    relationships.</li>
+                <li>Other techniques: MDS, Isomap, t‑SNE (visualization), LDA (supervised).</li>
+            </ul>
+
+            <div class="callout">
+                <p>📉 Dimensionality reduction can speed training, but benefits depend on the dataset. Most useful for
+                    noisy, small, or highly correlated data.</p>
+            </div>
+        </section>
+
+        <section id="neural-nets" class="card">
+            <h2>4. Neural Networks</h2>
+            <p class="source">Based on <em>09_Introduction_to_Artificial_Neural_Networks.pdf</em> and
+                <em>backpropagation_notes.pdf</em></p>
+
+            <h3>Threshold Logic Unit (TLU) &amp; Perceptron</h3>
+            <ul>
+                <li><strong>TLU</strong> – computes linear function <em>z = w<sup>T</sup>x + b</em>, then applies a step
+                    function (Heaviside or sign).</li>
+                <li><strong>Perceptron</strong> – one or more TLUs in a single layer, fully connected to inputs. Cannot
+                    solve XOR.</li>
+            </ul>
+
+            <h3>Multi-Layer Perceptrons (MLPs)</h3>
+            <ul>
+                <li>Contain input, hidden, and output layers. Can solve XOR and complex problems.</li>
+                <li><strong>Activation functions</strong> – introduce nonlinearity. Common: Sigmoid, Tanh, ReLU.</li>
+                <li>Without activation functions, deep networks reduce to a single linear model.</li>
+            </ul>
+
+            <h3>Backpropagation (High-Level)</h3>
+            <p>Backpropagation = automatic differentiation + gradient descent. It efficiently computes gradients of the
+                loss w.r.t. all parameters using the chain rule, working backward from the output layer. Then parameters
+                are updated via gradient descent: <em>w ← w − η · ∂l/∂w</em>.</p>
+
+            <div class="chain-rule">
+                <p><strong>Chain rule (example):</strong></p>
+                <p><em>f(x) = (x² + 2x)²</em> → let <em>u = x² + 2x</em>, <em>f(u) = u²</em>.</p>
+                <p><em>∂f/∂x = ∂f/∂u · ∂u/∂x = 2u · (2x + 2) = 2(x² + 2x)(2x + 2)</em>.</p>
+            </div>
+
+            <h3>Transfer Learning</h3>
+            <p>Reuse lower-layer features learned on a similar task. Deep architectures naturally support transfer
+                learning, which is especially useful when target data is limited.</p>
+
+            <h3>Hyperparameter Tuning Guidelines</h3>
+            <ul>
+                <li><strong>Hidden layers:</strong> start with 1–2; increase depth as task complexity grows. Deep nets
+                    are more parameter‑efficient.</li>
+                <li><strong>Neurons per layer:</strong> equal‑sized hidden layers often work well; increase until
+                    overfitting appears.</li>
+                <li><strong>Learning rate:</strong> one of the most important. Optimal often ~half of maximum
+                    (divergence) rate.</li>
+                <li><strong>Batch size:</strong> large batches improve hardware efficiency; small batches may generalize
+                    better.</li>
+            </ul>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>CSCI 4360 — Midterm Study Guide · compiled from course slides</p>
+        </div>
+    </footer>
+
     <script src="/script.js"></script>
 
 </body>
