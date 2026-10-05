@@ -21,8 +21,8 @@
   --drawer-bg: #252b47;
   --text: #000000;
   --text-secondary: #25335e;
-  --border: rgba(0, 0, 0, 0.4);
-  --shadow: rgba(0, 0, 0, 0.25);
+  --border: rgba(0, 0, 0, 0.5);
+  --shadow: rgba(0, 0, 0, 0.35);
   --slide-amt: 24px;
 }
 

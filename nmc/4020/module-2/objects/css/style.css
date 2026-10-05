@@ -1,0 +1,41 @@
+main {
+    background-color: var(--surface);
+    width: calc(100vw - 16px);
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+#adrink {
+    padding: 8px;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(var(--surface)) padding-box,
+        linear-gradient(to right, var(--primary-light), var(--primary), var(--primary-light)) border-box;
+    border-radius: 8px;
+    box-shadow: 0 0 4px var(--shadow);
+    margin: 0 auto;
+}
+
+#adrink:active,
+#adrink:focus {
+    outline: none;
+    box-shadow: 0 0 16px var(--shadow);
+}
+
+#aboutme {
+    font-size: 24px;
+}
+
+#image {
+    width: 100%;
+}
+
+#image img {
+    width: 100%;
+}

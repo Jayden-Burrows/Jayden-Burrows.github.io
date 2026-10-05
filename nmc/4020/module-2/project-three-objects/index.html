@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Beverage Selector</title>
+    <link href="/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="/nmc/4020/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h1>Explore My STEAM Library</h1>
+        <section id="sort-filter-bar">
+            <!-- Sort and Filter my STEAM Library -->
+            <label for="sort">Sort by: </label>
+            <select name="sort" id="sort"></select>
+            <span>Included Genres</span>
+            <input type="checkbox" name="includedGenres[]" value="includedGenre">
+            <label for="includedGenre">Genres</label>
+            <span>Excluded Genres</span>
+            <input type="checkbox" name="excludedGenres[]" value="excludedGenre">
+            <label for="excludedGenre">Genres</label>
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/beverage.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>

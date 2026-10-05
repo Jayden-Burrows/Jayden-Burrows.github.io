@@ -1,0 +1,24 @@
+main {
+    background-color: var(--surface);
+    width: calc(100vw - 16px);
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+#sort-filter-bar {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@media screen (min-width: 600px) {
+    flex-direction: row;
+}
