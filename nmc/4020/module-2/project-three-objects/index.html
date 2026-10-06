@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Beverage Selector</title>
+    <title>Steam Library</title>
     <link href="/style.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="/nmc/4020/css/styles.css" rel="stylesheet">
@@ -11,21 +11,23 @@
 
 <body>
     <main>
-        <h1>Explore My STEAM Library</h1>
-        <section id="sort-filter-bar">
-            <!-- Sort and Filter my STEAM Library -->
-            <label for="sort">Sort by: </label>
-            <select name="sort" id="sort"></select>
-            <span>Included Genres</span>
-            <input type="checkbox" name="includedGenres[]" value="includedGenre">
-            <label for="includedGenre">Genres</label>
-            <span>Excluded Genres</span>
-            <input type="checkbox" name="excludedGenres[]" value="excludedGenre">
-            <label for="excludedGenre">Genres</label>
+        <h1>Explore My Steam Library</h1>
+        <section id="library-container">
+            <aside id="sort-filter-bar">
+                <!-- Sort and Filter my STEAM Library -->
+                <label for="sort">Sort by: </label>
+                <select name="sort" id="sort"></select>
+                <label for="includedGenres">Included Genres</label>
+                <select name="includedGenres" id="includedGenres" multiple size="1"></select>
+                <label for="excludedGenres">Excluded Genres</label>
+                <select name="excludedGenres" id="excludedGenres" multiple size="1"></select>
+                <button type="button" id="applyBtn" onclick="sortAndFilter()">Apply</button>
+            </aside>
+            <div id="games-container"></div>
         </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/beverage.js"></script>
+    <script src="js/script.js"></script>
     <script src="/script.js"></script>
 </body>
 

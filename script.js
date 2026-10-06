@@ -4,10 +4,10 @@ let nav_links;
 
 const DEFAULT_nav_links = [
     { label: 'About', href: '/index.html#about-sec', icon: 'zmdi-border-color' },
-    { label: 'Experience', href: '/index.html#experience_sec', icon: 'zmdi-time-restore' },
-    { label: 'Skills', href: '/index.html#skills_sec', icon: 'zmdi-flash' },
-    { label: 'Certifications', href: '/index.html#certs_sec', icon: 'zmdi-badge-check' },
-    { label: 'Projects', href: '/index.html#project_sec', icon: 'zmdi-code' },
+    { label: 'Experience', href: '/index.html#experience-sec', icon: 'zmdi-time-restore' },
+    { label: 'Skills', href: '/index.html#skills-sec', icon: 'zmdi-flash' },
+    { label: 'Certifications', href: '/index.html#certs-sec', icon: 'zmdi-badge-check' },
+    { label: 'Projects', href: '/index.html#project-sec', icon: 'zmdi-code' },
     { label: 'Courses', href: '/courses/', icon: 'zmdi-folder' }
 ];
 
