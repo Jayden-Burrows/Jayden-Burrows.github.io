@@ -3,31 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Steam Library</title>
+    <title>Directory Listing</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link href="/style.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     <link href="/nmc/4020/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <h1>Explore My Steam Library</h1>
-        <section id="library-container">
-            <aside id="sort-filter-bar">
-                <!-- Sort and Filter my STEAM Library -->
-                <label for="sort">Sort by: </label>
-                <select name="sort" id="sort"></select>
-                <label for="includedGenres">Included Genres</label>
-                <select name="includedGenres" id="includedGenres" multiple size="1"></select>
-                <label for="excludedGenres">Excluded Genres</label>
-                <select name="excludedGenres" id="excludedGenres" multiple size="1"></select>
-                <button type="button" id="applyBtn" onclick="sortAndFilter()">Apply</button>
-            </aside>
-            <div id="games-container"></div>
-        </section>
-    </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+
+    <h2 id="index-heading">NMIX 4020/6020 - Project 3: Make an Object</h2>
+    <ol id="file-list">
+        <li><a href="part-one/">Part 1</a><span> Creating objects based on filters</span></li>
+        <li><a href="part-two/">Part 2</a><span> Case File: Theories about Final Fantasy Revelation</span></li>
+    </ol>
+
     <script src="/script.js"></script>
 </body>
 

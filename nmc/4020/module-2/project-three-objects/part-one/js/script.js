@@ -1,4 +1,4 @@
-let games = [
+let gamesLibrary = [
     {
         "title": "FINAL FANTASY VII",
         "description": "The timeless classic that redefined RPGs, following Cloud Strife and AVALANCHE in their fight against the Shinra Electric Power Company.",
@@ -108,23 +108,16 @@ const gamesContainer = document.getElementById('games-container');
 
 const sortByOptions = ['Oldest', 'Newest', 'Price (Highest)', 'Price (Lowest)', 'Rating (Highest)', 'Rating (Lowest)']
 
-for (let sortByOption of sortByOptions) {
-    sortSelect.innerHTML += `<option value=${sortByOption}>${sortByOption}</option>`
-}
+function getGames(games) {
+    gamesContainer.innerHTML = "";
 
-// Using a set so no duplicate genres
-let allGenres = new Set();
-
-for (let game of games) {
-    let gameGenres = new Set(game.genres);
-    allGenres = allGenres.union(gameGenres);
-
-    let gameGenresHtml = "";
-    for (let gameGenre of gameGenres) {
-        gameGenresHtml += `<span>${gameGenre}</span>`
-    }
-
-    gamesContainer.innerHTML += `
+    for (let game of games) {
+        let gameGenres = game.genres;
+        let gameGenresHtml = "";
+        for (let gameGenre of gameGenres) {
+            gameGenresHtml += `<span>${gameGenre}</span>`
+        }
+        gamesContainer.innerHTML += `
         <div class="game-container">
             <a href="${game.store_page}"><img src="${game.poster_link}"></a>
             <div class="game-details">
@@ -140,9 +133,82 @@ for (let game of games) {
                 <p>Price (USD): $${game.price}</p>
             </div>
         </div>`;
+    }
+}
+
+function sortAndFilter() {
+    let sortByOption = sortSelect.value;
+    let includedGenres = Array.from(includedGenresSelect.selectedOptions).map(option => option.value);
+    let excludedGenres = Array.from(excludedGenresSelect.selectedOptions).map(option => option.value);
+    includedGenres = new Set(includedGenres);
+    excludedGenres = new Set(excludedGenres);
+
+    let sortFilterGames = gamesLibrary;
+
+    if (includedGenres.size > 0) {
+        sortFilterGames = sortFilterGames.filter(game => {
+            let gameGenres = new Set(game.genres);
+            let genresIntersection = gameGenres.intersection(includedGenres);
+            return genresIntersection.size == includedGenres.size;
+        });
+    }
+
+    if (excludedGenres.size > 0) {
+        sortFilterGames = sortFilterGames.filter(game => {
+            let gameGenres = new Set(game.genres);
+            let genresIntersection = gameGenres.intersection(excludedGenres);
+            return genresIntersection.size == 0;
+        })
+    }
+
+    switch (sortByOption) {
+        case "Oldest":
+            sortFilterGames.sort((a, b) => a.release_date.localeCompare(b.release_date))
+            break;
+        case "Newest":
+            sortFilterGames.sort((a, b) => b.release_date.localeCompare(a.release_date))
+            break;
+        case "Price (Highest)":
+            sortFilterGames.sort((a, b) => b.price - a.price);
+            break;
+        case "Price (Lowest)":
+            sortFilterGames.sort((a, b) => a.price - b.price);
+            break;
+        case "Rating (Highest)":
+            console.log(sortFilterGames);
+            sortFilterGames.sort((a, b) => 
+                steamRatingScale[b.rating] - steamRatingScale[a.rating]);
+            console.log(sortFilterGames);
+            break;
+        case "Rating (Lowest)":
+            console.log(steamRatingScale);
+            console.log(sortFilterGames);
+            sortFilterGames.sort((a, b) => 
+                steamRatingScale[a.rating] - steamRatingScale[b.rating]);
+            console.log(sortFilterGames);
+            break;
+        default:
+            sortFilterGames.sort((a, b) => a.release_date.localeCompare(b.release_date))
+            break;
+    }
+    getGames(sortFilterGames);
+}
+
+for (let sortByOption of sortByOptions) {
+    sortSelect.innerHTML += `<option value='${sortByOption}'>${sortByOption}</option>`
+}
+
+// Using a set so no duplicate genres
+let allGenres = new Set();
+
+for (let game of gamesLibrary) {
+    let gameGenres = new Set(game.genres);
+    allGenres = allGenres.union(gameGenres);
 }
 
 for (let genre of allGenres) {
-    includedGenresSelect.innerHTML += `<option value=${genre}>${genre}</option>`;
-    excludedGenresSelect.innerHTML += `<option value=${genre}>${genre}</option>`;
+    includedGenresSelect.innerHTML += `<option value='${genre}'>${genre}</option>`;
+    excludedGenresSelect.innerHTML += `<option value='${genre}'>${genre}</option>`;
 }
+
+getGames(gamesLibrary);

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Final Fantasy VII Trilogy &amp; Theories</title>
+
+    <!-- Fonts & Material Design Iconic Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['PT Serif', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0d1117',
+                            card: '#161b22',
+                            accent: '#38bdf8',
+                            crimson: '#ef4444',
+                            gold: '#f59e0b',
+                            emerald: '#10b981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="bg-[#0b0e14] text-gray-200 font-sans antialiased min-h-screen pb-16">
+
+    <header class="sticky top-0 z-50 bg-[#0d1117]/90 backdrop-blur-md border-b border-gray-800/80 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold font-serif">
+                    VII
+                </div>
+                <span class="font-serif font-bold text-lg tracking-wider text-white">FF7 REVELATION</span>
+            </div>
+
+            <!-- Nav Links Container Target -->
+            <nav id="dynamic-nav" class="hidden md:flex items-center gap-1 sm:gap-2"></nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-12">
+
+        <section
+            class="glass-card rounded-2xl p-6 md:p-10 border border-gray-800 relative overflow-hidden scroll-reveal">
+            <div
+                class="absolute -right-16 -bottom-16 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="lg:col-span-7 space-y-4">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold uppercase tracking-widest">
+                        <i class="zmdi zmdi-chart-donut"></i> Multi-Part Narrative Breakdown
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl font-serif font-extrabold text-white tracking-tight leading-tight">
+                        Fate, Whispers &amp; Split Timelines
+                    </h1>
+                    <p class="text-gray-400 text-base sm:text-lg leading-relaxed">
+                        An interactive guide breaking down the Final Fantasy VII Remake project, the divergence
+                        from the 1997 canon, deep mechanics of the Lifestream, and complex theories surrounding Part 3.
+                    </p>
+                </div>
+
+                <!-- Hero Feature Image Container -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-xl overflow-hidden border border-gray-700/60 shadow-2xl group">
+                        <img src="https://pyxis.nymag.com/v1/imgs/ff3/207/eb3cd37c5bfeafa55ca94ea59235941f1b-whispers-final-fantasy.2x.rsocial.w600.jpg"
+                            alt="FF7 Singularity and Timeline Split Visual"
+                            class="w-full h-56 sm:h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x450/161b22/38bdf8?text=FF7+Hero+Image+Placeholder'">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-transparent to-transparent opacity-80">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview-sec" class="space-y-6 scroll-reveal">
+            <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                <i class="zmdi zmdi-info-outline text-sky-400 text-2xl"></i>
+                <h2 class="text-2xl font-serif font-bold text-white">1. Project Overview &amp; Background</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="glass-card p-6 rounded-xl space-y-3 border-t-2 border-t-sky-500 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono uppercase text-sky-400 tracking-wider">1997 Classic</span>
+                        <h3 class="text-xl font-bold text-white mt-1">The Original Canon</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mt-2">
+                            The original game presents a linear narrative centered on grief, loss, and planetary
+                            preservation. Aerith's tragic death at the Forgotten Capital served as an unalterable
+                            narrative anchor.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80">
+                        <div class="rounded-lg overflow-hidden border border-gray-800">
+                            <img src="https://i.ytimg.com/vi/FGuohjmGY3Q/sddefault.jpg" alt="Original Canon Visual"
+                                class="w-full h-28 object-cover"
+                                onerror="this.src='https://placehold.co/600x300/161b22/10b981?text=Image+Placeholder'">
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card p-6 rounded-xl space-y-3 border-t-2 border-t-amber-500 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono uppercase text-amber-400 tracking-wider">Trilogy Project</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Modern Expansion</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mt-2">
+                            Comprising <em>Remake</em>, <em>Rebirth</em>, and an upcoming Part 3, the project introduces
+                            multi-layered timeline entities (Whispers), shifting memories, and alternate dimensions.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80">
+                        <div class="rounded-lg overflow-hidden border border-gray-800">
+                            <img src="https://i.redd.it/kyq4hk6jvzog1.jpeg" alt="Trilogy Expansion Visual"
+                                class="w-full h-28 object-cover"
+                                onerror="this.src='https://placehold.co/600x300/161b22/f59e0b?text=Image+Placeholder'">
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card p-6 rounded-xl space-y-3 border-t-2 border-t-emerald-500 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Core Debate</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Remake or Stealth Sequel?</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mt-2">
+                            The introduction of Whispers suggests Sephiroth and Aerith possess future knowledge,
+                            effectively transforming the narrative into a temporal chess match over the destiny of Gaia.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80">
+                        <div class="rounded-lg overflow-hidden border border-gray-800">
+                            <img src="https://images3.alphacoders.com/141/thumb-1920-1413776.png"
+                                alt="Stealth Sequel Visual" class="w-full h-28 object-cover"
+                                onerror="this.src='https://placehold.co/600x300/161b22/ef4444?text=Image+Placeholder'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recap-sec" class="space-y-6 scroll-reveal">
+            <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                <i class="zmdi zmdi-time-restore text-sky-400 text-2xl"></i>
+                <h2 class="text-2xl font-serif font-bold text-white">2. Narrative Recap &amp; Temporal Pivots</h2>
+            </div>
+
+            <!-- CSS Grid: 1 Col Mobile -> 3 Col Desktop -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- Column 1: FF7 Original -->
+                <div
+                    class="glass-card p-6 rounded-xl flex flex-col justify-between hover:border-gray-700 transition-colors">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span
+                                class="px-2.5 py-1 bg-red-500/10 text-red-400 border border-red-500/20 text-xs font-mono rounded">CANON
+                                1997</span>
+                            <span class="text-xs text-gray-500">Unbroken Destiny</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">FFVII Original Narrative</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Aerith prays at the Forgotten Capital. Sephiroth strikes from above, resulting in her
+                            permanent death. Her consciousness returns to the Lifestream, enabling Gaia to channel Holy
+                            and stop Meteor.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-2 border-t border-gray-800 pt-4 text-xs text-gray-300">
+                        <li class="flex items-start gap-2"><i class="zmdi zmdi-check text-red-400 mt-0.5"></i> Single
+                            immutable timeline</li>
+                        <li class="flex items-start gap-2"><i class="zmdi zmdi-check text-red-400 mt-0.5"></i>
+                            Irreversible character martyrdom</li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Remake Intergrade -->
+                <div
+                    class="glass-card p-6 rounded-xl flex flex-col justify-between hover:border-gray-700 transition-colors">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span
+                                class="px-2.5 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 text-xs font-mono rounded">REMAKE
+                                / INTERGRADE</span>
+                            <span class="text-xs text-gray-500">2020 - 2021</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Shattered Fate at Singularity</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Covers Midgar while introducing the Whispers—guardians ensuring events follow the 1997
+                            script. Defeating the Whisper Harbinger at the Singularity destroys fate's binding grip,
+                            causing timeline offshoots like Zack Fair surviving his last stand.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-2 border-t border-gray-800 pt-4 text-xs text-gray-300">
+                        <li class="flex items-start gap-2"><i class="zmdi zmdi-check text-sky-400 mt-0.5"></i>
+                            Destruction of Fate's Arbiters</li>
+                        <li class="flex items-start gap-2"><i class="zmdi zmdi-check text-sky-400 mt-0.5"></i> Creation
+                            of parallel branch realities</li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Rebirth -->
+                <div
+                    class="glass-card p-6 rounded-xl flex flex-col justify-between hover:border-gray-700 transition-colors">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span
+                                class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono rounded">REBIRTH</span>
+                            <span class="text-xs text-gray-500">2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">The Multi-World Convergence</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Expands across Gaia into multiple decaying worlds (marked by different Stamp dog breeds). At
+                            the climax, Cloud deflects Sephiroth's sword—triggering rainbow particles—yet Aerith falls.
+                            Cloud appears to experience a split reality where Aerith survives.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-2 border-t border-gray-800 pt-4 text-xs text-gray-300">
+                        <li class="flex items-start gap-2"><i class="zmdi zmdi-check text-emerald-400 mt-0.5"></i>
+                            Rainbow light indicates timeline bifurcation</li>
+                        <li class="flex items-start gap-2"><i class="zmdi zmdi-check text-emerald-400 mt-0.5"></i>
+                            Severe cognitive disconnect for Cloud</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dynamic Primary Timeline Agents Target Container -->
+        <section id="agents-sec" class="space-y-6 scroll-reveal">
+            <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                <i class="zmdi zmdi-accounts-alt text-sky-400 text-2xl"></i>
+                <h2 class="text-2xl font-serif font-bold text-white">3. Primary Timeline Agents</h2>
+            </div>
+
+            <div id="agents-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </section>
+
+        <!-- Dynamic Continuity Roadmap Target Container -->
+        <section id="roadmap-sec" class="space-y-6 scroll-reveal">
+            <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                <i class="zmdi zmdi-compass text-sky-400 text-2xl"></i>
+                <h2 class="text-2xl font-serif font-bold text-white">4. Dynamic Continuity Roadmap</h2>
+            </div>
+
+            <!-- Dynamically Injected Tab Buttons -->
+            <div id="roadmap-tabs-container" class="flex flex-wrap gap-2"></div>
+
+            <!-- Tab Display Panel with Dynamic Header Banner -->
+            <div class="glass-card rounded-xl border border-gray-800 overflow-hidden">
+                <div id="roadmap-banner-container"
+                    class="relative h-48 sm:h-60 w-full overflow-hidden border-b border-gray-800 bg-gray-900 transition-all duration-500">
+                    <img id="roadmap-banner-img"
+                        src="https://preview.redd.it/final-fantasy-viis-ending-is-a-reference-to-secret-of-mana-v0-co9fr0v6by6c1.png?width=768&format=png&auto=webp&s=8eba2f5ce1317809318eb0014110355ec72f21e6"
+                        alt="Roadmap Stage Visual" class="w-full h-full object-cover transition-opacity duration-300"
+                        onerror="this.src='https://placehold.co/1200x400/161b22/38bdf8?text=Roadmap+Banner+Holder'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#161b22] via-[#161b22]/40 to-transparent"></div>
+                    <div class="absolute bottom-4 left-6 right-6">
+                        <span id="roadmap-banner-tag"
+                            class="px-2.5 py-1 bg-sky-500/20 text-sky-300 border border-sky-500/40 text-xs font-mono rounded"></span>
+                    </div>
+                </div>
+
+                <!-- Dynamically Injected Tab Panel Contents -->
+                <div id="roadmap-contents-container" class="p-6 md:p-8"></div>
+            </div>
+        </section>
+
+        <section id="theories-sec" class="space-y-8 scroll-reveal">
+            <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                <i class="zmdi zmdi-border-color text-sky-400 text-2xl"></i>
+                <h2 class="text-2xl font-serif font-bold text-white">5. Theories &amp; Deep Debate</h2>
+            </div>
+
+            <!-- Developer Statement Correction Box -->
+            <div class="glass-card p-6 rounded-xl border-l-4 border-l-amber-500 bg-amber-950/10 space-y-3">
+                <div class="flex items-center gap-2 text-amber-400 font-bold text-base">
+                    <i class="zmdi zmdi-alert-circle-o text-xl"></i> Nuanced Analysis: Developer Statements &amp;
+                    "Advent
+                    Children" Connection
+                </div>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    It is a common misconception that producer Yoshinori Kitase and director Tetsuya Nomura confirmed
+                    the trilogy will strictly lead straight into 2005's <em>Advent Children (AC)</em> unchanged. In
+                    interviews, developers stated the story will <strong>"connect to Advent Children"</strong> or
+                    <strong>"not betray AC fans,"</strong> but these statements remain intentionally vague and open to
+                    several narrative interpretations:
+                </p>
+                <ul class="list-disc list-inside text-xs text-gray-400 space-y-1 pl-2">
+                    <li><strong>Inevitable Canon:</strong> The trilogy is a loop that inevitably resolves into AC
+                        regardless of timeline branches.</li>
+                    <li><strong>One of Many Worlds:</strong> AC represents the bad/depressive outcome of the original
+                        timeline that Part 3 aims to break away from.</li>
+                    <li><strong>Thematic Link:</strong> "Connecting" may refer to emotional continuity and character
+                        resolutions rather than a literal 1:1 timeline match.</li>
+                </ul>
+            </div>
+
+            <!-- In-Depth Theory Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Theory 1 Expansion -->
+                <div
+                    class="glass-card p-6 md:p-8 rounded-2xl border border-gray-800 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="px-3 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 text-xs font-mono rounded-full">THEORY
+                                01</span>
+                            <span class="text-xs text-gray-500 font-mono">Tragic Realism</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Canonical Convergence (Aerith Is Dead)</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            This theory posits that Aerith definitively died at the Forgotten Capital in the primary
+                            reality. The alternate worlds shown throughout <em>Rebirth</em> are brief, ephemeral dreams
+                            within the Lifestream destined to fade. Cloud's perception of Aerith surviving is a
+                            psychological coping mechanism engineered by trauma and amplified by Jenova cells.
+                        </p>
+
+                        <div class="space-y-4 border-t border-gray-800 pt-4">
+                            <!-- Case FOR -->
+                            <div class="space-y-2">
+                                <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                                    <i class="zmdi zmdi-thumb-up"></i> Case FOR Theory 1 (Deep Evidence)
+                                </h4>
+                                <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
+                                    <li><strong>Jenova Illusion Mechanics:</strong> Sephiroth/Jenova feeds on Cloud's
+                                        mental instability. Cloud seeing a rift in the sky and Aerith smiling while the
+                                        rest of the party mourns mirrors his past denial of Zack's death.</li>
+                                    <li><strong>The Empty White Materia:</strong> Aerith handed Cloud a clear, drained
+                                        White Materia in her dream world, signifying that Holy's power in the primary
+                                        timeline was preserved only by her physical sacrifice.</li>
+                                    <li><strong>Thematic Core of Loss:</strong> Final Fantasy VII was created as a
+                                        reflection on irreversible grief. Undoing Aerith's death would undermine the
+                                        core emotional theme of the entire franchise.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Case AGAINST -->
+                            <div class="space-y-2">
+                                <h4 class="text-sm font-bold text-red-400 flex items-center gap-2">
+                                    <i class="zmdi zmdi-thumb-down"></i> Case AGAINST Theory 1
+                                </h4>
+                                <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
+                                    <li><strong>Rainbow Particle Effects:</strong> Square Enix specifically used rainbow
+                                        spark effects during Cloud's sword parry—the exact visual effect used when Zack
+                                        made choices that created new timelines.</li>
+                                    <li><strong>Aerith's Active Interaction:</strong> Aerith physically fights alongside
+                                        Cloud in the void dimension against Sephiroth reborn, showing her agency exceeds
+                                        a mere illusion.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Theory 2 Expansion -->
+                <div
+                    class="glass-card p-6 md:p-8 rounded-2xl border border-gray-800 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="px-3 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-mono rounded-full">THEORY
+                                02</span>
+                            <span class="text-xs text-gray-500 font-mono">Timeline Salvation</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Defying Destiny (Aerith Lives in Parallel)</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            This theory asserts that Cloud successfully altered fate at the moment of impact. The
+                            rainbow light confirmed the creation of a timeline branch where Aerith survived Sephiroth's
+                            strike. In Part 3, Cloud's task will not be accepting her death, but bridging these worlds
+                            to permanently save her and defeat Sephiroth across reality.
+                        </p>
+
+                        <div class="space-y-4 border-t border-gray-800 pt-4">
+                            <!-- Case FOR -->
+                            <div class="space-y-2">
+                                <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                                    <i class="zmdi zmdi-thumb-up"></i> Case FOR Theory 2 (Deep Evidence)
+                                </h4>
+                                <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
+                                    <li><strong>White vs Black Whispers:</strong> The emergence of opposing Whisper
+                                        factions (Black Whispers controlled by Sephiroth, White Whispers guided by
+                                        Aerith/Gaia) confirms a active cosmic war over timeline outcomes.</li>
+                                    <li><strong>Zack's Multiversal Crossover:</strong> Zack Fair physically crossed
+                                        dimensions to assist Cloud and Aerith, establishing a precedent that characters
+                                        from alternate branches can cross over.</li>
+                                    <li><strong>"7 Seconds Till the End":</strong> Sephiroth's quote in <em>Remake</em>
+                                        refers to the 7 seconds before Aerith's death—offering Cloud the agency to
+                                        change that exact moment.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Case AGAINST -->
+                            <div class="space-y-2">
+                                <h4 class="text-sm font-bold text-red-400 flex items-center gap-2">
+                                    <i class="zmdi zmdi-thumb-down"></i> Case AGAINST Theory 2
+                                </h4>
+                                <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
+                                    <li><strong>World Decay Mechanics:</strong> Rebirth shows alternate worlds are
+                                        unstable and quickly perish. An alternate world where Aerith lives may naturally
+                                        collapse.</li>
+                                    <li><strong>Narrative Complexity:</strong> Sustaining multiple living versions of
+                                        characters risks convoluting the ending and alienating mainstream audiences.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="summary-sec"
+            class="glass-card p-6 md:p-8 rounded-2xl border border-gray-800 space-y-6 scroll-reveal">
+            <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                <i class="zmdi zmdi-flag text-sky-400 text-2xl"></i>
+                <h2 class="text-2xl font-serif font-bold text-white">6. Game Release &amp; Summary</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                <div class="space-y-2 p-4 bg-gray-900/50 rounded-xl border border-gray-800">
+                    <h4 class="font-bold text-white flex items-center gap-2"><i
+                            class="zmdi zmdi-calendar text-sky-400 text-lg"></i> Expected Release Window</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Square Enix targets a development cycle similar to <em>Rebirth</em>, placing Part 3's projected
+                        release on <strong>April 8, 2027</strong> (generally aligned with Final Fantasy VII's 30th
+                        Anniversary).
+                    </p>
+                </div>
+
+                <div class="space-y-2 p-4 bg-gray-900/50 rounded-xl border border-gray-800">
+                    <h4 class="font-bold text-white flex items-center gap-2"><i
+                            class="zmdi zmdi-desktop-windows text-sky-400 text-lg"></i> Target Platforms</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Expected as a timed exclusive for <strong>PlayStation 5 / PlayStation 6</strong>, with
+                        subsequent releases scheduled for PC platforms (Steam / Epic Games Store).
+                    </p>
+                </div>
+
+                <div class="space-y-2 p-4 bg-gray-900/50 rounded-xl border border-gray-800">
+                    <h4 class="font-bold text-white flex items-center gap-2"><i
+                            class="zmdi zmdi-globe-alt text-sky-400 text-lg"></i> Official Coverage</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Follow official developer announcements on the <a
+                            href="https://ffvii-rebirth.square-enix-games.com" target="_blank"
+                            class="text-sky-400 hover:underline font-semibold">Square Enix Portal</a> and official Final
+                        Fantasy social outlets.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="space-y-2 p-4 bg-gray-900/50 rounded-xl border border-gray-800">
+            <h4 class="font-bold text-white flex items-center gap-2">Reflection </h4>
+            <ol>
+                <li>
+                    Provide at least one prompt you used to build this case file. <br>
+
+                    For this assignment, I used AI to generate the layout based off of the example prompt and the
+                    example website. From there, I prompted AI to make further changes to the content and styling. For
+                    example, here are two of the prompts I used to start the project: <br>
+                    <blockquote>
+                        Can you create a new index.html, css/style.css, and script.js file? I want to do a quick
+                        explanation for a class about theories for Final Fantasy VII Revelation, especially about
+                        whether Aerith will live or die based on the themes and quotes in previous games. I also want to
+                        include a quick overview of the two major theories (whether the game will end almost exactly
+                        like the original or if Aerith and maybe sephiroth will live) including a recap of what happened
+                        in the original game, FF7 Remake Intergrade, and FF7 Rebirth and cases for and against both
+                        major theories. The example for this assignment given was "a quick explanation for a class on
+                        the key witness of The Murdaugh Trial – the housekeeper. I also want to include a quick overview
+                        of the case including Paul Murdaugh’s boat accident, the history of the Murdaugh family in South
+                        Carolina, and the many other cold cases and accusations against the family. " Can you do my idea
+                        but with this kind of layout?
+                    </blockquote>
+                    <blockquote>
+                        This looks great, but can you: <br>
+
+                        1. Include a general overview of the game explaining what Final Fantasy 7 is (a game, released
+                        by
+                        Square Enix, description of the game, originally released + new remake trilogy but people debate
+                        if it's a remake or sequel) <br>
+                        2. Include more information in each section, especially trilogy narrative recap, and key figures
+                        &amp;
+                        timeline drivers <br>
+                        3. Modify the UI a little bit. Maybe more like the reference image attached. Maybe add
+                        intersection
+                        observer to make the sections float in on scroll. Also maybe add an animation for switching tabs
+                        of trilogy &amp; theory roadmap
+                    </blockquote>
+                    <blockquote>
+                        Can you change the html and javascript to use objects to generate these sections, especially,
+                        the primary timeline agents, and the dynamic continuity roadmap?
+                        Here is the html I have modified with new images and the js separated into js/script.js
+                    </blockquote>
+                </li>
+                <li>What did you change after the AI output? <br>
+                    I prompted the AI with multiple content and style edits including adding more content, adding new
+                    animations such as scroll animations, and dynamically generating some sections using objects instead
+                    of hard-coding them. From there, I proofread the website and added some images.
+                </li>
+                <li>
+                    What did you learn about JS objects? <br>
+                    I had previous experience with JS objects, but I definitely refreshed my memory of a few JS-specific
+                    methods like
+                    <code>for(let object of objects)</code> in Part 1 of the project. I didn't learn much about objects
+                    from Part 2 of this assignment.
+                </li>
+                <li>During this project, did you see AI as a shortcut, a collaborator, or something else? <br>
+                    I saw AI as a very efficient shortcut. It took me less time to create a significantly better looking
+                    and more complex website in Part 2 of this assignment than in Part 1 where I hand-coded my website.
+                    I especially see AI as a shortcut because I had very little knowledge of how the website works until
+                    I inspected the code. It added some features that I don't normally use (e.g.
+                    <code>IntersectionObserver</code> and Tailwind CSS within a vanilla html project).
+                </li>
+                <li>
+                    After this project, what is a new boundary you would set for yourself OR a boundary you would remove
+                    when using AI? <br>
+                    I think AI is a great tool to use when making large-scale projects within a short amount of time,
+                    but I would definitely make sure to carefully inspect the code for any AI-generated projects since
+                    they can create output that needs to be corrected or observed. For course projects, my views haven't
+                    changed, and I will continue to only use AI for debugging minor logic or syntax issues. This project
+                    has reinforced my beliefs that using AI for generating large chunks of an assignment is not helpful
+                    for learning.
+                </li>
+            </ol>
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+:root {
+    --surface: #161b22;
+    --bg: #0b0e14;
+    --accent: #38bdf8;
+    --text: #ffffff;
+    --text-secondary: #9ca3af;
+}
+
+[data-theme="dark"] {
+    --surface: #0b0e14;
+    --bg: #161b22;
+    --accent: #38bdf8;
+    --text: #ffffff;
+    --text-secondary: #9ca3af;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #21262d;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #30363d;
+}
+
+.glass-card {
+    background: rgba(22, 27, 34, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.roadmap-bg {
+    transition: background-image 0.5s ease-in-out;
+}
+
+blockquote {
+    background-color: #11182780;
+    padding: 8px;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    margin: 16px !important;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+ol {
+    list-style-type: decimal !important;
+    padding: 8px !important;
+    margin: 4px !important;
+}
