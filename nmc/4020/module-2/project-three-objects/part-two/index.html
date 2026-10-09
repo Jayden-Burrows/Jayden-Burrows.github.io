@@ -62,6 +62,7 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-12">
 
+        <!-- Hero Section -->
         <section
             class="glass-card rounded-2xl p-6 md:p-10 border border-gray-800 relative overflow-hidden scroll-reveal">
             <div
@@ -97,80 +98,153 @@
             </div>
         </section>
 
+        <!-- SECTION 1: Balanced Overview & Background -->
         <section id="overview-sec" class="space-y-6 scroll-reveal">
             <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
                 <i class="zmdi zmdi-info-outline text-sky-400 text-2xl"></i>
                 <h2 class="text-2xl font-serif font-bold text-white">1. Project Overview &amp; Background</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- 2-Column Grid with Image Header Banners -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Card 1: The Original Canon -->
                 <div
-                    class="glass-card p-6 rounded-xl space-y-3 border-t-2 border-t-sky-500 flex flex-col justify-between">
+                    class="glass-card rounded-2xl overflow-hidden border border-gray-800 border-t-4 border-t-sky-500 flex flex-col justify-between group">
                     <div>
-                        <span class="text-xs font-mono uppercase text-sky-400 tracking-wider">1997 Classic</span>
-                        <h3 class="text-xl font-bold text-white mt-1">The Original Canon</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mt-2">
-                            The original game presents a linear narrative centered on grief, loss, and planetary
-                            preservation. Aerith's tragic death at the Forgotten Capital served as an unalterable
-                            narrative anchor.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-gray-800/80">
-                        <div class="rounded-lg overflow-hidden border border-gray-800">
-                            <img src="https://i.ytimg.com/vi/FGuohjmGY3Q/sddefault.jpg" alt="Original Canon Visual"
-                                class="w-full h-28 object-cover"
-                                onerror="this.src='https://placehold.co/600x300/161b22/10b981?text=Image+Placeholder'">
+                        <!-- Top Banner with Dark Overlay & Embedded Title -->
+                        <div class="relative h-48 sm:h-56 overflow-hidden border-b border-gray-800/80 bg-gray-900">
+                            <img src="https://i.ytimg.com/vi/FGuohjmGY3Q/maxresdefault.jpg" alt="The Original Canon Banner"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 brightness-90"
+                                onerror="this.src='https://placehold.co/800x400/161b22/38bdf8?text=1997+Canon+Banner'">
+
+                            <!-- Dark Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#161b22] via-[#161b22]/60 to-transparent">
+                            </div>
+
+                            <!-- Title & Badge Overlay -->
+                            <div class="absolute bottom-4 left-6 right-6 space-y-1">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-mono uppercase text-sky-400 tracking-wider font-bold">1997
+                                        CLASSIC</span>
+                                    <span class="text-xs text-gray-300 font-mono">PlayStation Era</span>
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-serif font-extrabold text-white tracking-tight">The
+                                    Original Canon</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card Body Text -->
+                        <div class="p-6 sm:p-8 space-y-4 text-gray-300 text-sm leading-relaxed">
+                            <p>
+                                <strong>Final Fantasy VII</strong> is a landmark Japanese role-playing game (JRPG)
+                                released in 1997 by Square (now Square Enix) for the Sony PlayStation. It is widely
+                                celebrated for shifting the gaming industry into the 3D era with cinematic cutscenes,
+                                pre-rendered backgrounds, and deep tactical combat.
+                            </p>
+                            <p>
+                                The story begins in the dystopian metropolis of Midgar, ruled by the corrupt
+                                <strong>Shinra Electric Power Company</strong>. Shinra harvests "Mako"—the literal
+                                spiritual lifeblood of the planet, known as the <strong>Lifestream</strong>—to power
+                                technology, slowly killing Gaia. Players control <strong>Cloud Strife</strong>, an
+                                ex-SOLDIER mercenary joining <strong>AVALANCHE</strong> to bomb Shinra's reactors.
+                            </p>
+                            <p>
+                                During a mission, Cloud meets <strong>Aerith Gainsborough</strong>, the last surviving
+                                <strong>Cetra (Ancient)</strong>. When legendary war hero <strong>Sephiroth</strong>
+                                reappears seeking to absorb the Lifestream and summon Meteor, the party pursues him
+                                across the globe. At the story's emotional climax in the <strong>Forgotten
+                                    Capital</strong>, Aerith prays for Holy before Sephiroth impales her from above. Her
+                                death served as an unalterable narrative anchor that redefined gaming sacrifice, leading
+                                the party to ultimately defeat Sephiroth and allow Aerith's spirit in the Lifestream to
+                                save the world.
+                            </p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Card 2: Modern Expansion -->
                 <div
-                    class="glass-card p-6 rounded-xl space-y-3 border-t-2 border-t-amber-500 flex flex-col justify-between">
+                    class="glass-card rounded-2xl overflow-hidden border border-gray-800 border-t-4 border-t-amber-500 flex flex-col justify-between group">
                     <div>
-                        <span class="text-xs font-mono uppercase text-amber-400 tracking-wider">Trilogy Project</span>
-                        <h3 class="text-xl font-bold text-white mt-1">Modern Expansion</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mt-2">
-                            Comprising <em>Remake</em>, <em>Rebirth</em>, and an upcoming Part 3, the project introduces
-                            multi-layered timeline entities (Whispers), shifting memories, and alternate dimensions.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-gray-800/80">
-                        <div class="rounded-lg overflow-hidden border border-gray-800">
-                            <img src="https://i.redd.it/kyq4hk6jvzog1.jpeg" alt="Trilogy Expansion Visual"
-                                class="w-full h-28 object-cover"
-                                onerror="this.src='https://placehold.co/600x300/161b22/f59e0b?text=Image+Placeholder'">
+                        <!-- Top Banner with Dark Overlay & Embedded Title -->
+                        <div class="relative h-48 sm:h-56 overflow-hidden border-b border-gray-800/80 bg-gray-900">
+                            <img src="https://i.redd.it/kyq4hk6jvzog1.jpeg" alt="The Modern Expansion Banner"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 brightness-90"
+                                onerror="this.src='https://placehold.co/800x400/161b22/f59e0b?text=Modern+Expansion+Banner'">
+
+                            <!-- Dark Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#161b22] via-[#161b22]/60 to-transparent">
+                            </div>
+
+                            <!-- Title & Badge Overlay -->
+                            <div class="absolute bottom-4 left-6 right-6 space-y-1">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="text-xs font-mono uppercase text-amber-400 tracking-wider font-bold">TRILOGY
+                                        PROJECT</span>
+                                    <span class="text-xs text-gray-300 font-mono">2020 – 2027</span>
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-serif font-extrabold text-white tracking-tight">The
+                                    Modern Expansion</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card Body Text -->
+                        <div class="p-6 sm:p-8 space-y-4 text-gray-300 text-sm leading-relaxed">
+                            <p>
+                                Rather than a simple HD remaster, Square Enix re-envisioned the 1997 masterpiece as a
+                                multi-part AAA trilogy: <em>Final Fantasy VII Remake</em> (2020), <em>Final Fantasy VII
+                                    Rebirth</em> (2024), and an upcoming untitled Part 3 (fans call <em>FF7
+                                    Revelation</em>).
+                            </p>
+                            <p>
+                                This modern expansion completely overhauls the original title with photorealistic
+                                graphics, fully voiced cutscenes, expanded city districts, and action-hybrid combat.
+                                While generally following the primary plot beats of the 1997 release, it weaves in vast
+                                amounts of new lore, side quests, and character development.
+                            </p>
+                            <p>
+                                Crucially, the trilogy introduces a major metaphysical twist: <strong>the Whispers
+                                    (Arbiters of Fate)</strong>. These spectral entities emerge whenever the party
+                                strays from the events of the original 1997 timeline, acting as cosmic guardians who
+                                enforce canonical history. When Cloud and his companions destroy the Whisper Harbinger
+                                at the Singularity, they shatter the chains of destiny—opening up branching parallel
+                                dimensions and alternate timelines (such as one where Cloud's mentor, <strong>Zack
+                                    Fair</strong>, survives).
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div
-                    class="glass-card p-6 rounded-xl space-y-3 border-t-2 border-t-emerald-500 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Core Debate</span>
-                        <h3 class="text-xl font-bold text-white mt-1">Remake or Stealth Sequel?</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mt-2">
-                            The introduction of Whispers suggests Sephiroth and Aerith possess future knowledge,
-                            effectively transforming the narrative into a temporal chess match over the destiny of Gaia.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-gray-800/80">
-                        <div class="rounded-lg overflow-hidden border border-gray-800">
-                            <img src="https://images3.alphacoders.com/141/thumb-1920-1413776.png"
-                                alt="Stealth Sequel Visual" class="w-full h-28 object-cover"
-                                onerror="this.src='https://placehold.co/600x300/161b22/ef4444?text=Image+Placeholder'">
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Full-Width Bottom Banner: The Core Debate -->
+            <div class="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-emerald-500 bg-emerald-950/10 space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider font-semibold">CORE
+                        ACADEMIC DEBATE</span>
+                    <i class="zmdi zmdi-help-outline text-emerald-400 text-xl"></i>
                 </div>
+                <h3 class="text-xl font-bold text-white">Remake or Stealth Sequel?</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    The introduction of Whispers and temporal branches transforms the trilogy from a simple nostalgia
+                    trip into an unpredictable multiversal chess match. Both Sephiroth and Aerith appear to possess
+                    future knowledge of the original game's tragic outcome—fighting across timeline dimensions to either
+                    rewrite or defend the fate of Gaia.
+                </p>
             </div>
         </section>
 
+        <!-- SECTION 2: Narrative Recap -->
         <section id="recap-sec" class="space-y-6 scroll-reveal">
             <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
                 <i class="zmdi zmdi-time-restore text-sky-400 text-2xl"></i>
                 <h2 class="text-2xl font-serif font-bold text-white">2. Narrative Recap &amp; Temporal Pivots</h2>
             </div>
 
-            <!-- CSS Grid: 1 Col Mobile -> 3 Col Desktop -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
                 <!-- Column 1: FF7 Original -->
@@ -250,7 +324,7 @@
             </div>
         </section>
 
-        <!-- Dynamic Primary Timeline Agents Target Container -->
+        <!-- SECTION 3: Dynamic Primary Timeline Agents Target Container -->
         <section id="agents-sec" class="space-y-6 scroll-reveal">
             <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
                 <i class="zmdi zmdi-accounts-alt text-sky-400 text-2xl"></i>
@@ -260,23 +334,20 @@
             <div id="agents-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
         </section>
 
-        <!-- Dynamic Continuity Roadmap Target Container -->
+        <!-- SECTION 4: Dynamic Continuity Roadmap Target Container -->
         <section id="roadmap-sec" class="space-y-6 scroll-reveal">
             <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
                 <i class="zmdi zmdi-compass text-sky-400 text-2xl"></i>
                 <h2 class="text-2xl font-serif font-bold text-white">4. Dynamic Continuity Roadmap</h2>
             </div>
 
-            <!-- Dynamically Injected Tab Buttons -->
             <div id="roadmap-tabs-container" class="flex flex-wrap gap-2"></div>
 
-            <!-- Tab Display Panel with Dynamic Header Banner -->
             <div class="glass-card rounded-xl border border-gray-800 overflow-hidden">
                 <div id="roadmap-banner-container"
                     class="relative h-48 sm:h-60 w-full overflow-hidden border-b border-gray-800 bg-gray-900 transition-all duration-500">
-                    <img id="roadmap-banner-img"
-                        src="https://preview.redd.it/final-fantasy-viis-ending-is-a-reference-to-secret-of-mana-v0-co9fr0v6by6c1.png?width=768&format=png&auto=webp&s=8eba2f5ce1317809318eb0014110355ec72f21e6"
-                        alt="Roadmap Stage Visual" class="w-full h-full object-cover transition-opacity duration-300"
+                    <img id="roadmap-banner-img" src="https://preview.redd.it/final-fantasy-viis-ending-is-a-reference-to-secret-of-mana-v0-co9fr0v6by6c1.png?width=768&format=png&auto=webp&s=8eba2f5ce1317809318eb0014110355ec72f21e6" alt="Roadmap Stage Visual"
+                        class="w-full h-full object-cover transition-opacity duration-300"
                         onerror="this.src='https://placehold.co/1200x400/161b22/38bdf8?text=Roadmap+Banner+Holder'">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#161b22] via-[#161b22]/40 to-transparent"></div>
                     <div class="absolute bottom-4 left-6 right-6">
@@ -285,11 +356,11 @@
                     </div>
                 </div>
 
-                <!-- Dynamically Injected Tab Panel Contents -->
                 <div id="roadmap-contents-container" class="p-6 md:p-8"></div>
             </div>
         </section>
 
+        <!-- SECTION 5: Theories -->
         <section id="theories-sec" class="space-y-8 scroll-reveal">
             <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
                 <i class="zmdi zmdi-border-color text-sky-400 text-2xl"></i>
@@ -300,8 +371,7 @@
             <div class="glass-card p-6 rounded-xl border-l-4 border-l-amber-500 bg-amber-950/10 space-y-3">
                 <div class="flex items-center gap-2 text-amber-400 font-bold text-base">
                     <i class="zmdi zmdi-alert-circle-o text-xl"></i> Nuanced Analysis: Developer Statements &amp;
-                    "Advent
-                    Children" Connection
+                    "Advent Children" Connection
                 </div>
                 <p class="text-sm text-gray-300 leading-relaxed">
                     It is a common misconception that producer Yoshinori Kitase and director Tetsuya Nomura confirmed
@@ -342,25 +412,23 @@
                         </p>
 
                         <div class="space-y-4 border-t border-gray-800 pt-4">
-                            <!-- Case FOR -->
                             <div class="space-y-2">
                                 <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
                                     <i class="zmdi zmdi-thumb-up"></i> Case FOR Theory 1 (Deep Evidence)
                                 </h4>
                                 <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
                                     <li><strong>Jenova Illusion Mechanics:</strong> Sephiroth/Jenova feeds on Cloud's
-                                        mental instability. Cloud seeing a rift in the sky and Aerith smiling while the
-                                        rest of the party mourns mirrors his past denial of Zack's death.</li>
+                                        mental instability. Cloud seeing a rift in the sky while others mourn mirrors
+                                        his past denial of Zack's death.</li>
                                     <li><strong>The Empty White Materia:</strong> Aerith handed Cloud a clear, drained
-                                        White Materia in her dream world, signifying that Holy's power in the primary
+                                        White Materia in her dream world, signifying Holy's power in the primary
                                         timeline was preserved only by her physical sacrifice.</li>
                                     <li><strong>Thematic Core of Loss:</strong> Final Fantasy VII was created as a
                                         reflection on irreversible grief. Undoing Aerith's death would undermine the
-                                        core emotional theme of the entire franchise.</li>
+                                        core emotional theme.</li>
                                 </ul>
                             </div>
 
-                            <!-- Case AGAINST -->
                             <div class="space-y-2">
                                 <h4 class="text-sm font-bold text-red-400 flex items-center gap-2">
                                     <i class="zmdi zmdi-thumb-down"></i> Case AGAINST Theory 1
@@ -368,7 +436,7 @@
                                 <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
                                     <li><strong>Rainbow Particle Effects:</strong> Square Enix specifically used rainbow
                                         spark effects during Cloud's sword parry—the exact visual effect used when Zack
-                                        made choices that created new timelines.</li>
+                                        created new timelines.</li>
                                     <li><strong>Aerith's Active Interaction:</strong> Aerith physically fights alongside
                                         Cloud in the void dimension against Sephiroth reborn, showing her agency exceeds
                                         a mere illusion.</li>
@@ -397,32 +465,29 @@
                         </p>
 
                         <div class="space-y-4 border-t border-gray-800 pt-4">
-                            <!-- Case FOR -->
                             <div class="space-y-2">
                                 <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
                                     <i class="zmdi zmdi-thumb-up"></i> Case FOR Theory 2 (Deep Evidence)
                                 </h4>
                                 <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
                                     <li><strong>White vs Black Whispers:</strong> The emergence of opposing Whisper
-                                        factions (Black Whispers controlled by Sephiroth, White Whispers guided by
-                                        Aerith/Gaia) confirms a active cosmic war over timeline outcomes.</li>
+                                        factions confirms an active cosmic war over timeline outcomes.</li>
                                     <li><strong>Zack's Multiversal Crossover:</strong> Zack Fair physically crossed
-                                        dimensions to assist Cloud and Aerith, establishing a precedent that characters
-                                        from alternate branches can cross over.</li>
+                                        dimensions to assist Cloud and Aerith, establishing a precedent that alternate
+                                        branch characters can cross over.</li>
                                     <li><strong>"7 Seconds Till the End":</strong> Sephiroth's quote in <em>Remake</em>
                                         refers to the 7 seconds before Aerith's death—offering Cloud the agency to
                                         change that exact moment.</li>
                                 </ul>
                             </div>
 
-                            <!-- Case AGAINST -->
                             <div class="space-y-2">
                                 <h4 class="text-sm font-bold text-red-400 flex items-center gap-2">
                                     <i class="zmdi zmdi-thumb-down"></i> Case AGAINST Theory 2
                                 </h4>
                                 <ul class="text-xs text-gray-400 space-y-2 list-disc list-inside">
                                     <li><strong>World Decay Mechanics:</strong> Rebirth shows alternate worlds are
-                                        unstable and quickly perish. An alternate world where Aerith lives may naturally
+                                        unstable and perish quickly. An alternate world where Aerith lives may naturally
                                         collapse.</li>
                                     <li><strong>Narrative Complexity:</strong> Sustaining multiple living versions of
                                         characters risks convoluting the ending and alienating mainstream audiences.
@@ -436,6 +501,7 @@
             </div>
         </section>
 
+        <!-- SECTION 6: Game Release & Summary -->
         <section id="summary-sec"
             class="glass-card p-6 md:p-8 rounded-2xl border border-gray-800 space-y-6 scroll-reveal">
             <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
@@ -449,8 +515,7 @@
                             class="zmdi zmdi-calendar text-sky-400 text-lg"></i> Expected Release Window</h4>
                     <p class="text-gray-400 text-xs leading-relaxed">
                         Square Enix targets a development cycle similar to <em>Rebirth</em>, placing Part 3's projected
-                        release on <strong>April 8, 2027</strong> (generally aligned with Final Fantasy VII's 30th
-                        Anniversary).
+                        release around <strong>early 2027</strong> (aligned with Final Fantasy VII's 30th Anniversary).
                     </p>
                 </div>
 
