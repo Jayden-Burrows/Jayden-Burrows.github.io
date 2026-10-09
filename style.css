@@ -191,6 +191,12 @@ input:checked+.slider:before {
   border-radius: 3px;
 }
 
+[data-theme="dark"] {
+  #top-nav-logo {
+    content: url('/images/logos/primary-transparent-logo.png')
+  }
+}
+
 
 #nav-title {
   letter-spacing: 0.5px;

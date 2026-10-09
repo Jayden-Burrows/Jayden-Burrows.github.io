@@ -14,6 +14,10 @@
     --text-secondary: #9ca3af;
 }
 
+#top-nav-logo {
+    content: url('/images/logos/primary-transparent-logo.png')
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }

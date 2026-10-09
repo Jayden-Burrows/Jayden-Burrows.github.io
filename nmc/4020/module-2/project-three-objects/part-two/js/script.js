@@ -95,9 +95,6 @@ const roadmap_data = [
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. Render Navigation Bar Links Dynamically
-    renderDynamicNav();
-
     // 2. Render Timeline Agents Cards Dynamically
     renderTimelineAgents();
 
@@ -107,20 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4. Scroll Reveal Intersection Observer
     initScrollReveal();
 });
-
-/**
- * Dynamic Nav Generator
- */
-function renderDynamicNav() {
-    const navContainer = document.getElementById("dynamic-nav");
-    if (!navContainer) return;
-
-    navContainer.innerHTML = page_links.map(link => `
-        <a href="${link.href}" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-300 hover:text-white hover:bg-gray-800/80 transition-all flex items-center gap-1.5">
-            <i class="zmdi ${link.icon} text-sky-400"></i> ${link.label}
-        </a>
-    `).join("");
-}
 
 /**
  * Dynamic Timeline Agents Generator
