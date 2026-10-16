@@ -64,7 +64,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.6rem 2rem;
+  padding: 0.6rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -460,7 +460,7 @@ input:checked+.slider:before {
 }
 
 /* ── Main Content ── */
-main {
+main.invisible {
   opacity: 0;
   transition: opacity 0.8s ease 0.3s;
 }

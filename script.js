@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Inject navigation bar
     const DEFAULT_nav_links = [
-        { label: 'Education', href: '#education-sec', icon: 'zmdi-book' },
-        { label: 'Experience', href: '#experience-sec', icon: 'zmdi-time-restore' },
-        { label: 'Skills', href: '#skills-sec', icon: 'zmdi-flash' },
-        { label: 'Certifications', href: '#certs-sec', icon: 'zmdi-badge-check' },
-        { label: 'Projects', href: '#project-sec', icon: 'zmdi-code' },
-        { label: 'Write-Ups', href: '#writeups-sec', icon: 'zmdi-file-text' },
-        { label: 'Contact', href: '#contact-sec', icon: 'zmdi-email' }
+        { label: 'Education', href: '/#education-sec', icon: 'zmdi-graduation-cap' },
+        { label: 'Experience', href: '/#experience-sec', icon: 'zmdi-time-restore' },
+        { label: 'Skills', href: '/#skills-sec', icon: 'zmdi-flash' },
+        { label: 'Certifications', href: '/#certs-sec', icon: 'zmdi-badge-check' },
+        { label: 'Projects', href: '/#project-sec', icon: 'zmdi-code' },
+        { label: 'Write-Ups', href: '/#writeups-sec', icon: 'zmdi-file-text' },
+        { label: 'Courses', href: '/courses/', icon: 'zmdi-book' },
+        { label: 'Contact', href: '/#contact-sec', icon: 'zmdi-email' }
     ];
 
     const topNavLinksHTML = DEFAULT_nav_links.map(link => `<li><a class="nav-link" href="${link.href}">${link.label}</a></li>`).join('');
@@ -127,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function proceedToPortfolio() {
         terminalOverlay.classList.add('hidden');
-        mainContent.classList.add('visible');
+        mainContent.classList.toggle('visible');
+        mainContent.classList.toggle('invisible');
         document.body.style.overflow = 'auto';
     }
 
