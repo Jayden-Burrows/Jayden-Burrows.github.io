@@ -32,8 +32,9 @@
 }
 
 html {
-  font-size: 20px;
+  font-size: 18px;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 * {
@@ -47,9 +48,10 @@ body {
   background-color: var(--bg-light);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* ── Navbar ── */
@@ -322,7 +324,10 @@ input:checked+.slider:before {
   z-index: 9999;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0;
   transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
 }
 
@@ -335,6 +340,7 @@ input:checked+.slider:before {
 .terminal-window {
   width: 95%;
   max-width: 800px;
+  margin: auto;
   background-color: #0A0E14;
   border-radius: 6px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
@@ -344,7 +350,7 @@ input:checked+.slider:before {
 
 .terminal-header {
   background-color: #111827;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -357,7 +363,7 @@ input:checked+.slider:before {
   align-items: center;
   gap: 0.5rem;
   background-color: #1F2937;
-  padding: 0.35rem 0.9rem;
+  padding: 0.35rem 0.5rem;
   border-radius: 4px 4px 0 0;
   border: 1px solid #374151;
   border-bottom: none;
@@ -366,11 +372,11 @@ input:checked+.slider:before {
 }
 
 .terminal-tab-icon svg {
-  width: 1rem;
+  width: 0.8rem;
 }
 
 .terminal-tab-title {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: #D1D5DB;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -397,20 +403,30 @@ input:checked+.slider:before {
 .terminal-body {
   padding: 1.5rem;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #64FFDA;
   min-height: 400px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   background-color: #0A0E14;
+  overflow-x: auto;
 }
 
 #terminal-output {
-  white-space: pre-wrap;
-  line-height: 1.5;
-  color: #64FFDA;
-  font-size: 1rem;
+  white-space: pre;
+  overflow-x: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 600px) {
+  #terminal-output {
+    white-space: pre;
+    font-size: 0.55rem;
+    line-height: 1.2;
+    overflow-x: auto;
+  }
 }
 
 #terminal-input-line {
@@ -1673,6 +1689,98 @@ main.visible .cloud-overlay .cloud-5 {
   transform: translateY(0);
 }
 
+/* ── Custom Scrollbar Styling ── */
+/* WebKit (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track: matches the container background */
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+  border-radius: 4px;
+}
+
+/* Thumb: uses a muted accent by default */
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+  border: 2px solid var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* Corner where horizontal and vertical scrollbars meet */
+::-webkit-scrollbar-corner {
+  background: var(--bg-light);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg-light);
+}
+
+/* ── Scrollbar Contextual Overrides ── */
+
+/* Dark/terminal-style containers — scrollbar matches the dark bg */
+#terminal-overlay::-webkit-scrollbar-track,
+.terminal-body::-webkit-scrollbar-track,
+#terminal-output::-webkit-scrollbar-track {
+  background: #0A0E14;
+  border-radius: 0;
+}
+
+#terminal-overlay::-webkit-scrollbar-thumb,
+.terminal-body::-webkit-scrollbar-thumb,
+#terminal-output::-webkit-scrollbar-thumb {
+  background: #1F2937;
+  border: 2px solid #0A0E14;
+  border-radius: 4px;
+}
+
+#terminal-overlay::-webkit-scrollbar-thumb:hover,
+.terminal-body::-webkit-scrollbar-thumb:hover,
+#terminal-output::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+#terminal-overlay,
+.terminal-body,
+#terminal-output {
+  scrollbar-color: #1F2937 #0A0E14;
+}
+
+/* Surface containers (cards, drawers, modals) — thumb uses a neutral surface tone */
+#nav-drawer::-webkit-scrollbar-track,
+.repo-sidebar::-webkit-scrollbar-track,
+.repo-main::-webkit-scrollbar-track,
+.binder-tabs::-webkit-scrollbar-track,
+.section-container::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+#nav-drawer::-webkit-scrollbar-thumb,
+.repo-sidebar::-webkit-scrollbar-thumb,
+.repo-main::-webkit-scrollbar-thumb,
+.binder-tabs::-webkit-scrollbar-thumb,
+.section-container::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 2px solid var(--surface);
+}
+
+#nav-drawer,
+.repo-sidebar,
+.repo-main,
+.binder-tabs,
+.section-container {
+  scrollbar-color: var(--accent) var(--surface);
+}
+
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .hero-card {
@@ -1909,15 +2017,25 @@ main.visible .cloud-overlay .cloud-5 {
 
   .terminal-body {
     padding: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .terminal-tab-title {
+    font-size: 0.75rem;
+  }
+
+  #terminal-output {
+    font-size: 0.65rem;
+    line-height: 1.3;
+  }
+
+  #terminal-input-line {
+    font-size: 0.7rem;
+    display: none;
   }
 
   #mobile-fallback {
     display: block;
-  }
-
-  #terminal-input-line {
-    display: none;
   }
 
   .footer-social-link {
