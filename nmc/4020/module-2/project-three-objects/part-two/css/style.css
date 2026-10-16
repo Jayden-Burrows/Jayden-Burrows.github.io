@@ -14,8 +14,12 @@
     --text-secondary: #9ca3af;
 }
 
-#top-nav-logo {
-    content: url('/images/logos/primary-transparent-logo.png')
+.top-nav {
+  background-color: var(--surface);
+}
+
+#nav-title {
+  color: white;
 }
 
 .glass-card {
