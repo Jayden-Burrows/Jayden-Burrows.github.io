@@ -632,162 +632,71 @@
         </section>
 
         <!-- Write-Ups Section -->
-        <!-- <section id="writeups-sec" class="section-container">
+        <section id="writeups-sec" class="section-container">
             <div class="section-header">
                 <h2 class="section-title">Write-Ups</h2>
             </div>
             <div class="binder-container">
                 <div class="binder-tabs-container">
                     <div class="binder-tabs">
-                        <div class="binder-tab active" data-tab="homelab" style="background:#2A9D8F;">
-                            <span>Security Homelab</span>
+                        <div class="binder-tab active" data-tab="nist" style="background:#4A6FA5;">
+                            <span>NIST CSF Risk Assessment</span>
                         </div>
-                        <div class="binder-tab" data-tab="nist" style="background:#4A6FA5;">
-                            <span>NIST CSF Risk</span>
-                        </div>
-                        <div class="binder-tab" data-tab="vuln" style="background:#7BA098;">
-                            <span>Vulnerability Mgmt</span>
-                        </div>
-                        <div class="binder-tab" data-tab="policy" style="background:#1A2A3A;">
-                            <span>Security Policy</span>
-                        </div>
-                        <div class="binder-tab" data-tab="phishing" style="background:#2F4F4F;">
-                            <span>Phishing Sim</span>
-                        </div>
-                        <div class="binder-tab" data-tab="splunk" style="background:#3D6B7D;">
-                            <span>Splunk Logs</span>
-                        </div>
+                        <!-- 
+                <div class="binder-tab" data-tab="homelab" style="background:#2A9D8F;">
+                    <span>Security Homelab</span>
+                </div>
+                <div class="binder-tab" data-tab="vuln" style="background:#7BA098;">
+                    <span>Vulnerability Mgmt</span>
+                </div>
+                <div class="binder-tab" data-tab="policy" style="background:#1A2A3A;">
+                    <span>Security Policy</span>
+                </div>
+                <div class="binder-tab" data-tab="phishing" style="background:#2F4F4F;">
+                    <span>Phishing Sim</span>
+                </div>
+                <div class="binder-tab" data-tab="splunk" style="background:#3D6B7D;">
+                    <span>Splunk Logs</span>
+                </div> 
+                -->
                     </div>
                 </div>
                 <div class="binder-page">
                     <div class="binder-content">
-                        <div class="binder-paper active" data-paper="homelab">
+
+                        <!-- NIST CSF Active Paper -->
+                        <div class="binder-paper active" data-paper="nist">
                             <div class="paper-layout">
                                 <div class="paper-text">
-                                    <h3>Enterprise Security Homelab</h3>
-                                    <div class="paper-tools"><strong>Key Tools:</strong> VirtualBox, Windows Server
-                                        2022, Active Directory, DNS, DHCP, Ubuntu, Windows 10, GPOs</div>
-                                    <p>Set up a virtualized corporate network using VirtualBox. Configured a Windows
-                                        Server 2022 domain controller with Active Directory, DNS, and DHCP. Joined
-                                        Windows 10 and Ubuntu Linux workstations to the domain. Implemented Group Policy
-                                        Objects (GPOs) for security baselines.</p>
-                                    <a href="#" class="paper-link">Read Full Write-Up →</a>
+                                    <h3>NIST CSF 2.0 Risk Assessment</h3>
+                                    <div class="paper-tools"><strong>Key Tools:</strong> NIST CSF 2.0, NIST SP 800-171,
+                                        Excel, CMMC Level 2</div>
+                                    <p>Conducted a mock gap assessment for Mavis's Machine Shop (a DIB manufacturer).
+                                        Evaluated the Protect and Detect functions, scored maturity levels, and built a
+                                        risk register mapped directly to CMMC readiness requirements.</p>
+                                    <a href="write-ups/nist-assessments/MMS/" class="paper-link">Read Full Case Study →</a>
                                 </div>
                                 <div class="paper-image">
                                     <div class="polaroid">
-                                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop"
-                                            alt="Network server rack">
-                                        <span class="polaroid-caption">Corporate Network Layout</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="binder-paper" data-paper="nist">
-                            <div class="paper-layout">
-                                <div class="paper-text">
-                                    <h3>Risk Assessment Using NIST CSF</h3>
-                                    <div class="paper-tools"><strong>Key Tools:</strong> NIST CSF, Risk Register
-                                        Template, Excel, CUI Institute Personas</div>
-                                    <p>Conducted a mock risk assessment for a fictional e-commerce company. Identified
-                                        critical assets, threats, and vulnerabilities. Mapped controls to the NIST CSF
-                                        core functions and produced a risk register with likelihood/impact scores.</p>
-                                    <a href="#" class="paper-link">Read Full Write-Up →</a>
-                                </div>
-                                <div class="paper-image">
-                                    <div class="polaroid">
+                                        <!-- Replace with a screenshot of your Excel cover or scales tab -->
                                         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop"
-                                            alt="Risk assessment documents">
-                                        <span class="polaroid-caption">Risk Register & Controls</span>
+                                            alt="NIST Risk Assessment">
+                                        <span class="polaroid-caption">NIST CSF Gap &amp; Risk Register</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="binder-paper" data-paper="vuln">
-                            <div class="paper-layout">
-                                <div class="paper-text">
-                                    <h3>Vulnerability Scanning with Nessus</h3>
-                                    <div class="paper-tools"><strong>Key Tools:</strong> Nessus Essentials,
-                                        Metasploitable 2, VirtualBox, CVSS</div>
-                                    <p>Deployed a vulnerable VM in an isolated lab. Ran a credentialed scan with Nessus
-                                        Essentials. Analyzed findings, prioritized remediation steps based on CVSS
-                                        scores, and documented the process. <em>All testing was performed in an isolated
-                                            home lab environment for educational purposes only.</em></p>
-                                    <a href="#" class="paper-link">Read Full Write-Up →</a>
-                                </div>
-                                <div class="paper-image">
-                                    <div class="polaroid">
-                                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop"
-                                            alt="Security scanning">
-                                        <span class="polaroid-caption">Nessus Scan Results</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="binder-paper" data-paper="policy">
-                            <div class="paper-layout">
-                                <div class="paper-text">
-                                    <h3>Information Security Policy Development</h3>
-                                    <div class="paper-tools"><strong>Key Tools:</strong> ISO 27001, NIST SP 800-53,
-                                        Microsoft Word</div>
-                                    <p>Drafted a comprehensive Information Security Policy for a fictional organization.
-                                        Covered acceptable use, access control, incident response, and data
-                                        classification. Aligned the policy with ISO 27001 and NIST SP 800-53.</p>
-                                    <a href="#" class="paper-link">Read Full Write-Up →</a>
-                                </div>
-                                <div class="paper-image">
-                                    <div class="polaroid">
-                                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop"
-                                            alt="Policy document">
-                                        <span class="polaroid-caption">Security Policy Draft</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="binder-paper" data-paper="phishing">
-                            <div class="paper-layout">
-                                <div class="paper-text">
-                                    <h3>Phishing Simulation & Awareness</h3>
-                                    <div class="paper-tools"><strong>Key Tools:</strong> GoPhish, Email Templates,
-                                        PowerPoint</div>
-                                    <p>Used GoPhish to conduct a phishing simulation for a fictional company. Created a
-                                        realistic email template and landing page. Tracked click rates and reported
-                                        rates, then developed a security awareness training presentation based on the
-                                        results.</p>
-                                    <a href="#" class="paper-link">Read Full Write-Up →</a>
-                                </div>
-                                <div class="paper-image">
-                                    <div class="polaroid">
-                                        <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=300&fit=crop"
-                                            alt="Email security">
-                                        <span class="polaroid-caption">Phishing Campaign Setup</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="binder-paper" data-paper="splunk">
-                            <div class="paper-layout">
-                                <div class="paper-text">
-                                    <h3>Log Analysis with Splunk</h3>
-                                    <div class="paper-tools"><strong>Key Tools:</strong> Splunk, Windows Event Logs,
-                                        Syslog, Linux</div>
-                                    <p>Set up a Splunk instance and ingested logs from Windows and Linux machines.
-                                        Created dashboards and alerts for suspicious activity. Simulated a brute-force
-                                        attack and detected it using Splunk queries.</p>
-                                    <a href="#" class="paper-link">Read Full Write-Up →</a>
-                                </div>
-                                <div class="paper-image">
-                                    <div class="polaroid">
-                                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"
-                                            alt="Log analysis dashboard">
-                                        <span class="polaroid-caption">Splunk Dashboard</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <!-- 
+                <div class="binder-paper" data-paper="homelab">
+                    ...
+                </div>
+                -->
+
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         <!-- Contact Footer -->
         <footer id="contact-sec" class="footer-section">

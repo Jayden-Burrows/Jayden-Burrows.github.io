@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIST CSF 2.0 Assessment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Radley:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="case-study-header">
+        <h1 class="case-study-title">NIST CSF 2.0 Risk Assessment</h1>
+        <div class="case-study-meta">
+            <span><strong>Client:</strong> Mavis' Machine Shop (DIB Contractor)</span>
+            <span><strong>Role:</strong> GRC Analyst</span>
+            <span><strong>Date:</strong> October 2026</span>
+            <span><strong>Framework:</strong> NIST CSF 2.0 / SP 800-171</span>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="case-study-content">
+
+        <!-- Executive Summary -->
+        <section class="case-study-section">
+            <h2>Executive Summary</h2>
+            <p>This assessment evaluated Mavis’s Machine Shop, a Defense Industrial Base (DIB) contract manufacturer,
+                against the Protect and Detect functions of NIST CSF 2.0, cross-mapped to NIST SP 800-171 Rev 2 for CMMC
+                Level 2 readiness.</p>
+
+            <h3>Key Findings</h3>
+            <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                <li><strong>Overall Posture:</strong> Average current maturity is <strong>2.3</strong> against an
+                    average target of <strong>3.3</strong>.</li>
+                <li><strong>Strengths:</strong> Identity and access management is the strongest area (3.3), though gaps
+                    remain in hardware authentication and physical access logging.</li>
+                <li><strong>Weaknesses:</strong> Adverse event analysis is the weakest (1.2 against a target of 3). Nine
+                    subcategories are two or more levels below target.</li>
+            </ul>
+
+            <h3>Top Risks Identified</h3>
+            <p>1. No centralized log monitoring (SIEM).<br>
+                2. Undefined incident declaration criteria.<br>
+                3. MFA applied only to external access.</p>
+
+            <p><em>Limitations: The incident response and BC/DR plans were not provided, and the written policy is dated
+                    2021.</em></p>
+        </section>
+
+        <!-- Methodology -->
+        <section class="case-study-section">
+            <h2>Assessment Methodology</h2>
+            <p>To provide a realistic gap analysis, I evaluated 33 subcategories across the <strong>Protect
+                    (PR)</strong> and <strong>Detect (DE)</strong> functions. Each subcategory was scored using a 4-tier
+                maturity model and mapped directly to its corresponding NIST SP 800-171 control for CMMC readiness.</p>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Maturity Score</th>
+                        <th>Tier Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1.0 - Partial</strong></td>
+                        <td>Ad-hoc, informal processes. Reactive approach.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2.0 - Risk Informed</strong></td>
+                        <td>Approved processes exist, but not organization-wide.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3.0 - Repeatable</strong></td>
+                        <td>Formally documented, organization-wide policies enforced.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4.0 - Adaptive</strong></td>
+                        <td>Continuous improvement, predictive, automated.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Risk Register Snapshot -->
+        <section class="case-study-section">
+            <h2>Risk Register Snapshot</h2>
+            <p>The gap analysis was translated into a business risk register. Below are the top 3 critical risks
+                requiring immediate remediation.</p>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Risk</th>
+                        <th>Description</th>
+                        <th>Score</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>R-01</strong></td>
+                        <td>Undetected Intrusion: Lack of SIEM/centralized log correlation allows attackers to dwell
+                            undetected.</td>
+                        <td class="risk-critical">16 (Critical)</td>
+                        <td>Deploy SIEM or managed detection service; define log sources and correlation rules.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>R-02</strong></td>
+                        <td>Incident Misclassification: Undefined incident criteria risk missing DoD reporting deadlines
+                            (72 hrs).</td>
+                        <td class="risk-critical">20 (Critical)</td>
+                        <td>Formalize IR plan with severity matrix and reporting timelines; run tabletop exercises.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>R-03</strong></td>
+                        <td>MFA Gap: MFA is only required for external access, leaving internal networks vulnerable to
+                            stolen credentials.</td>
+                        <td class="risk-critical">20 (Critical)</td>
+                        <td>Extend MFA to privileged accounts and general internal network access.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Deliverables -->
+        <section class="case-study-section">
+            <h2>Project Deliverables</h2>
+            <p>Download the full, redacted Excel workbook containing the complete 33-subcategory Gap Assessment, Risk
+                Register, and Scoring Methodology.</p>
+            <a href="assets/Mavis_NIST_CSF_Assessment.xlsx" class="download-btn" download>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Full Assessment (.xlsx)
+            </a>
+            <a href="assets/executive_summary.md" class="download-btn" download>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Executive Summary (.md)
+            </a>
+        </section>
+
+    </main>
+    <script src="/script.js"></script>
+</body>
+
+</html>

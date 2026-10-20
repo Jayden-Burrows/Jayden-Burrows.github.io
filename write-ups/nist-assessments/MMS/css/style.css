@@ -1,0 +1,394 @@
+/* ── Write-Ups (Binder Layout) ── */
+.binder-container {
+    display: flex;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-lg);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    min-height: 600px;
+}
+
+.binder-tabs-container {
+    flex: 0 0 200px;
+    background: var(--bg-light);
+    border-left: 1px solid var(--border);
+    display: flex;
+}
+
+.binder-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.binder-tab {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-right: -8px;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -2px 2px 6px var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    opacity: 0.85;
+}
+
+.binder-tab span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.binder-tab:hover {
+    transform: translateX(-4px);
+    opacity: 1;
+}
+
+.binder-tab.active {
+    margin-right: -16px;
+    transform: translateX(-8px);
+    box-shadow: -4px 4px 12px var(--shadow-lg), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.binder-page {
+    flex: 1;
+    padding: 2rem;
+    position: relative;
+    background: var(--surface);
+}
+
+.binder-content {
+    position: relative;
+}
+
+.binder-paper {
+    display: none;
+    animation: fadeInPaper 0.4s ease;
+}
+
+.binder-paper.active {
+    display: block;
+}
+
+@keyframes fadeInPaper {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.paper-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.paper-text {
+    flex: 1;
+}
+
+.paper-text h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.paper-tools {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--border);
+}
+
+.paper-tools strong {
+    color: var(--accent);
+}
+
+.paper-text p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.paper-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.paper-link:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.paper-image {
+    flex: 0 0 240px;
+}
+
+/* Polaroid image style */
+.polaroid {
+    background: white;
+    padding: 12px 12px 40px 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
+    transform: rotate(2deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+[data-theme="dark"] .polaroid {
+    background: #1A2A3A;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Radley', serif;
+    font-style: italic;
+    font-size: 0.75rem;
+    color: #555;
+}
+
+[data-theme="dark"] .polaroid-caption {
+    color: #B0B8C8;
+}
+
+/* ── Case Study Page Styles (nist-assessment.html) ── */
+.case-study-header {
+    padding: 8rem 2rem 4rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.case-study-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.case-study-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    flex-wrap: wrap;
+}
+
+.case-study-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.case-study-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.case-study-section {
+    margin-bottom: 4rem;
+}
+
+.case-study-section h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-light);
+    padding-bottom: 0.5rem;
+}
+
+.case-study-section h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+}
+
+.case-study-section p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.case-study-list {
+    margin-left: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Case Study Tables */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-table thead tr {
+    background-color: var(--text-primary);
+    color: var(--surface);
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: var(--bg-light);
+}
+
+.styled-table tbody tr:hover {
+    background-color: var(--accent-light);
+}
+
+.risk-critical {
+    color: #e53e3e;
+    font-weight: bold;
+}
+
+.risk-high {
+    color: #dd6b20;
+    font-weight: bold;
+}
+
+.risk-medium {
+    color: #d69e2e;
+    font-weight: bold;
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Mobile Adjustments for Binder */
+@media (max-width: 900px) {
+    .binder-container {
+        flex-direction: column;
+    }
+
+    .binder-tabs-container {
+        flex: 0 0 auto;
+        border-left: none;
+        border-bottom: 1px solid var(--border);
+        overflow-x: auto;
+        transform: rotateX(180deg);
+        scrollbar-width: thin;
+    }
+
+    .binder-tabs {
+        flex-direction: row;
+        padding: 0;
+        gap: 6px;
+        transform: rotateX(180deg);
+        width: fit-content;
+    }
+
+    .binder-tab {
+        flex: 0 0 auto;
+        border-radius: 8px 8px 0 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        padding: 0.75rem 1rem;
+        white-space: nowrap;
+        opacity: 1;
+    }
+
+    .binder-tab:hover,
+    .binder-tab.active {
+        transform: none;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .binder-tab.active {
+        filter: brightness(1.25);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+    }
+
+    .paper-layout {
+        flex-direction: column;
+    }
+
+    .paper-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .polaroid {
+        transform: rotate(0deg);
+    }
+
+    .binder-page {
+        padding: 1.5rem;
+    }
+}
