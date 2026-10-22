@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jayden Burrows">
-    <title>Jayden Burrows</title>
+    <title>Jayden Burrows | Cybersecurity &amp; GRC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Radley:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Ubuntu+Mono:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>if (location.hash.length < 2) document.documentElement.classList.add('intro-lock');</script>
 </head>
 
 <body>
 
-    <!-- Kali Linux Terminal Overlay -->
-    <div id="terminal-overlay">
-        <div class="terminal-window">
+    <!-- Hero stage: terminal expands, loads, then opens the about window -->
+    <section id="about-sec" class="hero-stage">
+        <div class="stage-inner">
+            <div class="terminal-window" id="terminal-window">
             <div class="terminal-header">
                 <div class="terminal-tab">
                     <span class="terminal-tab-icon">
@@ -54,22 +56,17 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <main id="main-content" class="invisible">
-
-        <!-- Hero / About Section -->
-        <section id="about-sec" class="hero-section">
-            <div class="sky-background"></div>
-            <div class="cloud-overlay">
-                <div class="cloud cloud-1"></div>
-                <div class="cloud cloud-2"></div>
-                <div class="cloud cloud-3"></div>
-                <div class="cloud cloud-4"></div>
-                <div class="cloud cloud-5"></div>
-            </div>
-
-            <div class="hero-card">
+            <div class="about-window" id="about-window" role="region" aria-label="About Jayden">
+                <div class="terminal-header">
+                    <div class="terminal-tab"><span class="terminal-tab-title">About | Firefox</span></div>
+                    <div class="terminal-header-actions aw-actions" aria-hidden="true">
+                        <span class="terminal-action-btn">&#9472;</span>
+                        <span class="terminal-action-btn">&#9633;</span>
+                        <span class="terminal-action-btn">&#10005;</span>
+                    </div>
+                </div>
+                <div class="aw-urlbar"><span class="aw-url">file:///home/jayden/about.html</span></div>
+                <div class="aw-body">
                 <div class="hero-left">
                     <div class="profile-wrapper">
                         <img src="/images/2026_Headshot.png" alt="Jayden Burrows" class="profile-img">
@@ -101,8 +98,13 @@
                         <span class="detail-item"><strong>Location:</strong> Athens, GA</span>
                     </div>
                 </div>
+                </div>
             </div>
-        </section>
+        </div>
+        <button type="button" id="skip-intro" class="skip-intro hidden">skip &rsaquo;</button>
+    </section>
+
+    <main id="main-content" class="invisible">
 
         <!-- Education Section -->
         <section id="education-sec" class="section-container">
@@ -674,8 +676,7 @@
                                 </div>
                                 <div class="paper-image">
                                     <div class="polaroid">
-                                        <!-- Replace with a screenshot of your Excel cover or scales tab -->
-                                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop"
+                                        <img src="/images/NistAssessment.png" style="object-position:top"
                                             alt="NIST Risk Assessment">
                                         <span class="polaroid-caption">NIST CSF Gap &amp; Risk Register</span>
                                     </div>

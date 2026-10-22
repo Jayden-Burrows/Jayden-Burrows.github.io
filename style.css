@@ -378,7 +378,7 @@ input:checked+.slider:before {
 .terminal-tab-title {
   font-size: 0.75rem;
   color: #D1D5DB;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
 }
 
 .terminal-header-actions {
@@ -391,7 +391,7 @@ input:checked+.slider:before {
   color: #6B7280;
   font-size: 0.9rem;
   cursor: pointer;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
   transition: color 0.2s;
   line-height: 1;
 }
@@ -402,7 +402,7 @@ input:checked+.slider:before {
 
 .terminal-body {
   padding: 1.5rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
   font-size: 0.9rem;
   color: #64FFDA;
   min-height: 400px;
@@ -2059,5 +2059,304 @@ main.visible .cloud-overlay .cloud-5 {
 
   .footer-title {
     font-size: 1.25rem;
+  }
+}
+
+/* ═════ v4: fonts, drawer, hero stage ═════ */
+:root {
+  --font-serif: 'Fraunces', Georgia, serif
+}
+
+.section-title {
+  font-size: clamp(2.3rem, 5vw, 3.5rem)
+}
+
+@media (min-width:601px) {
+  .hero-name {
+    font-size: 2.8rem
+  }
+}
+
+.polaroid,
+.polaroid:hover {
+  transform: none
+}
+
+/* Drawer: dark navy in light mode, steel blue in dark mode */
+#nav-drawer {
+  --dr-bg: #0A192F;
+  --dr-head: #0F2A47;
+  background-color: var(--dr-bg)
+}
+
+[data-theme="dark"] #nav-drawer {
+  --dr-bg: #1B3A5C;
+  --dr-head: #234B73
+}
+
+#drawer-profile-wrap {
+  background-color: var(--dr-head);
+  border-bottom-color: rgba(255, 255, 255, .12)
+}
+
+#drawer-name {
+  color: #E6F1FF
+}
+
+.drawer-toggle-btn svg {
+  stroke: #E6F1FF
+}
+
+.drawer-socials .social-link {
+  background-color: #E6F1FF;
+  border-color: transparent
+}
+
+.drawer-socials .social-link svg {
+  fill: #0A192F
+}
+
+.drawer-nav-link {
+  color: #CCD6F6
+}
+
+.drawer-nav-link i {
+  color: #8FE3D6
+}
+
+.drawer-nav-link:hover {
+  background-color: rgba(255, 255, 255, .08);
+  color: #64FFDA
+}
+
+/* Hero stage */
+.hero-stage {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: calc(100vh - 62px);
+  background: #0A0E14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow: hidden
+}
+
+.stage-inner {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 62px - 3rem);
+  min-height: 540px
+}
+
+.terminal-window,
+.about-window {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  display: flex;
+  flex-direction: column
+}
+
+.terminal-window {
+  width: 95%;
+  max-width: 800px;
+  height: min(640px, 100%);
+  transform: translate(-50%, -50%);
+  transition: width .7s cubic-bezier(.77, 0, .175, 1), max-width .7s cubic-bezier(.77, 0, .175, 1), height .7s cubic-bezier(.77, 0, .175, 1), opacity .5s, scale .5s
+}
+
+.terminal-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto
+}
+
+.hero-stage.expanded .terminal-window {
+  width: 100%;
+  max-width: 100%;
+  height: 100%
+}
+
+.hero-stage.about-open .terminal-window {
+  opacity: .3;
+  scale: .985
+}
+
+.about-window {
+  width: min(1000px, 94%);
+  transform: translate(-50%, -50%) scale(.92);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  background: var(--surface);
+  border: 1px solid #1F2937;
+  border-radius: 6px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .6);
+  overflow: hidden;
+  transition: transform .45s cubic-bezier(.2, .8, .2, 1), opacity .35s
+}
+
+.hero-stage.about-open .about-window {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto
+}
+
+.aw-actions .terminal-action-btn {
+  pointer-events: none;
+  padding: 0 .35rem
+}
+
+.aw-urlbar {
+  background: #111827;
+  padding: .4rem .8rem;
+  border-bottom: 1px solid #1F2937
+}
+
+.aw-url {
+  display: block;
+  background: #0A0E14;
+  border: 1px solid #1F2937;
+  border-radius: 999px;
+  padding: .25rem 1rem;
+  font: .9rem 'Ubuntu Mono', 'DejaVu Sans Mono', monospace;
+  color: #9CA3AF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.aw-body {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  background: var(--surface)
+}
+
+.skip-intro {
+  position: absolute;
+  right: 2.6rem;
+  bottom: 2.3rem;
+  z-index: 6;
+  background: rgba(10, 14, 20, .8);
+  border: 1px solid #374151;
+  color: #9CA3AF;
+  font: .9rem 'Ubuntu Mono', 'DejaVu Sans Mono', monospace;
+  padding: .3rem .8rem;
+  border-radius: 4px;
+  cursor: pointer
+}
+
+.skip-intro:hover {
+  color: #64FFDA;
+  border-color: #64FFDA
+}
+
+.skip-intro.hidden {
+  display: none
+}
+
+.hero-stage.no-anim * {
+  transition: none !important
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .hero-stage * {
+    transition: none !important
+  }
+}
+
+@media (min-width:601px) {
+  .terminal-body {
+    font-size: 1rem
+  }
+
+  .terminal-tab-title {
+    font-size: .85rem
+  }
+}
+
+@media (min-width:1001px) {
+  .aw-body .profile-wrapper {
+    display: block
+  }
+
+  .aw-body .hero-left::before {
+    display: none
+  }
+
+  .aw-body .hero-left {
+    flex: 0 0 200px;
+    align-self: center
+  }
+}
+
+@media (max-width:900px) {
+  .aw-body {
+    flex-direction: column;
+    padding: 1.8rem;
+    gap: 1.5rem
+  }
+}
+
+@media (max-width:600px) {
+  .hero-stage {
+    padding: 1rem
+  }
+
+  .stage-inner {
+    height: calc(100vh - 62px - 2rem);
+    min-height: 480px
+  }
+
+  .aw-body {
+    padding: 1.2rem
+  }
+
+  .aw-url {
+    font-size: .8rem
+  }
+}
+
+/* Intro lock: nav hidden, page not scrollable, rest of page not rendered until the intro ends */
+html.intro-lock,
+html.intro-lock body {
+  overflow: hidden;
+  height: 100%
+}
+
+html.intro-lock body {
+  background-color: #0A0E14
+}
+
+.nav-content {
+  transition: opacity .6s ease
+}
+
+html.intro-lock .nav-content {
+  opacity: 0;
+  pointer-events: none
+}
+
+main.invisible {
+  display: none
+}
+
+main.visible {
+  opacity: 1;
+  animation: mainIn .8s ease both
+}
+
+@keyframes mainIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
   }
 }
