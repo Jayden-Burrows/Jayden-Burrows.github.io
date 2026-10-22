@@ -8,22 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Radley:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Ubuntu+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <style>
-        :root {
-            --bg: #0A192F;
-            --surface: #112240;
-            --text-primary: #E6F1FF;
-            --text-secondary: #8892B0;
-            --accent: #64FFDA;
-            --accent-hover: #4CD1B0;
-            --accent-glow: rgba(100, 255, 218, 0.3);
-            --font-sans: 'Ubuntu', sans-serif;
-            --font-serif: 'Radley', serif;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -34,33 +22,40 @@
             scroll-behavior: smooth;
         }
 
+        /* ── Dark sky ── */
         .main-div {
+            --bg: #02040A;
+            --text-primary: #E6F1FF;
+            --text-secondary: #8892B0;
+            --accent: #64FFDA;
+            --accent-hover: #4CD1B0;
+            --accent-glow: rgba(100, 255, 218, 0.25);
+            --font-sans: 'Ubuntu', sans-serif;
+            --font-serif: 'Fraunces', Georgia, serif;
+            --font-mono: 'Ubuntu Mono', 'DejaVu Sans Mono', monospace;
+
             font-family: var(--font-sans);
-            background-color: var(--bg);
+            background: radial-gradient(ellipse 120% 70% at 50% 115%, #0B1B33 0%, #050A14 55%, #02040A 100%);
             color: var(--text-primary);
             line-height: 1.6;
             overflow: hidden;
-            min-height: 100vh;
+            min-height: calc(100vh - 62px);
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
         }
 
-        /* ── Starfield Background ── */
         .starfield {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            inset: 0;
             z-index: 0;
             overflow: hidden;
         }
 
         .star {
             position: absolute;
-            background-color: white;
+            background: #fff;
             border-radius: 50%;
             animation: twinkle 3s infinite ease-in-out;
         }
@@ -69,131 +64,132 @@
 
             0%,
             100% {
-                opacity: 0.2;
-                transform: scale(0.8);
+                opacity: 0.15;
             }
 
             50% {
-                opacity: 1;
-                transform: scale(1.2);
+                opacity: 0.85;
             }
         }
 
-        /* ── Nebula Clouds ── */
         .nebula {
-            position: fixed;
+            position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
+            filter: blur(90px);
+            opacity: 0.08;
             z-index: 0;
             pointer-events: none;
         }
 
         .nebula-1 {
-            width: 600px;
-            height: 600px;
+            width: 560px;
+            height: 560px;
             background: radial-gradient(circle, #64FFDA 0%, transparent 70%);
-            top: -200px;
+            top: -220px;
             left: -200px;
-            animation: drift-1 25s ease-in-out infinite alternate;
+            animation: drift-1 30s ease-in-out infinite alternate;
         }
 
         .nebula-2 {
-            width: 500px;
-            height: 500px;
+            width: 480px;
+            height: 480px;
             background: radial-gradient(circle, #4A90D9 0%, transparent 70%);
-            bottom: -150px;
-            right: -150px;
-            animation: drift-2 30s ease-in-out infinite alternate;
-        }
-
-        .nebula-3 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, #9D7CD8 0%, transparent 70%);
-            top: 40%;
-            right: 20%;
-            animation: drift-3 35s ease-in-out infinite alternate;
+            bottom: -180px;
+            right: -160px;
+            animation: drift-2 36s ease-in-out infinite alternate;
         }
 
         @keyframes drift-1 {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
+            to {
                 transform: translate(80px, 60px) scale(1.15);
             }
         }
 
         @keyframes drift-2 {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
+            to {
                 transform: translate(-70px, -50px) scale(1.1);
             }
         }
 
-        @keyframes drift-3 {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                transform: translate(-50px, 40px) scale(1.2);
-            }
-        }
-
-        /* ── Shooting Stars ── */
-        .shooting-star {
-            position: fixed;
-            width: 3px;
-            height: 3px;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.6);
+        /* ── Meteors: one at a time, fixed angle, short and quick ── */
+        .meteor {
+            position: absolute;
             z-index: 1;
+            height: 2px;
+            width: var(--len);
+            border-radius: 2px;
             opacity: 0;
-            animation: shoot linear infinite;
-            will-change: transform, opacity;
+            pointer-events: none;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85));
+            animation: meteor var(--dur) cubic-bezier(.3, .6, .4, 1) forwards;
         }
 
-        .shooting-star::after {
+        .meteor::after {
             content: '';
             position: absolute;
-            top: 50%;
             right: 0;
-            width: 80px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
-            transform: translateY(-50%);
-            transform-origin: right center;
+            top: 50%;
+            width: 4px;
+            height: 4px;
+            margin-top: -2px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.55);
         }
 
-        @keyframes shoot {
+        @keyframes meteor {
             0% {
-                transform: translate(0, 0) rotate(45deg);
                 opacity: 0;
+                transform: rotate(var(--a)) translateX(0);
             }
 
-            5% {
+            15% {
                 opacity: 1;
-            }
-
-            30% {
-                opacity: 1;
-            }
-
-            40% {
-                transform: translate(60vw, 60vh) rotate(45deg);
-                opacity: 0;
             }
 
             100% {
-                transform: translate(60vw, 60vh) rotate(45deg);
                 opacity: 0;
+                transform: rotate(var(--a)) translateX(var(--dist));
+            }
+        }
+
+        /* ── Astronaut ── */
+        .astronaut-wrap {
+            position: absolute;
+            z-index: 5;
+            pointer-events: none;
+            right: clamp(1.5rem, 9vw, 8rem);
+            top: 50%;
+            width: clamp(150px, 20vw, 290px);
+            transform: translateY(-50%);
+            transition: translate 0.9s ease-out;
+        }
+
+        .astronaut {
+            display: block;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(100, 255, 218, 0.12));
+            animation: float 22s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(-4deg);
+            }
+
+            25% {
+                transform: translate(26px, -22px) rotate(3deg);
+            }
+
+            50% {
+                transform: translate(8px, 22px) rotate(6deg);
+            }
+
+            75% {
+                transform: translate(-24px, 6px) rotate(-1deg);
             }
         }
 
@@ -217,7 +213,7 @@
             line-height: 1;
             margin-bottom: 0.5rem;
             text-shadow: 0 0 40px var(--accent-glow);
-            animation: pulse-glow 3s ease-in-out infinite;
+            animation: pulse-glow 4s ease-in-out infinite;
         }
 
         @keyframes pulse-glow {
@@ -228,17 +224,24 @@
             }
 
             50% {
-                text-shadow: 0 0 80px var(--accent-glow), 0 0 120px var(--accent-glow);
+                text-shadow: 0 0 70px var(--accent-glow);
             }
         }
 
         .not-found-title {
-            font-family: var(--font-sans);
             font-size: clamp(1.5rem, 4vw, 2.5rem);
             font-weight: 500;
-            color: var(--text-primary);
             margin-bottom: 1rem;
             letter-spacing: -0.5px;
+        }
+
+        .not-found-path {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--accent);
+            opacity: 0.8;
+            margin-bottom: 1rem;
+            overflow-wrap: anywhere;
         }
 
         .not-found-message {
@@ -284,31 +287,24 @@
             box-shadow: 0 8px 25px var(--accent-glow);
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
-
         .btn svg {
-            width: 18px;
-            height: 18px;
+            width: 36px;
+            height: 36px;
         }
 
-        #nav-title {
-            color: black;
+        @media (max-width: 900px) {
+            .astronaut-wrap {
+                right: 1rem;
+                top: 1rem;
+                width: 110px;
+                transform: none;
+            }
         }
 
-        /* ── Responsive ── */
         @media (max-width: 600px) {
             .not-found-container {
                 padding: 1.5rem;
+                padding-top: 5rem;
             }
 
             .not-found-actions {
@@ -319,9 +315,19 @@
             .btn {
                 width: 100%;
             }
+        }
 
-            .nebula {
-                filter: blur(60px);
+        @media (prefers-reduced-motion: reduce) {
+
+            .star,
+            .nebula,
+            .astronaut,
+            .not-found-code {
+                animation: none;
+            }
+
+            .star {
+                opacity: 0.6;
             }
         }
     </style>
@@ -330,18 +336,20 @@
 <body>
 
     <div class="main-div">
-        <!-- Nebula Clouds -->
         <div class="nebula nebula-1"></div>
         <div class="nebula nebula-2"></div>
-        <div class="nebula nebula-3"></div>
-        <!-- Starfield -->
         <div class="starfield" id="starfield"></div>
-        <!-- Shooting Stars (populated by JS) -->
-        <div id="shooting-star-field"></div>
-        <!-- Content -->
+        <div id="meteor-field"></div>
+
+        <!-- Astronaut: replace src with your image. A placeholder shows if the file isn't found. -->
+        <div class="astronaut-wrap" id="astronaut-wrap" aria-hidden="true">
+            <img class="astronaut" id="astronaut" src="/images/astronaut.png" alt="">
+        </div>
+
         <div class="not-found-container">
             <h1 class="not-found-code">404</h1>
             <h2 class="not-found-title">Lost in Space</h2>
+            <p class="not-found-path" id="not-found-path"></p>
             <p class="not-found-message">
                 Looks like this page drifted off into the cosmos.
                 The coordinates you entered don't match any known destination in this galaxy.
@@ -360,57 +368,47 @@
     </div>
 
     <script>
-        // ── Generate Starfield ──
+        const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Starfield
         const starfield = document.getElementById('starfield');
-        const starCount = 200;
-
-        for (let i = 0; i < starCount; i++) {
+        for (let i = 0; i < 170; i++) {
             const star = document.createElement('div');
-            star.classList.add('star');
-
-            const size = Math.random() * 2.5 + 0.5;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.animationDelay = `${Math.random() * 3}s`;
-            star.style.animationDuration = `${Math.random() * 2 + 2}s`;
-
+            star.className = 'star';
+            const size = Math.random() * 2 + 0.5;
+            star.style.cssText = `width:${size}px;height:${size}px;left:${Math.random() * 100}%;top:${Math.random() * 100}%;` +
+                `animation-delay:${Math.random() * 3}s;animation-duration:${Math.random() * 3 + 2.5}s`;
             starfield.appendChild(star);
         }
 
-        // ── Generate Shooting Stars ──
-        const shootingStarField = document.getElementById('shooting-star-field');
-
-        function createShootingStar() {
-            const star = document.createElement('div');
-            star.classList.add('shooting-star');
-
-            // Random starting position (top half of the screen)
-            star.style.left = `${Math.random() * 80}%`;
-            star.style.top = `${Math.random() * 40}%`;
-
-            // Random animation duration (4-8 seconds)
-            const duration = Math.random() * 4 + 4;
-            star.style.animationDuration = `${duration}s`;
-
-            // Random delay before it starts (0-20 seconds)
-            star.style.animationDelay = `${Math.random() * 20}s`;
-
-            shootingStarField.appendChild(star);
-        }
-
-        // Create several shooting stars
-        for (let i = 0; i < 6; i++) {
-            createShootingStar();
-        }
-
-        // ── Keyboard Shortcut: Press Enter to Return Home ──
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                window.location.href = '/';
+        // Meteors: one at a time, all travelling the same direction, short and quick
+        const meteorField = document.getElementById('meteor-field');
+        function launchMeteor() {
+            if (!document.hidden) {
+                const m = document.createElement('div');
+                m.className = 'meteor';
+                m.style.left = `${5 + Math.random() * 60}%`;
+                m.style.top = `${3 + Math.random() * 30}%`;
+                m.style.setProperty('--a', `${25 + Math.random() * 15}deg`);
+                m.style.setProperty('--len', `${90 + Math.random() * 60}px`);
+                m.style.setProperty('--dist', `${300 + Math.random() * 300}px`);
+                m.style.setProperty('--dur', `${1.1 + Math.random() * 0.6}s`);
+                m.addEventListener('animationend', () => m.remove());
+                meteorField.appendChild(m);
             }
-        });
+            setTimeout(launchMeteor, 5000 + Math.random() * 7000);
+        }
+        if (!reduceMotion) setTimeout(launchMeteor, 2500);
+
+        if (!reduceMotion && matchMedia('(hover: hover)').matches) {
+            const wrap = document.getElementById('astronaut-wrap');
+            addEventListener('pointermove', (e) => {
+                wrap.style.translate = `${(e.clientX / innerWidth - 0.5) * -24}px ${(e.clientY / innerHeight - 0.5) * -24}px`;
+            });
+        }
+
+        // Press Enter to return home
+        document.addEventListener('keydown', (e) => { if (e.key === 'Enter') window.location.href = '/'; });
     </script>
     <script src="/script.js"></script>
 
