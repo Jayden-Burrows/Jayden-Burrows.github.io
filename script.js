@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <path d="M 2 5 L 22 5"></path><path d="M 2 12 L 22 12"></path><path d="M 2 19 L 22 19"></path>
                         </svg>
                     </button>
-                    <a href="#" id="nav-title">Jayden Burrows</a>
+                    <a href="/" id="nav-title">Jayden Burrows</a>
                 </div>
                 <div id="right-top-nav">
                     <ul class="nav-links">${topNavLinksHTML}</ul>
