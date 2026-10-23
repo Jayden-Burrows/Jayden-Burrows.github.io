@@ -1527,11 +1527,16 @@ main.visible .cloud-overlay .cloud-5 {
   color: #B0B8C8;
 }
 
+.binder-tabs-container {
+  display: contents;
+}
+
 .binder-tabs {
   flex: 0 0 200px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  height: 100%;
   padding: 2rem 0;
   background: var(--bg-light);
   border-left: 1px solid var(--border);
@@ -1541,6 +1546,7 @@ main.visible .cloud-overlay .cloud-5 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex: 0 0 auto;
   padding: 1rem 1.2rem;
   cursor: pointer;
   color: white;
@@ -1839,6 +1845,7 @@ main.visible .cloud-overlay .cloud-5 {
   }
 
   .binder-tabs-container {
+    display: block;
     width: 100%;
     overflow-x: auto;
     transform: rotateX(180deg);
@@ -2021,11 +2028,11 @@ main.visible .cloud-overlay .cloud-5 {
   }
 
   .terminal-tab-title {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   #terminal-output {
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     line-height: 1.3;
   }
 

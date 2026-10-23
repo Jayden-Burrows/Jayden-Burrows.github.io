@@ -21,41 +21,42 @@
     <section id="about-sec" class="hero-stage">
         <div class="stage-inner">
             <div class="terminal-window" id="terminal-window">
-            <div class="terminal-header">
-                <div class="terminal-tab">
-                    <span class="terminal-tab-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <g id="System / Terminal">
-                                    <path id="Vector"
-                                        d="M17 15H12M7 10L10 12.5L7 15M3 15.8002V8.2002C3 7.08009 3 6.51962 3.21799 6.0918C3.40973 5.71547 3.71547 5.40973 4.0918 5.21799C4.51962 5 5.08009 5 6.2002 5H17.8002C18.9203 5 19.4796 5 19.9074 5.21799C20.2837 5.40973 20.5905 5.71547 20.7822 6.0918C21 6.5192 21 7.07899 21 8.19691V15.8031C21 16.921 21 17.48 20.7822 17.9074C20.5905 18.2837 20.2837 18.5905 19.9074 18.7822C19.48 19 18.921 19 17.8031 19H6.19691C5.07899 19 4.5192 19 4.0918 18.7822C3.71547 18.5905 3.40973 18.2837 3.21799 17.9074C3 17.4796 3 16.9203 3 15.8002Z"
-                                        stroke="#64FFDA" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
+                <div class="terminal-header">
+                    <div class="terminal-tab">
+                        <span class="terminal-tab-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g id="System / Terminal">
+                                        <path id="Vector"
+                                            d="M17 15H12M7 10L10 12.5L7 15M3 15.8002V8.2002C3 7.08009 3 6.51962 3.21799 6.0918C3.40973 5.71547 3.71547 5.40973 4.0918 5.21799C4.51962 5 5.08009 5 6.2002 5H17.8002C18.9203 5 19.4796 5 19.9074 5.21799C20.2837 5.40973 20.5905 5.71547 20.7822 6.0918C21 6.5192 21 7.07899 21 8.19691V15.8031C21 16.921 21 17.48 20.7822 17.9074C20.5905 18.2837 20.2837 18.5905 19.9074 18.7822C19.48 19 18.921 19 17.8031 19H6.19691C5.07899 19 4.5192 19 4.0918 18.7822C3.71547 18.5905 3.40973 18.2837 3.21799 17.9074C3 17.4796 3 16.9203 3 15.8002Z"
+                                            stroke="#64FFDA" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
-                    </span>
-                    <span class="terminal-tab-title">jayden@portfolio: ~</span>
+                            </svg>
+                        </span>
+                        <span class="terminal-tab-title">jayden@portfolio: ~</span>
+                    </div>
+                    <div class="terminal-header-actions">
+                        <span class="terminal-action-btn" id="btn-minimize">─</span>
+                        <span class="terminal-action-btn" id="btn-maximize">□</span>
+                        <span class="terminal-action-btn" id="btn-close">✕</span>
+                    </div>
                 </div>
-                <div class="terminal-header-actions">
-                    <span class="terminal-action-btn" id="btn-minimize">─</span>
-                    <span class="terminal-action-btn" id="btn-maximize">□</span>
-                    <span class="terminal-action-btn" id="btn-close">✕</span>
+                <div class="terminal-body">
+                    <div id="terminal-output"></div>
+                    <div id="terminal-input-line" class="hidden">
+                        <span class="prompt">(jayden@portfolio)-[~]</span>
+                        <span class="command">$ Press Enter to proceed...</span>
+                    </div>
+                    <div id="mobile-fallback" class="hidden">
+                        <button type="button" id="mobile-proceed" class="btn btn-primary">Proceed to Portfolio
+                            →</button>
+                    </div>
                 </div>
             </div>
-            <div class="terminal-body">
-                <div id="terminal-output"></div>
-                <div id="terminal-input-line" class="hidden">
-                    <span class="prompt">(jayden@portfolio)-[~]</span>
-                    <span class="command">$ Press Enter to proceed...</span>
-                </div>
-                <div id="mobile-fallback" class="hidden">
-                    <button type="button" id="mobile-proceed" class="btn btn-primary">Proceed to Portfolio →</button>
-                </div>
-            </div>
-        </div>
             <div class="about-window" id="about-window" role="region" aria-label="About Jayden">
                 <div class="terminal-header">
                     <div class="terminal-tab"><span class="terminal-tab-title">About | Firefox</span></div>
@@ -67,37 +68,39 @@
                 </div>
                 <div class="aw-urlbar"><span class="aw-url">file:///home/jayden/about.html</span></div>
                 <div class="aw-body">
-                <div class="hero-left">
-                    <div class="profile-wrapper">
-                        <img src="/images/2026_Headshot.png" alt="Jayden Burrows" class="profile-img">
-                    </div>
-                </div>
-
-                <div class="hero-right">
-                    <div class="hero-header">
-                        <h1 class="hero-name">Jayden Burrows</h1>
-                        <p class="hero-tagline">Aspiring Cybersecurity &amp; Risk Analyst | GRC Enthusiast</p>
+                    <div class="hero-left">
+                        <div class="profile-wrapper">
+                            <img src="/images/2026_Headshot.png" alt="Jayden Burrows" class="profile-img">
+                        </div>
                     </div>
 
-                    <div class="hero-about-text">
-                        <p>Hi, I'm Jayden! I'm a Computer Science student at the University of Georgia, where I'm also a
-                            member of the Honors College. My passion for cybersecurity started with a curiosity about
-                            how to build resilient, compliant, and ethical technology. I believe the best security
-                            professionals are lifelong learners who care about people as much as they care about
-                            technology.
-                        </p>
-                    </div>
+                    <div class="hero-right">
+                        <div class="hero-header">
+                            <h1 class="hero-name">Jayden Burrows</h1>
+                            <p class="hero-tagline">Aspiring Cybersecurity &amp; Risk Analyst | GRC Enthusiast</p>
+                        </div>
 
-                    <div class="hero-actions">
-                        <a href="Jayden_Burrows_resume.pdf" class="btn btn-primary" download>Download Resume</a>
-                        <a href="mailto:jaydenmburrows@outlook.com" class="btn btn-secondary">Contact Me</a>
-                    </div>
+                        <div class="hero-about-text">
+                            <p>Hi, I'm Jayden! I'm a Computer Science student at the University of Georgia, where I'm
+                                also a
+                                member of the Honors College. My passion for cybersecurity started with a curiosity
+                                about
+                                how to build resilient, compliant, and ethical technology. I believe the best security
+                                professionals are lifelong learners who care about people as much as they care about
+                                technology.
+                            </p>
+                        </div>
 
-                    <div class="hero-details-compact">
-                        <span class="detail-item"><strong>Role:</strong> CS Major at UGA</span>
-                        <span class="detail-item"><strong>Location:</strong> Athens, GA</span>
+                        <div class="hero-actions">
+                            <a href="Jayden_Burrows_resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                            <a href="mailto:jaydenmburrows@outlook.com" class="btn btn-secondary">Contact Me</a>
+                        </div>
+
+                        <div class="hero-details-compact">
+                            <span class="detail-item"><strong>Role:</strong> CS Major at UGA</span>
+                            <span class="detail-item"><strong>Location:</strong> Athens, GA</span>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -641,13 +644,13 @@
             <div class="binder-container">
                 <div class="binder-tabs-container">
                     <div class="binder-tabs">
-                        <!-- <div class="binder-tab active" data-tab="homelab" style="background:#2A9D8F;">
-                            <span>Security Homelab</span>
-                        </div> -->
                         <div class="binder-tab active" data-tab="nist" style="background:#4A6FA5;">
                             <span>NIST CSF Risk</span>
                         </div>
-                        <!-- <div class="binder-tab" data-tab="vuln" style="background:#7BA098;">
+                        <!-- <div class="binder-tab active" data-tab="homelab" style="background:#2A9D8F;">
+                            <span>Security Homelab</span>
+                        </div>
+                        <div class="binder-tab" data-tab="vuln" style="background:#7BA098;">
                             <span>Vulnerability Mgmt</span>
                         </div>
                         <div class="binder-tab" data-tab="policy" style="background:#1A2A3A;">
@@ -672,7 +675,8 @@
                                     <p>Conducted a mock gap assessment for Mavis's Machine Shop (a DIB manufacturer).
                                         Evaluated the Protect and Detect functions, scored maturity levels, and built a
                                         risk register mapped directly to CMMC readiness requirements.</p>
-                                    <a href="write-ups/nist-assessments/MMS/" class="paper-link">Read Full Case Study →</a>
+                                    <a href="write-ups/nist-assessments/MMS/" class="paper-link">Read Full Case Study
+                                        →</a>
                                 </div>
                                 <div class="paper-image">
                                     <div class="polaroid">
@@ -839,6 +843,7 @@
         </footer>
     </main>
 
+    <script src="index-animation.js"></script>
     <script src="script.js"></script>
 </body>
 

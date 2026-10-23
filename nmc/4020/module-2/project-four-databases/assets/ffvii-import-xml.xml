@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/">
+
+<channel>
+	<title>FF7 DB 2</title>
+	<link>https://playground.wordpress.net</link>
+	<description>Final Fantasy VII games database</description>
+	<pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+	<language>en-US</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://playground.wordpress.net</wp:base_site_url>
+	<wp:base_blog_url>https://playground.wordpress.net</wp:base_blog_url>
+
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login><![CDATA[admin]]></wp:author_login>
+		<wp:author_email><![CDATA[admin@example.com]]></wp:author_email>
+		<wp:author_display_name><![CDATA[admin]]></wp:author_display_name>
+		<wp:author_first_name><![CDATA[]]></wp:author_first_name>
+		<wp:author_last_name><![CDATA[]]></wp:author_last_name>
+	</wp:author>
+
+	<!-- ==================== CATEGORIES ==================== -->
+
+	<!-- Console platforms (Standalone, no "Device" or "Console" parent) -->
+	<wp:category>
+		<wp:term_id>5</wp:term_id>
+		<wp:category_nicename><![CDATA[ps1]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[PS1]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>6</wp:term_id>
+		<wp:category_nicename><![CDATA[ps2]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[PS2]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>7</wp:term_id>
+		<wp:category_nicename><![CDATA[ps4]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[PS4]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>8</wp:term_id>
+		<wp:category_nicename><![CDATA[ps5]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[PS5]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>9</wp:term_id>
+		<wp:category_nicename><![CDATA[psp]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[PSP]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>10</wp:term_id>
+		<wp:category_nicename><![CDATA[nintendo-switch]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Nintendo Switch]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>11</wp:term_id>
+		<wp:category_nicename><![CDATA[nintendo-switch-2]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Nintendo Switch 2]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>12</wp:term_id>
+		<wp:category_nicename><![CDATA[xbox-one]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Xbox One]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>13</wp:term_id>
+		<wp:category_nicename><![CDATA[xbox-series-xs]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Xbox Series X/S]]></wp:cat_name>
+	</wp:category>
+
+	<!-- Other devices (Standalone) -->
+	<wp:category>
+		<wp:term_id>3</wp:term_id>
+		<wp:category_nicename><![CDATA[pc]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[PC]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>4</wp:term_id>
+		<wp:category_nicename><![CDATA[mobile]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Mobile]]></wp:cat_name>
+	</wp:category>
+
+	<!-- Age Rating (Standalone) -->
+	<wp:category>
+		<wp:term_id>15</wp:term_id>
+		<wp:category_nicename><![CDATA[t-for-teen]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[T for Teen]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>16</wp:term_id>
+		<wp:category_nicename><![CDATA[m-for-mature]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[M for Mature]]></wp:cat_name>
+	</wp:category>
+
+	<!-- Length (Standalone) -->
+	<wp:category>
+		<wp:term_id>18</wp:term_id>
+		<wp:category_nicename><![CDATA[medium]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Medium]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>19</wp:term_id>
+		<wp:category_nicename><![CDATA[long]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Long]]></wp:cat_name>
+	</wp:category>
+
+	<!-- Narrative Continuity (Standalone) -->
+	<wp:category>
+		<wp:term_id>21</wp:term_id>
+		<wp:category_nicename><![CDATA[original]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Original]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>22</wp:term_id>
+		<wp:category_nicename><![CDATA[prequel]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Prequel]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>23</wp:term_id>
+		<wp:category_nicename><![CDATA[sequel]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Sequel]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>24</wp:term_id>
+		<wp:category_nicename><![CDATA[remaster]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Remaster]]></wp:cat_name>
+	</wp:category>
+
+	<!-- Release (Standalone) -->
+	<wp:category>
+		<wp:term_id>26</wp:term_id>
+		<wp:category_nicename><![CDATA[vintage]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Vintage]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>27</wp:term_id>
+		<wp:category_nicename><![CDATA[modern]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Modern]]></wp:cat_name>
+	</wp:category>
+
+	<!-- Reviews (Standalone) -->
+	<wp:category>
+		<wp:term_id>29</wp:term_id>
+		<wp:category_nicename><![CDATA[mixed]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Mixed]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>30</wp:term_id>
+		<wp:category_nicename><![CDATA[mostly-positive]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Mostly Positive]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>31</wp:term_id>
+		<wp:category_nicename><![CDATA[very-positive]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Very Positive]]></wp:cat_name>
+	</wp:category>
+
+	<!-- ==================== TAGS ==================== -->
+	<wp:tag><wp:term_id>101</wp:term_id><wp:tag_slug><![CDATA[square-enix]]></wp:tag_slug><wp:tag_name><![CDATA[Square Enix]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:term_id>102</wp:term_id><wp:tag_slug><![CDATA[fine-co-ltd]]></wp:tag_slug><wp:tag_name><![CDATA[FINE CO. Ltd]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:term_id>103</wp:term_id><wp:tag_slug><![CDATA[rpg]]></wp:tag_slug><wp:tag_name><![CDATA[RPG]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:term_id>104</wp:term_id><wp:tag_slug><![CDATA[adventure]]></wp:tag_slug><wp:tag_name><![CDATA[Adventure]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:term_id>105</wp:term_id><wp:tag_slug><![CDATA[jrpg]]></wp:tag_slug><wp:tag_name><![CDATA[JRPG]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:term_id>106</wp:term_id><wp:tag_slug><![CDATA[action-rpg]]></wp:tag_slug><wp:tag_name><![CDATA[Action RPG]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:term_id>107</wp:term_id><wp:tag_slug><![CDATA[third-person-shooter]]></wp:tag_slug><wp:tag_name><![CDATA[Third-person shooter]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:term_id>108</wp:term_id><wp:tag_slug><![CDATA[action]]></wp:tag_slug><wp:tag_name><![CDATA[Action]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:term_id>109</wp:term_id><wp:tag_slug><![CDATA[tose-co-ltd]]></wp:tag_slug><wp:tag_name><![CDATA[TOSE CO., LTD.]]></wp:tag_name></wp:tag>
+
+	<!-- ==================== POSTS ==================== -->
+
+	<!-- 1. Final Fantasy VII -->
+	<item>
+		<title><![CDATA[Final Fantasy VII]]></title>
+		<link>https://playground.wordpress.net/?p=1001</link>
+		<pubDate>Mon, 19 Oct 2026 00:01:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://playground.wordpress.net/?p=1001</guid>
+		<description></description>
+		<content:encoded><![CDATA[Still beloved by legions of fans to this day, the enduring masterpiece FINAL FANTASY VII comes to Steam®, with a number of extra features included! An epic adventure beyond imagination, and a battle for the fate of the planet, brought back to life.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1001</wp:post_id>
+		<wp:post_date><![CDATA[2026-10-19 00:01:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-10-19 00:01:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[final-fantasy-vii]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="t-for-teen"><![CDATA[T for Teen]]></category>
+		<category domain="category" nicename="ps1"><![CDATA[PS1]]></category>
+		<category domain="category" nicename="ps4"><![CDATA[PS4]]></category>
+		<category domain="category" nicename="ps5"><![CDATA[PS5]]></category>
+		<category domain="category" nicename="nintendo-switch"><![CDATA[Nintendo Switch]]></category>
+		<category domain="category" nicename="xbox-one"><![CDATA[Xbox One]]></category>
+		<category domain="category" nicename="xbox-series-xs"><![CDATA[Xbox Series X/S]]></category>
+		<category domain="category" nicename="pc"><![CDATA[PC]]></category>
+		<category domain="category" nicename="mobile"><![CDATA[Mobile]]></category>
+		<category domain="category" nicename="long"><![CDATA[Long]]></category>
+		<category domain="category" nicename="original"><![CDATA[Original]]></category>
+		<category domain="category" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="category" nicename="mostly-positive"><![CDATA[Mostly Positive]]></category>
+		<category domain="post_tag" nicename="square-enix"><![CDATA[Square Enix]]></category>
+		<category domain="post_tag" nicename="fine-co-ltd"><![CDATA[FINE CO. Ltd]]></category>
+		<category domain="post_tag" nicename="rpg"><![CDATA[RPG]]></category>
+		<category domain="post_tag" nicename="adventure"><![CDATA[Adventure]]></category>
+		<category domain="post_tag" nicename="jrpg"><![CDATA[JRPG]]></category>
+	</item>
+
+	<!-- 2. Before Crisis - Final Fantasy VII -->
+	<item>
+		<title><![CDATA[Before Crisis - Final Fantasy VII]]></title>
+		<link>https://playground.wordpress.net/?p=1002</link>
+		<pubDate>Mon, 19 Oct 2026 00:02:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://playground.wordpress.net/?p=1002</guid>
+		<description></description>
+		<content:encoded><![CDATA[Set six years before Final Fantasy VII, Before Crisis centers on the Turks who set out to end the menace on the ShinRa company by a group of rebels called AVALANCHE]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1002</wp:post_id>
+		<wp:post_date><![CDATA[2026-10-19 00:02:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-10-19 00:02:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[before-crisis-final-fantasy-vii]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="t-for-teen"><![CDATA[T for Teen]]></category>
+		<category domain="category" nicename="mobile"><![CDATA[Mobile]]></category>
+		<category domain="category" nicename="medium"><![CDATA[Medium]]></category>
+		<category domain="category" nicename="prequel"><![CDATA[Prequel]]></category>
+		<category domain="category" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="category" nicename="mixed"><![CDATA[Mixed]]></category>
+		<category domain="post_tag" nicename="action-rpg"><![CDATA[Action RPG]]></category>
+		<category domain="post_tag" nicename="jrpg"><![CDATA[JRPG]]></category>
+		<category domain="post_tag" nicename="square-enix"><![CDATA[Square Enix]]></category>
+	</item>
+
+	<!-- 3. Dirge of Cerberus -->
+	<item>
+		<title><![CDATA[Dirge of Cerberus: Final Fantasy VII]]></title>
+		<link>https://playground.wordpress.net/?p=1003</link>
+		<pubDate>Mon, 19 Oct 2026 00:03:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://playground.wordpress.net/?p=1003</guid>
+		<description></description>
+		<content:encoded><![CDATA[Set a few years after Final Fantasy VII: Advent Children (2005), this PS2 game tells the tale of Vincent Valentine, who is targeted by Deepground, a mysterious organization that plans to awaken a creature known as Omega, with the ability to destroy the Planet.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1003</wp:post_id>
+		<wp:post_date><![CDATA[2026-10-19 00:03:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-10-19 00:03:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[dirge-of-cerberus-final-fantasy-vii]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="t-for-teen"><![CDATA[T for Teen]]></category>
+		<category domain="category" nicename="ps2"><![CDATA[PS2]]></category>
+		<category domain="category" nicename="medium"><![CDATA[Medium]]></category>
+		<category domain="category" nicename="sequel"><![CDATA[Sequel]]></category>
+		<category domain="category" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="category" nicename="mixed"><![CDATA[Mixed]]></category>
+		<category domain="post_tag" nicename="action-rpg"><![CDATA[Action RPG]]></category>
+		<category domain="post_tag" nicename="third-person-shooter"><![CDATA[Third-person shooter]]></category>
+		<category domain="post_tag" nicename="square-enix"><![CDATA[Square Enix]]></category>
+	</item>
+
+	<!-- 4. Crisis Core -->
+	<item>
+		<title><![CDATA[Crisis Core: Final Fantasy VII]]></title>
+		<link>https://playground.wordpress.net/?p=1004</link>
+		<pubDate>Mon, 19 Oct 2026 00:04:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://playground.wordpress.net/?p=1004</guid>
+		<description></description>
+		<content:encoded><![CDATA[Taking place around the events of Nibelheim outlined in Last Order: Final Fantasy VII (2005), Crisis Core focuses on Zack Fair, a member of the paramilitary organization SOLDIER, who is assigned to look for the missing soldier Genesis Rhapsodos.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1004</wp:post_id>
+		<wp:post_date><![CDATA[2026-10-19 00:04:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-10-19 00:04:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[crisis-core-final-fantasy-vii]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="t-for-teen"><![CDATA[T for Teen]]></category>
+		<category domain="category" nicename="psp"><![CDATA[PSP]]></category>
+		<category domain="category" nicename="pc"><![CDATA[PC]]></category>
+		<category domain="category" nicename="medium"><![CDATA[Medium]]></category>
+		<category domain="category" nicename="prequel"><![CDATA[Prequel]]></category>
+		<category domain="category" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="category" nicename="very-positive"><![CDATA[Very Positive]]></category>
+		<category domain="post_tag" nicename="action-rpg"><![CDATA[Action RPG]]></category>
+		<category domain="post_tag" nicename="jrpg"><![CDATA[JRPG]]></category>
+		<category domain="post_tag" nicename="square-enix"><![CDATA[Square Enix]]></category>
+	</item>
+
+	<!-- 5. FF7 Remake -->
+	<item>
+		<title><![CDATA[Final Fantasy VII Remake]]></title>
+		<link>https://playground.wordpress.net/?p=1005</link>
+		<pubDate>Mon, 19 Oct 2026 00:05:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://playground.wordpress.net/?p=1005</guid>
+		<description></description>
+		<content:encoded><![CDATA[Cloud Strife, an ex-SOLDIER operative, descends on the mako-powered city of Midgar. The world of the timeless classic FINAL FANTASY VII is reborn, using cutting-edge graphics technology, a new battle system and an additional adventure featuring Yuffie Kisaragi.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1005</wp:post_id>
+		<wp:post_date><![CDATA[2026-10-19 00:05:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-10-19 00:05:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[final-fantasy-vii-remake]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="t-for-teen"><![CDATA[T for Teen]]></category>
+		<category domain="category" nicename="ps4"><![CDATA[PS4]]></category>
+		<category domain="category" nicename="ps5"><![CDATA[PS5]]></category>
+		<category domain="category" nicename="xbox-series-xs"><![CDATA[Xbox Series X/S]]></category>
+		<category domain="category" nicename="nintendo-switch-2"><![CDATA[Nintendo Switch 2]]></category>
+		<category domain="category" nicename="pc"><![CDATA[PC]]></category>
+		<category domain="category" nicename="long"><![CDATA[Long]]></category>
+		<category domain="category" nicename="sequel"><![CDATA[Sequel]]></category>
+		<category domain="category" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="category" nicename="very-positive"><![CDATA[Very Positive]]></category>
+		<category domain="post_tag" nicename="rpg"><![CDATA[RPG]]></category>
+		<category domain="post_tag" nicename="action-rpg"><![CDATA[Action RPG]]></category>
+		<category domain="post_tag" nicename="jrpg"><![CDATA[JRPG]]></category>
+		<category domain="post_tag" nicename="square-enix"><![CDATA[Square Enix]]></category>
+	</item>
+
+	<!-- 6. Crisis Core Reunion -->
+	<item>
+		<title><![CDATA[Crisis Core -Final Fantasy VII- Reunion]]></title>
+		<link>https://playground.wordpress.net/?p=1006</link>
+		<pubDate>Mon, 19 Oct 2026 00:06:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://playground.wordpress.net/?p=1006</guid>
+		<description></description>
+		<content:encoded><![CDATA[CRISIS CORE -FINAL FANTASY VII- REUNION is a remaster of CRISIS CORE featuring updated graphics, combat systems and soundtrack. Follow the tale of SOLDIER operative Zack Fair, as he discovers the secrets of Shinra's dark experiments.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1006</wp:post_id>
+		<wp:post_date><![CDATA[2026-10-19 00:06:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-10-19 00:06:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[crisis-core-final-fantasy-vii-reunion]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="t-for-teen"><![CDATA[T for Teen]]></category>
+		<category domain="category" nicename="ps4"><![CDATA[PS4]]></category>
+		<category domain="category" nicename="ps5"><![CDATA[PS5]]></category>
+		<category domain="category" nicename="xbox-series-xs"><![CDATA[Xbox Series X/S]]></category>
+		<category domain="category" nicename="nintendo-switch-2"><![CDATA[Nintendo Switch 2]]></category>
+		<category domain="category" nicename="pc"><![CDATA[PC]]></category>
+		<category domain="category" nicename="medium"><![CDATA[Medium]]></category>
+		<category domain="category" nicename="remaster"><![CDATA[Remaster]]></category>
+		<category domain="category" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="category" nicename="very-positive"><![CDATA[Very Positive]]></category>
+		<category domain="post_tag" nicename="action"><![CDATA[Action]]></category>
+		<category domain="post_tag" nicename="rpg"><![CDATA[RPG]]></category>
+		<category domain="post_tag" nicename="jrpg"><![CDATA[JRPG]]></category>
+		<category domain="post_tag" nicename="square-enix"><![CDATA[Square Enix]]></category>
+		<category domain="post_tag" nicename="tose-co-ltd"><![CDATA[TOSE CO., LTD.]]></category>
+	</item>
+
+	<!-- 7. FF7 Rebirth -->
+	<item>
+		<title><![CDATA[Final Fantasy VII Rebirth]]></title>
+		<link>https://playground.wordpress.net/?p=1007</link>
+		<pubDate>Mon, 19 Oct 2026 00:07:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://playground.wordpress.net/?p=1007</guid>
+		<description></description>
+		<content:encoded><![CDATA[The Unknown Journey Continues... After escaping the city of Midgar, Cloud and his friends set out on a journey across the planet. New adventures await in a vibrant, expansive world in this standalone entry of the FFVII remake trilogy.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1007</wp:post_id>
+		<wp:post_date><![CDATA[2026-10-19 00:07:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-10-19 00:07:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[final-fantasy-vii-rebirth]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="t-for-teen"><![CDATA[T for Teen]]></category>
+		<category domain="category" nicename="ps5"><![CDATA[PS5]]></category>
+		<category domain="category" nicename="xbox-series-xs"><![CDATA[Xbox Series X/S]]></category>
+		<category domain="category" nicename="nintendo-switch-2"><![CDATA[Nintendo Switch 2]]></category>
+		<category domain="category" nicename="pc"><![CDATA[PC]]></category>
+		<category domain="category" nicename="long"><![CDATA[Long]]></category>
+		<category domain="category" nicename="sequel"><![CDATA[Sequel]]></category>
+		<category domain="category" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="category" nicename="mostly-positive"><![CDATA[Mostly Positive]]></category>
+		<category domain="post_tag" nicename="rpg"><![CDATA[RPG]]></category>
+		<category domain="post_tag" nicename="action"><![CDATA[Action]]></category>
+		<category domain="post_tag" nicename="adventure"><![CDATA[Adventure]]></category>
+		<category domain="post_tag" nicename="square-enix"><![CDATA[Square Enix]]></category>
+	</item>
+
+	<!-- 8. FF7 Revelation -->
+	<item>
+		<title><![CDATA[Final Fantasy VII Revelation]]></title>
+		<link>https://playground.wordpress.net/?p=1008</link>
+		<pubDate>Mon, 19 Oct 2026 00:08:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://playground.wordpress.net/?p=1008</guid>
+		<description></description>
+		<content:encoded><![CDATA[The final battle to decide the fate of the world has begun. Take to the skies, chart your course, and stand with your companions against Sephiroth one last time. A vast planet awaits. Everything leads here.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1008</wp:post_id>
+		<wp:post_date><![CDATA[2026-10-19 00:08:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-10-19 00:08:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[final-fantasy-vii-revelation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="m-for-mature"><![CDATA[M for Mature]]></category>
+		<category domain="category" nicename="ps5"><![CDATA[PS5]]></category>
+		<category domain="category" nicename="xbox-series-xs"><![CDATA[Xbox Series X/S]]></category>
+		<category domain="category" nicename="nintendo-switch-2"><![CDATA[Nintendo Switch 2]]></category>
+		<category domain="category" nicename="pc"><![CDATA[PC]]></category>
+		<category domain="category" nicename="long"><![CDATA[Long]]></category>
+		<category domain="category" nicename="sequel"><![CDATA[Sequel]]></category>
+		<category domain="category" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="category" nicename="mostly-positive"><![CDATA[Mostly Positive]]></category>
+		<category domain="post_tag" nicename="rpg"><![CDATA[RPG]]></category>
+		<category domain="post_tag" nicename="action"><![CDATA[Action]]></category>
+		<category domain="post_tag" nicename="action-rpg"><![CDATA[Action RPG]]></category>
+		<category domain="post_tag" nicename="square-enix"><![CDATA[Square Enix]]></category>
+	</item>
+
+</channel>
+</rss>
