@@ -1,0 +1,220 @@
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #21262d;
+    --text-main: #c9d1d9;
+    --text-bright: #f0f6fc;
+    --accent-teal: #00d2c4;
+    --accent-blue: #58a6ff;
+    --border-color: #30363d;
+    --radius: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.hero-header {
+    background: linear-gradient(135deg, #0d1117 0%, #1f2937 100%);
+    border-bottom: 2px solid var(--accent-teal);
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+.header-container h1 {
+    color: var(--text-bright);
+    margin: 0 0 0.5rem 0;
+    font-size: 2.2rem;
+}
+
+.header-container p {
+    color: var(--accent-teal);
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+}
+
+.meta-info {
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+/* Layout */
+.main-layout {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.content-section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.content-section h2 {
+    color: var(--accent-blue);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Interactive Tabs & Cards */
+.game-nav-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background-color: var(--border-color);
+    color: var(--text-bright);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-teal);
+    color: #000;
+    border-color: var(--accent-teal);
+}
+
+.game-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.banner-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.game-card-header {
+    padding: 1rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.game-card-header h3 {
+    margin: 0;
+    color: var(--accent-teal);
+}
+
+/* Timeline Formatting */
+.timeline-container {
+    padding: 1.5rem;
+}
+
+.timeline-list {
+    position: relative;
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+    border-left: 2px solid var(--accent-teal);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.2rem;
+    padding-left: 15px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent-teal);
+}
+
+/* Debate & Cards */
+.debate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .debate-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.debate-card {
+    background-color: var(--bg-card);
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent-blue);
+}
+
+.theory-b {
+    border-left-color: var(--accent-teal);
+}
+
+.debate-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--text-bright);
+}
+
+.callout-box, .opinion-card {
+    background-color: var(--bg-card);
+    border-left: 4px solid var(--accent-teal);
+    padding: 1.2rem;
+    border-radius: var(--radius);
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-teal);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.info-item {
+    background-color: var(--bg-card);
+    padding: 0.8rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.custom-list {
+    padding-left: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #8b949e;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+}

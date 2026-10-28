@@ -1,0 +1,275 @@
+:root {
+    --bg-primary: #050811;
+    /* Deep Midgar Night / Lifestream Abyss */
+    --bg-secondary: #0b1329;
+    /* Mako Dark Blue */
+    --bg-card: #111e38;
+    --text-main: #c2d4ff;
+    --text-bright: #ffffff;
+    --accent-mako: #00ffc6;
+    /* Vibrant Mako Cyan/Green */
+    --accent-glow: #1ae5be;
+    --accent-blue: #38bdf8;
+    --border-color: #1e293b;
+    --radius: 10px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Scroll Animation Classes */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header */
+.hero-header {
+    background: radial-gradient(circle at center, #0f1c3f 0%, #050811 100%);
+    border-bottom: 2px solid var(--accent-mako);
+    padding: 3.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 255, 198, 0.15);
+}
+
+.header-container h1 {
+    color: var(--text-bright);
+    margin: 0 0 0.5rem 0;
+    font-size: 2.4rem;
+    text-shadow: 0 0 12px rgba(0, 255, 198, 0.4);
+}
+
+.header-container p {
+    color: var(--accent-mako);
+    font-size: 1.15rem;
+    margin: 0 0 1rem 0;
+}
+
+.meta-info {
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+/* Layout */
+.main-layout {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.content-section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.content-section h2 {
+    color: var(--accent-mako);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.6rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Interactive Tabs & Cards */
+.game-nav-tabs {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.7rem 1.3rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+    background-color: #1a2b4c;
+    color: var(--text-bright);
+    border-color: var(--accent-mako);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-mako);
+    color: #050811;
+    border-color: var(--accent-mako);
+    box-shadow: 0 0 12px rgba(0, 255, 198, 0.4);
+}
+
+.game-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.banner-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+.banner-img:hover {
+    filter: brightness(1);
+}
+
+.game-card-header {
+    padding: 1.2rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.game-card-header h3 {
+    margin: 0;
+    color: var(--accent-mako);
+    font-size: 1.3rem;
+}
+
+/* Timeline Formatting */
+.timeline-container {
+    padding: 1.8rem;
+}
+
+.timeline-list {
+    position: relative;
+    list-style: none;
+    padding-left: 24px;
+    margin: 0;
+    border-left: 2px solid var(--accent-mako);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.4rem;
+    padding-left: 15px;
+    color: var(--text-main);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -31px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent-mako);
+    box-shadow: 0 0 8px var(--accent-mako);
+}
+
+/* Debate & Cards */
+.debate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+@media (max-width: 650px) {
+    .debate-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.debate-card {
+    background-color: var(--bg-card);
+    padding: 1.4rem;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent-blue);
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.theory-b {
+    border-left-color: var(--accent-mako);
+}
+
+.debate-card h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    color: var(--text-bright);
+}
+
+.callout-box,
+.opinion-card {
+    background-color: var(--bg-card);
+    border-left: 4px solid var(--accent-mako);
+    padding: 1.4rem;
+    border-radius: var(--radius);
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-mako);
+    margin-top: 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 650px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-item {
+    background-color: var(--bg-card);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.custom-list {
+    padding-left: 1.2rem;
+}
+
+.custom-list li {
+    margin-bottom: 0.6rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: #64748b;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+}
