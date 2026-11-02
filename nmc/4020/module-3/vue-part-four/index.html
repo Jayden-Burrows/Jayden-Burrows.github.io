@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Components 101</title>
+    <title>Vue Exercise 5</title>
     <link rel="stylesheet" href="/style.css">
-    <!-- Updated to Vue version 3: -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.js"></script>
+    <style>
+        main {
+            margin: 3rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="co">
-        <!-- I'm choosing to use toastOpinion in the Vue.js code and toast-opinion in the html -->
-        <!-- because vue translates kebab-case to camelCase, and this convention feels more natural -->
-        <!-- to Vanilla js and html (e.g. background-color html -> backgroundColor js) -->
-        <toast toast-opinion="I hate toast" bg-color="lightblue"></toast>
-        <toast toast-opinion="I like toast" bg-color="yellow"></toast>
-    </div>
+    <main>
+        <h1>Exercise: Vue Part IV</h1>
+        <ol>
+            <li><a href="part-one/">Part One</a></li>
+            <li><a href="part-two/">Part Two</a></li>
+        </ol>
+    </main>
 
-    <!-- <script> moved to inside <body> element -->
-    <script src="component.js"></script>
     <script src="/script.js"></script>
 </body>
+
 </html>

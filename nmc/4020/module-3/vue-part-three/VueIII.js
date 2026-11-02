@@ -8,7 +8,7 @@ const drinkdata = {
     data() {
         return {
             divStructure: {
-                backgroundColor: "#f5cac3",
+                backgroundColor: "tan",
                 width: '400px'
             },
             divText: {

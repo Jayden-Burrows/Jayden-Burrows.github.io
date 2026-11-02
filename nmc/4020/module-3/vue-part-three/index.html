@@ -8,17 +8,30 @@
   <link rel="stylesheet" href="/style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="VueIII.js" defer></script>
+  <style>
+    main {
+      margin: 1rem;
+    }
+
+    #drink div {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+  </style>
 </head>
 
 <body>
 
-  <div id="drink">
-    <h1>{{title}}</h1>
-    <div :style="[divStructure]" v-for="eachDrink in drink" :key="eachDrink.counter">
-      <h2 :style="[divText]">{{ eachDrink.drink_name }}</h2>
-      <p>{{ eachDrink.fact }}</p>
+  <main>
+    <div id="drink">
+      <h1>{{title}}</h1>
+      <div :style="[divStructure]" v-for="eachDrink in drink" :key="eachDrink.counter">
+        <h2 :style="[divText]">{{ eachDrink.drink_name }}</h2>
+        <p>{{ eachDrink.fact }}</p>
+      </div>
     </div>
-  </div>
+  </main>
   <script src="/script.js"></script>
 </body>
 

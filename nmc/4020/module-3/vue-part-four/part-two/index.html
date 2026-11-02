@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components 101</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- Updated to Vue version 3: -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.js"></script>
+    <style>
+        main {
+            text-align: center;
+        }
+
+        #co {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem auto;
+        }
+
+        #co div {
+            background-color: lightgrey;
+            padding: 0.5rem;
+            border-radius: 1rem;
+        }
+
+        #co img {
+            background-color: white;
+        }
+
+        #co button {
+            padding: 0.5rem;
+            font-size: 1.15rem;
+            border-radius: 0.5rem;
+            border: 1px solid grey;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Feed the Zoo!</h1>
+        <div id="co">
+            <clicker monster="Dino"></clicker>
+            <clicker monster="Dragon"></clicker>
+        </div>
+    </main>
+
+    <!-- <script> moved to inside <body> element -->
+    <script src="component.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
