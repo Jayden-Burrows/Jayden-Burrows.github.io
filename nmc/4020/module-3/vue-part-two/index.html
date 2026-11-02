@@ -11,6 +11,31 @@
     <style>
         main * {
             margin: 8px;
+            padding: 8px;
+        }
+
+        button, select {
+            font-size: 1.05rem;
+        }
+
+        #drink {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: lavenderblush;
+            border-radius: 8px;            
+        }
+
+        #drink h2 {
+            color: hotpink;
+        }
+
+        #drink button {
+            background-color: thistle;
+            color: purple;
+            border: none;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -22,6 +47,7 @@
                 <h2>{{eachDrink.drink_name}}</h2>
             </div> -->
             <h2>{{ drinkname }}</h2>
+            <img :src="drinkImg" alt="">
             <p>{{ fact }}</p>
             <select v-model="selectedDrink" v-on:change="displayDrink">
                 <option disabled value="">-- Choose a Drink --</option>
