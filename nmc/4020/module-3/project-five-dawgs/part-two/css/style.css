@@ -22,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.75rem;
     background-color: var(--page-accent);
     padding: 0.75rem;
@@ -88,4 +89,9 @@
     margin: 0 2rem;
     display: flex;
     gap: 0.5rem;
+}
+
+#pages span {
+    font-weight: bold;
+    letter-spacing: 1px;
 }

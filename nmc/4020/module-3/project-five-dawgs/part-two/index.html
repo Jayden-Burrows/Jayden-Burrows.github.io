@@ -14,8 +14,13 @@
 <body>
   <div id="app">
     <div id="breed-btns">
-      <button v-on:click="showme('cocker')" type="button">Cocker</button>
+      <button v-on:click="showme('blenheim')" type="button">Blenheim</button>
       <button v-on:click="showme('brittany')" type="button">Brittany</button>
+      <button v-on:click="showme('cocker')" type="button">Cocker</button>
+      <button v-on:click="showme('irish')" type="button">Irish</button>
+      <button v-on:click="showme('japanese')" type="button">Japanese</button>
+      <button v-on:click="showme('sussex')" type="button">Sussex</button>
+      <button v-on:click="showme('welsh')" type="button">Welsh</button>
     </div>
     <div v-if="moreData.length > 0">
       <h3>{{ whichDawg.toUpperCase() }} SPANIEL</h3>
@@ -35,7 +40,10 @@
         </div>
         <div id="pages">
           <div v-for="page in pagination">
-            <button v-on:click="currentIndex = page" type="button">{{ page }}</button>
+            <button v-if="Number.isInteger(page)" v-on:click="currentIndex = page" type="button">
+              {{ page }}
+            </button>
+            <span v-else>{{ page }}</span>
           </div>
         </div>
         <div v-if="currentIndex < numPages">
