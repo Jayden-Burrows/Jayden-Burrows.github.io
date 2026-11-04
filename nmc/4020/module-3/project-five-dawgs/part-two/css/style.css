@@ -1,0 +1,91 @@
+:root {
+    --page-dark: mediumslateblue;
+    --page-light: white;
+    --page-accent: lavender;
+}
+
+#app {
+    margin: 2rem;
+}
+
+#app button {
+    border: 1px solid var(--page-dark);
+    background-color: var(--page-light);
+    color: var(--page-dark);
+    padding: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+#breed-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--page-accent);
+    padding: 0.75rem;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 1rem;
+    border: 1px solid var(--page-dark);
+}
+
+#app h3 {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.35rem;
+    font-family: var(--font-serif);
+    color: mediumslateblue;
+}
+
+#images {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+    max-width: 100vw;
+}
+
+#images div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 16px #00000090;
+}
+
+#images img {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+
+#pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--page-accent);
+    border: 1px solid var(--page-dark);
+    padding: 0.5rem;
+    border-radius: 2rem;
+    max-width: 100vw;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+#pagination button {
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+#pages {
+    margin: 0 2rem;
+    display: flex;
+    gap: 0.5rem;
+}

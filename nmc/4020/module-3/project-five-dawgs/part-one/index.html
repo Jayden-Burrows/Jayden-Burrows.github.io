@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    img {
+      width: 400px;
+    }
+  </style>
+  <title>How Bout'Em</title>
+</head>
+
+<body>
+  <div id="app">
+    <button v-on:click="showme('cocker')" type="button">Cocker</button>
+    <button v-on:click="showme('brittany')" type="button">Brittany</button>
+
+    <div>
+      <p>Click a button to see some Spaniels!</p>
+    </div>
+
+    <div v-for="breed in moreData" :key="breed">
+      <a :href="breed" target="_blank">
+        <img :src="breed" alt="Spaniel image">
+      </a>
+    </div>
+  </div>
+<script src="js/script.js"></script>
+</body>
+
+</html>

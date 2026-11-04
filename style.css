@@ -6,7 +6,7 @@
   --text-secondary: #4A5568;
   --accent: #2A9D8F;
   --accent-hover: #21867A;
-  --accent-light: #E6FFFA;
+  --accent-light: #e6fffa;
   --border: #E2E8F0;
   --shadow: rgba(10, 25, 47, 0.06);
   --shadow-lg: rgba(10, 25, 47, 0.1);
@@ -2373,8 +2373,21 @@ main.visible {
   }
 
   #nav-title {
+    display: flex;
+    align-items: center;
     font-size: 1.25rem;
   }
+
+  #nav-title::before {
+    display: inline-block;
+    content: "";
+    background: url('/images/logos/logo.png');
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.5rem;
+  }
+
 
   .nav-links {
     gap: 1.5rem;
@@ -2457,6 +2470,13 @@ main.visible {
 
   #nav-title {
     font-size: 1.4rem;
+  }
+
+  #nav-title::before {
+    background: url('/images/logos/smallLogo.png');
+    background-size: cover;
+    height: 2.5rem;
+    width: 2.5rem;
   }
 
   .nav-links a {
